@@ -9,7 +9,10 @@ import lombok.Data;
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
     @Column(insertable=false, updatable=false)
+=======
+>>>>>>> c58055ec7fce2139764386f834d07fda803a5e57
     private int cartItemID;
     
     @ManyToOne
