@@ -1,20 +1,19 @@
 package com.cts.repository;
 
-<<<<<<< HEAD
+
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-=======
 import org.springframework.data.jpa.repository.JpaRepository;
->>>>>>> c58055ec7fce2139764386f834d07fda803a5e57
 
 import com.cts.entity.Product;
 
 public interface ProductRepository extends JpaRepository<Product,Integer> {
-<<<<<<< HEAD
+
 	 List<Product> findByNameContainingIgnoreCase(String name);
 	   List<Product> findByType(String type);
 	   List<Product> findByGender(String gender);
@@ -36,9 +35,7 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
 	   
 	   @Query("SELECT p FROM Product p WHERE p.active = true AND p.price BETWEEN :minPrice AND :maxPrice")
 	   List<Product> findActiveProductsByPriceRange(@Param("minPrice") Double minPrice, @Param("maxPrice") Double maxPrice);
-
-
-=======
->>>>>>> c58055ec7fce2139764386f834d07fda803a5e57
+	   
+	   Optional<Product> findByProductIDAndActiveTrue(Integer productID);
 
 }
