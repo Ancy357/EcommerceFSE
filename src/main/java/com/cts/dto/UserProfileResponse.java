@@ -2,12 +2,17 @@ package com.cts.dto;
 
 import com.cts.enums.Role;
 import com.cts.enums.MembershipLevel;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserProfileResponse {
     private int userID;
     private String firstName;

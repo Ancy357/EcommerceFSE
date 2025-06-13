@@ -2,8 +2,10 @@
 package com.cts.service;
 
 import com.cts.dto.*;
+import com.cts.entity.User;
 import com.cts.enums.Role;
 import java.util.List;
+import java.util.Optional;
 import java.time.LocalDateTime;
 
 public interface IUserService {
@@ -33,9 +35,18 @@ public interface IUserService {
     void updateUserStatus(int userId, UserStatusUpdateRequest request);
 
     // Delete User
-    void deleteUser(int userId);
+    void softdeleteUser(int userId);
+    void hardDeleteUser(int userId);
     
     //Update membership
     //public void updateMembershipLevel(int userId);
+    
+    //methods for feign client
+    int getUserId(int userId);
+    List<CartItemDTO> getUserCartItems(Integer userId);
+    
+    //For authentication
+    public Optional<User> findByEmail(String email);
+    UserAuthDetailsDto getUserAuthDetailsByEmail(String email);
 
 }

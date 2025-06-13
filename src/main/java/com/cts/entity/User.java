@@ -27,7 +27,6 @@ public class User {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    private String profileImageUrl;
     private LocalDate dateOfBirth;
     private String gender;
 
@@ -54,13 +53,12 @@ public class User {
 
     private String verificationToken;
    
-    private LocalDateTime lastPasswordChangeAt;
 
-    // Membership
-    @Enumerated(EnumType.STRING)
-    private MembershipLevel membershipLevel;
+//    // Membership
+//    @Enumerated(EnumType.STRING)
+//    private MembershipLevel membershipLevel;
 
-    private Integer defaultShippingAddressId;
+
 
 //    Audit
 //    private String createdBy;
