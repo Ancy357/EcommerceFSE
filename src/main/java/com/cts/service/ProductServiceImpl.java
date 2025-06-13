@@ -198,23 +198,31 @@ public class ProductServiceImpl implements IProductService {
 	}
 
 	public String addFeedback(int productID, FeedbackDto feedbackDto) {
-		logger.info("Adding feedback for product ID: {}", productID);
-		Product product = productRepository.findById(productID).orElseThrow(() -> {
-			logger.error("Product not found for feedback, ID: {}", productID);
-			return new ResourceNotFoundException("Product not found");
-		});
+	    logger.info("Adding feedback for product ID: {}", productID);
+	    Product product = productRepository.findById(productID).orElseThrow(() -> {
+	        logger.error("Product not found for feedback, ID: {}", productID);
+	        return new ResourceNotFoundException("Product not found");
+	    });
 
-		Feedback feedback = new Feedback();
-		feedback.setProduct(product);
-		feedback.setReviewText(feedbackDto.getReviewText());
-		feedback.setRating(feedbackDto.getRating());
+	    // Validate the rating
+	    int rating = feedbackDto.getRating();
+	    if (rating < 1 || rating > 5) {
+	        logger.error("Invalid rating: {}. Rating must be between 1 and 5.", rating);
+	        return "Error: Rating must be between 1 and 5."; // Avoiding exception, returning response
+	    }
 
-		product.getFeedbacks().add(feedback);
-		productRepository.save(product);
+	    Feedback feedback = new Feedback();
+	    feedback.setProduct(product);
+	    feedback.setReviewText(feedbackDto.getReviewText());
+	    feedback.setRating(rating);
 
-		logger.info("Feedback added successfully for product ID: {}", productID);
-		return "Feedback added successfully!";
+	    product.getFeedbacks().add(feedback);
+	    productRepository.save(product);
+
+	    logger.info("Feedback added successfully for product ID: {}", productID);
+	    return "Feedback added successfully!";
 	}
+
 
 	public List<FeedbackDto> getFeedbackByProduct(int productID) {
 		logger.info("Fetching feedback for product ID: {}", productID);
