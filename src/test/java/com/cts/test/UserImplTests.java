@@ -70,7 +70,8 @@ class UserImplTests {
     		    "secret",                // password
     		    "9876543210",            // phoneNumber
     		    LocalDate.of(1995, 5, 15), // dateOfBirth
-    		    "Female"                 // gender
+    		    "Female",                 // gender
+    		    "some_random_img_url"
     		);
         User newUser = new User();
         newUser.setEmail("jane@example.com");

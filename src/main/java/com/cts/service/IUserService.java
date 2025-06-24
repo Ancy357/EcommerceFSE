@@ -3,10 +3,8 @@ package com.cts.service;
 
 import com.cts.dto.*;
 import com.cts.entity.User;
-import com.cts.enums.Role;
 import java.util.List;
 import java.util.Optional;
-import java.time.LocalDateTime;
 
 public interface IUserService {
 
@@ -19,6 +17,7 @@ public interface IUserService {
     List<UserSummaryResponse> getAllUsers();
     UserProfileResponse updateUserProfile(int userId, UpdateProfileRequest request);
     void changePassword(ChangePasswordRequest request);
+    UserProfileResponse updateProfileImage(int userId, UpdateProfileImageRequest request);
 
     // Password Recovery
     void forgotPassword(ForgotPasswordRequest request);
@@ -38,12 +37,11 @@ public interface IUserService {
     void softdeleteUser(int userId);
     void hardDeleteUser(int userId);
     
-    //Update membership
-    //public void updateMembershipLevel(int userId);
     
     //methods for feign client
     int getUserId(int userId);
     List<CartItemDTO> getUserCartItems(Integer userId);
+    List<OrderDTO> getOrdersOfUser(int userId);
     
     //For authentication
     public Optional<User> findByEmail(String email);

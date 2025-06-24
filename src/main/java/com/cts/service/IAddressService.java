@@ -9,4 +9,5 @@ public interface IAddressService {
     void deleteAddress(int addressId);
     List<AddressResponse> getUserAddresses(int userId);
     void setDefaultAddress(SetDefaultAddressRequest request);
+    boolean isAddressOwnedByUser(int addressId, int userId);
 }

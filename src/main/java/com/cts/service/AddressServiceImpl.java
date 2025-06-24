@@ -148,4 +148,11 @@ public class AddressServiceImpl implements IAddressService {
             throw new RuntimeException("Failed to set default address.", e);
         }
     }
+    @Override
+    public boolean isAddressOwnedByUser(int addressId, int userId) {
+        // Implement logic to check if the addressId belongs to the userId
+        // e.g., return addressRepository.existsByIdAndUserId(addressId, userId);
+        // This would require a method in your AddressRepository.
+        return false; // Placeholder, implement actual logic
+    }
 }

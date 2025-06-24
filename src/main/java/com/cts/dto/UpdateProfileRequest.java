@@ -38,4 +38,5 @@ public class UpdateProfileRequest {
     @Pattern(regexp = "^(Male|Female|Other|Prefer not to say)$",
              message = "Gender must be 'Male', 'Female', 'Other', or 'Prefer not to say'")
     private String gender;
+    private String profileimg;
 }

@@ -17,5 +17,5 @@ public class UpdateProfileImageRequest {
     // Basic regex for URL validation (allows http, https, and a general structure)
     @Pattern(regexp = "^(http|https)://[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(/[^ \"' لذا]*)?$",
              message = "Profile image URL must be a valid HTTP or HTTPS URL")
-    private String profileImageUrl;
+    private String profileimg;
 }

@@ -57,4 +57,5 @@ public class RegisterRequest {
              message = "Gender must be 'Male', 'Female', 'Other', or 'Prefer not to say'")
     // Alternative: Use an Enum type for gender and apply @NotNull
     private String gender;
+    private String profileimg;
 }

@@ -19,7 +19,7 @@ public class UserProfileResponse {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private String profileImageUrl;
+    private String profileimg;
     private LocalDate dateOfBirth;
     private String gender;
     private Set<Role> roles;

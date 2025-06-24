@@ -19,12 +19,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.Optional; // Ensure this is imported
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cts.client.CartServiceClient;
+import com.cts.client.OrderServiceClient;
 
 @Service
 @RequiredArgsConstructor
@@ -41,6 +42,8 @@ public class UserServiceImpl implements IUserService {
     private final ModelMapper modelMapper;
 
     private final CartServiceClient cartServiceClient;
+    
+    private final OrderServiceClient orderServiceClient;
 
     // Existing methods (login, registerUser, getUserById, etc.) ...
     @Override
@@ -196,6 +199,39 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
+    @Override
+    public UserProfileResponse updateProfileImage(int userId, UpdateProfileImageRequest request) {
+        logger.info("Attempting to update profile image for user ID: {}", userId);
+        try {
+            User user = userRepository.findById(userId)
+                    .orElseThrow(() -> new UserNotFoundException("User not found"));
+            logger.debug("Found user {} for profile image update.", user.getEmail());
+
+            // Directly set the profile image URL from the request
+            user.setProfileimg(request.getProfileimg());
+            user.setUpdatedAt(LocalDateTime.now()); // Update timestamp
+
+            userRepository.save(user);
+            logger.info("User profile image updated successfully for ID: {}", userId);
+
+            // Map the updated user to a response DTO
+            // IMPORTANT: Ensure your UserProfileResponse DTO has a 'profileimg' field
+            // if you want this URL to be returned to the client.
+            UserProfileResponse response = modelMapper.map(user, UserProfileResponse.class);
+            // If ModelMapper doesn't automatically map profileimg from User to UserProfileResponse,
+            // you might need to explicitly set it:
+            // response.setProfileimg(user.getProfileimg());
+            return response;
+        } catch (UserNotFoundException e) {
+            logger.warn("User profile image update failed: User with ID {} not found. Error: {}", userId, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("An unexpected error occurred while updating profile image for user ID {}: {}", userId, e.getMessage(), e);
+            throw new RuntimeException("Failed to update user profile image.", e);
+        }
+    }
+
+    // Existing methods continue...
     @Override
     public void changePassword(ChangePasswordRequest request) {
         logger.info("Attempting to change password for user with email: {}", request.getEmail());
@@ -465,19 +501,19 @@ public class UserServiceImpl implements IUserService {
 
             if (cartItemsResponse.getStatusCode().is2xxSuccessful() && cartItemsResponse.getBody() != null) {
                 logger.info("Successfully retrieved {} cart items for user ID {} from Cart Service.",
-                            cartItemsResponse.getBody().size(), userId);
+                                cartItemsResponse.getBody().size(), userId);
                 return cartItemsResponse.getBody();
             } else if (cartItemsResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
                 logger.info("No cart found or cart is empty for user ID {} in Cart Service (Status 404). Returning empty list.", userId);
                 return Collections.emptyList();
             } else {
                 logger.error("Cart Service returned non-successful status for user ID {}: Status: {}, Body: {}",
-                            userId, cartItemsResponse.getStatusCode(), cartItemsResponse.getBody());
+                                userId, cartItemsResponse.getStatusCode(), cartItemsResponse.getBody());
                 throw new RuntimeException("Failed to retrieve cart items from Cart Service. Status: " + cartItemsResponse.getStatusCode());
             }
         } catch (feign.FeignException.FeignClientException e) {
             logger.error("Client error from Cart Service when fetching cart items for user ID {}: Status: {}, Message: {}",
-                         userId, e.status(), e.contentUTF8(), e);
+                           userId, e.status(), e.contentUTF8(), e);
             if (e.status() == HttpStatus.NOT_FOUND.value()) {
                 logger.info("No cart found for user ID {} in Cart Service (FeignClientException 404). Returning empty list.", userId);
                 return Collections.emptyList();
@@ -485,15 +521,40 @@ public class UserServiceImpl implements IUserService {
             throw new RuntimeException("Error from Cart Service (client error) while fetching cart items for user " + userId + ": " + e.getMessage(), e);
         } catch (feign.FeignException.FeignServerException e) {
             logger.error("Server error from Cart Service when fetching cart items for user ID {}: Status: {}, Message: {}",
-                         userId, e.status(), e.contentUTF8(), e);
+                           userId, e.status(), e.contentUTF8(), e);
             throw new RuntimeException("Cart Service internal error (server error) while fetching cart items for user " + userId + ": " + e.getMessage(), e);
         } catch (Exception e) {
             logger.error("An unexpected error occurred while communicating with Cart Service for user ID {}: {}",
-                         userId, e.getMessage(), e);
+                           userId, e.getMessage(), e);
             throw new RuntimeException("Failed to retrieve cart items due to an unexpected error.", e);
         }
     }
 
+    //get order details
+    @Override
+    public List<OrderDTO> getOrdersOfUser(int userId) {
+        logger.info("Attempting to fetch orders for userId: {} from Order Microservice", userId);
+        try {
+            ResponseEntity<List<OrderDTO>> response = orderServiceClient.getOrdersByUserId(userId);
+            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
+                logger.info("Successfully fetched {} orders for userId: {}", response.getBody().size(), userId);
+                return response.getBody();
+            } else {
+                logger.warn("Failed to fetch orders for userId: {}. Status: {}", userId, response.getStatusCode());
+                // Handle specific HTTP statuses if needed (e.g., 404 for no orders found)
+                return List.of(); // Return empty list if no orders or non-successful status
+            }
+        } catch (feign.FeignException.NotFound e) {
+            logger.warn("No orders found or user not found in Order Microservice for userId: {}. Error: {}", userId, e.getMessage());
+            return List.of(); // Return empty list for 404 (no orders or user not found)
+        } catch (feign.FeignException e) {
+            logger.error("Error fetching orders for userId: {} from Order Microservice. Status: {}, Message: {}", userId, e.status(), e.getMessage());
+            // Re-throw or handle more gracefully based on your error handling strategy
+            throw new RuntimeException("Failed to fetch orders from Order Service for user " + userId, e);
+        }
+    }
+    
+    
     // --- NEW: Implementation for Authentication Service to fetch user details by email ---
     @Override
     public Optional<User> findByEmail(String email) {

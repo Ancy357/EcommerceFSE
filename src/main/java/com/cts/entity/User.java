@@ -53,16 +53,8 @@ public class User {
 
     private String verificationToken;
    
+    private String profileimg;
 
-//    // Membership
-//    @Enumerated(EnumType.STRING)
-//    private MembershipLevel membershipLevel;
-
-
-
-//    Audit
-//    private String createdBy;
-//    private String updatedBy;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;

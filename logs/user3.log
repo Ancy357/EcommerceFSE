@@ -1,0 +1,203 @@
+2025-06-24 01:05:28.970 [HikariPool-1:housekeeper] WARN  user3:com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h31m31s378ms645µs100ns).
+2025-06-24 08:48:44.514 [HikariPool-1:housekeeper] WARN  user3:com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h43m23s764ms415µs100ns).
+2025-06-24 08:51:01.048 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 08:56:01.049 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:01:01.061 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:22:50.867 [HikariPool-1:housekeeper] WARN  user3:com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m6s141ms476µs100ns).
+2025-06-24 09:26:42.045 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:31:42.047 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:36:42.048 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:41:42.066 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:46:42.076 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:51:42.088 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 09:56:42.091 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:01:42.097 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:06:36.694 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:06:36.695 [http-nio-7003-exec-10] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:06:36.695 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:06:36.701 [http-nio-7003-exec-10] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:06:36.701 [http-nio-7003-exec-10] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:06:36.728 [http-nio-7003-exec-10] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:06:42.107 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:11:42.110 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:16:42.125 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:18:08.819 [http-nio-7003-exec-2] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:18:08.819 [http-nio-7003-exec-2] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:18:08.821 [http-nio-7003-exec-2] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:18:08.822 [http-nio-7003-exec-2] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:18:08.822 [http-nio-7003-exec-2] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:18:08.833 [http-nio-7003-exec-2] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:18:11.225 [http-nio-7003-exec-3] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:18:11.225 [http-nio-7003-exec-3] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:18:11.226 [http-nio-7003-exec-3] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:18:11.227 [http-nio-7003-exec-3] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:18:11.227 [http-nio-7003-exec-3] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:18:11.233 [http-nio-7003-exec-3] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:18:44.571 [http-nio-7003-exec-4] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:18:44.572 [http-nio-7003-exec-4] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:18:44.572 [http-nio-7003-exec-4] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:18:44.573 [http-nio-7003-exec-4] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:18:44.573 [http-nio-7003-exec-4] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:18:44.581 [http-nio-7003-exec-4] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:21:42.142 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:21:47.437 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:21:47.437 [http-nio-7003-exec-6] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:21:47.438 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:21:47.439 [http-nio-7003-exec-6] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:21:47.439 [http-nio-7003-exec-6] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:21:47.452 [http-nio-7003-exec-6] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:22:46.341 [http-nio-7003-exec-7] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:22:46.342 [http-nio-7003-exec-7] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:22:46.342 [http-nio-7003-exec-7] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:22:46.343 [http-nio-7003-exec-7] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:22:46.344 [http-nio-7003-exec-7] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:22:46.352 [http-nio-7003-exec-7] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:23:00.609 [http-nio-7003-exec-8] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:23:00.609 [http-nio-7003-exec-8] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:23:00.610 [http-nio-7003-exec-8] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:23:00.610 [http-nio-7003-exec-8] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:23:00.610 [http-nio-7003-exec-8] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:23:00.616 [http-nio-7003-exec-8] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:25:57.767 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:25:57.767 [http-nio-7003-exec-10] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:25:57.768 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:25:57.769 [http-nio-7003-exec-10] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:25:57.769 [http-nio-7003-exec-10] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:25:57.776 [http-nio-7003-exec-10] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:26:03.045 [http-nio-7003-exec-1] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/39
+2025-06-24 10:26:03.203 [http-nio-7003-exec-1] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-24 10:26:03.210 [http-nio-7003-exec-1] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:26:03.212 [http-nio-7003-exec-1] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/39
+2025-06-24 10:26:03.222 [http-nio-7003-exec-1] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:26:03.237 [http-nio-7003-exec-1] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:26:03.237 [http-nio-7003-exec-1] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 39
+2025-06-24 10:26:03.237 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:26:03.237 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-24 10:26:03.237 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee
+2025-06-24 10:26:03.237 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-24 10:26:03.238 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-24 10:26:03.238 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {sub=rakshith12@gmail.com, exp=2025-06-24T05:55:57Z, userId=39, iat=2025-06-24T04:55:57Z, roles=[USER]}
+2025-06-24 10:26:03.238 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 39
+2025-06-24 10:26:03.238 [http-nio-7003-exec-1] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): rakshith12@gmail.com
+2025-06-24 10:26:03.238 [http-nio-7003-exec-1] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 39
+2025-06-24 10:26:03.286 [http-nio-7003-exec-1] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 39. Email: rakshith12@gmail.com
+2025-06-24 10:26:03.306 [http-nio-7003-exec-1] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 39
+2025-06-24 10:26:03.349 [http-nio-7003-exec-2] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/39
+2025-06-24 10:26:03.351 [http-nio-7003-exec-2] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-24 10:26:03.351 [http-nio-7003-exec-2] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:26:03.351 [http-nio-7003-exec-2] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/39
+2025-06-24 10:26:03.353 [http-nio-7003-exec-2] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:26:03.353 [http-nio-7003-exec-2] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:26:03.354 [http-nio-7003-exec-2] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 39
+2025-06-24 10:26:03.354 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:26:03.354 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-24 10:26:03.354 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee
+2025-06-24 10:26:03.354 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-24 10:26:03.354 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-24 10:26:03.355 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {sub=rakshith12@gmail.com, exp=2025-06-24T05:55:57Z, userId=39, iat=2025-06-24T04:55:57Z, roles=[USER]}
+2025-06-24 10:26:03.355 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 39
+2025-06-24 10:26:03.355 [http-nio-7003-exec-2] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): rakshith12@gmail.com
+2025-06-24 10:26:03.355 [http-nio-7003-exec-2] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 39
+2025-06-24 10:26:03.363 [http-nio-7003-exec-2] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 39. Email: rakshith12@gmail.com
+2025-06-24 10:26:03.364 [http-nio-7003-exec-2] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 39
+2025-06-24 10:26:42.156 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:27:06.852 [http-nio-7003-exec-5] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/39
+2025-06-24 10:27:06.856 [http-nio-7003-exec-5] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-24 10:27:06.856 [http-nio-7003-exec-5] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:06.857 [http-nio-7003-exec-5] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/39
+2025-06-24 10:27:06.858 [http-nio-7003-exec-5] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 39
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {sub=rakshith12@gmail.com, exp=2025-06-24T05:55:57Z, userId=39, iat=2025-06-24T04:55:57Z, roles=[USER]}
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 39
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): rakshith12@gmail.com
+2025-06-24 10:27:06.861 [http-nio-7003-exec-5] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 39
+2025-06-24 10:27:06.875 [http-nio-7003-exec-5] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 39. Email: rakshith12@gmail.com
+2025-06-24 10:27:06.876 [http-nio-7003-exec-5] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 39
+2025-06-24 10:27:06.912 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/39
+2025-06-24 10:27:06.915 [http-nio-7003-exec-6] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-24 10:27:06.915 [http-nio-7003-exec-6] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:06.916 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/39
+2025-06-24 10:27:06.917 [http-nio-7003-exec-6] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:06.918 [http-nio-7003-exec-6] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 39
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@e0a2d5ee
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {sub=rakshith12@gmail.com, exp=2025-06-24T05:55:57Z, userId=39, iat=2025-06-24T04:55:57Z, roles=[USER]}
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 39
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): rakshith12@gmail.com
+2025-06-24 10:27:06.919 [http-nio-7003-exec-6] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 39
+2025-06-24 10:27:06.930 [http-nio-7003-exec-6] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 39. Email: rakshith12@gmail.com
+2025-06-24 10:27:06.931 [http-nio-7003-exec-6] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 39
+2025-06-24 10:27:12.947 [http-nio-7003-exec-7] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:27:12.947 [http-nio-7003-exec-7] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:27:12.947 [http-nio-7003-exec-7] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:27:12.949 [http-nio-7003-exec-7] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:27:12.949 [http-nio-7003-exec-7] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:27:12.958 [http-nio-7003-exec-7] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:27:41.529 [http-nio-7003-exec-8] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:27:41.529 [http-nio-7003-exec-8] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24 10:27:41.529 [http-nio-7003-exec-8] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith12@gmail.com
+2025-06-24 10:27:41.531 [http-nio-7003-exec-8] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith12@gmail.com
+2025-06-24 10:27:41.531 [http-nio-7003-exec-8] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user authentication details for email: rakshith12@gmail.com
+2025-06-24 10:27:41.540 [http-nio-7003-exec-8] INFO  user3:com.cts.service.UserServiceImpl - Successfully fetched authentication details for user: rakshith12@gmail.com
+2025-06-24 10:27:43.608 [http-nio-7003-exec-9] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/39
+2025-06-24 10:27:43.609 [http-nio-7003-exec-9] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-24 10:27:43.610 [http-nio-7003-exec-9] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@68d6f8fc, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:43.610 [http-nio-7003-exec-9] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/39
+2025-06-24 10:27:43.610 [http-nio-7003-exec-9] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 39
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@68d6f8fc, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@68d6f8fc
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {sub=rakshith12@gmail.com, exp=2025-06-24T05:57:41Z, userId=39, iat=2025-06-24T04:57:41Z, roles=[USER]}
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 39
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): rakshith12@gmail.com
+2025-06-24 10:27:43.611 [http-nio-7003-exec-9] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 39
+2025-06-24 10:27:43.619 [http-nio-7003-exec-9] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 39. Email: rakshith12@gmail.com
+2025-06-24 10:27:43.620 [http-nio-7003-exec-9] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 39
+2025-06-24 10:27:43.641 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/39
+2025-06-24 10:27:43.643 [http-nio-7003-exec-10] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-24 10:27:43.643 [http-nio-7003-exec-10] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@68d6f8fc, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:43.643 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/39
+2025-06-24 10:27:43.645 [http-nio-7003-exec-10] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:43.647 [http-nio-7003-exec-10] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-24 10:27:43.648 [http-nio-7003-exec-10] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 39
+2025-06-24 10:27:43.648 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@68d6f8fc, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-24 10:27:43.648 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-24 10:27:43.649 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@68d6f8fc
+2025-06-24 10:27:43.649 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-24 10:27:43.649 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-24 10:27:43.649 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {sub=rakshith12@gmail.com, exp=2025-06-24T05:57:41Z, userId=39, iat=2025-06-24T04:57:41Z, roles=[USER]}
+2025-06-24 10:27:43.649 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 39
+2025-06-24 10:27:43.649 [http-nio-7003-exec-10] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): rakshith12@gmail.com
+2025-06-24 10:27:43.649 [http-nio-7003-exec-10] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 39
+2025-06-24 10:27:43.660 [http-nio-7003-exec-10] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 39. Email: rakshith12@gmail.com
+2025-06-24 10:27:43.661 [http-nio-7003-exec-10] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 39
+2025-06-24 10:31:42.168 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:36:42.182 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-24 10:38:49.179 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-06-24 10:38:49.193 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application USER3 with eureka with status DOWN
+2025-06-24 10:38:49.194 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1750741729194, current=DOWN, previous=UP]
+2025-06-24 10:38:49.194 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003: registering service...
+2025-06-24 10:38:49.233 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - registration status: 204
+2025-06-24 10:38:49.239 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 10:38:49.248 [tomcat-shutdown] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-24 10:38:49.277 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 10:38:49.291 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-24 10:38:49.298 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-24 10:38:49.300 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-06-24 10:38:52.314 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-06-24 10:38:52.381 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - deregister  status: 200
+2025-06-24 10:38:52.383 [RMI TCP Connection(155)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

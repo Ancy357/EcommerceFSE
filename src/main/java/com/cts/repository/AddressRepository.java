@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface AddressRepository extends JpaRepository<Address, Integer> {
     List<Address> findByUserUserID(int userId);
     List<Address> findByUserUserIDAndIsDefaultTrue(int userId);
+    boolean existsByIdAndUserUserID(int addressId, int userId);
 }
