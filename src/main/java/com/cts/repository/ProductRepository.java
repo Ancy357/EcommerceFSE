@@ -32,8 +32,17 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
 	   @Query("UPDATE Product p SET p.active = true WHERE p.productID = :id")
 	   void restoreProduct(@Param("id") int id);
 	   
-	   @Query("SELECT p FROM Product p WHERE p.active = true AND p.price BETWEEN :minPrice AND :maxPrice")
-	   List<Product> findActiveProductsByPriceRange(@Param("minPrice") Double minPrice, @Param("maxPrice") Double maxPrice);
+//	   @Query("SELECT p FROM Product p WHERE p.active = true AND p.price BETWEEN :minPrice AND :maxPrice")
+//	   List<Product> findActiveProductsByPriceRange(@Param("minPrice") Double minPrice, @Param("maxPrice") Double maxPrice);
+	   
+	   
+	   @Query("SELECT p FROM Product p WHERE p.active = true " +
+		       "AND (:minPrice IS NULL OR p.price >= :minPrice) " +
+		       "AND (:maxPrice IS NULL OR p.price <= :maxPrice)")
+		List<Product> findActiveProductsByPriceRange(@Param("minPrice") Double minPrice,
+		                                             @Param("maxPrice") Double maxPrice);
+
+	   
 	   
 	   Optional<Product> findByProductIDAndActiveTrue(Integer productID);
 

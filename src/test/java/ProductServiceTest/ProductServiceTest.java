@@ -5,17 +5,24 @@ import static org.mockito.Mockito.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.cts.entity.Feedback;
 import com.cts.entity.Product;
 import com.cts.dto.ProductDto;
+import com.cts.dto.ProductStockDTO;
+import com.cts.dto.FeedbackDto;
 import com.cts.dto.ProductAddDTO;
+import com.cts.dto.ProductCartDTO;
 import com.cts.repository.ProductRepository;
 import com.cts.service.ProductServiceImpl;
 import org.modelmapper.ModelMapper;
@@ -32,7 +39,7 @@ class ProductServiceTest {
     @InjectMocks
     private ProductServiceImpl productService;
 
-    // ✅ Test for getProductById()
+     
     @Test
     void testGetProductById_Success() {
         Product mockProduct = new Product();
@@ -217,4 +224,81 @@ class ProductServiceTest {
         verify(productRepository, times(1)).save(mockProduct);
     }
 
+    
+    
+    
+    @Test
+    void testSearchByName() {
+        List<Product> mockProducts = List.of(new Product(1, "Laptop", 1000.0));
+        ProductDto mockDto = new ProductDto(1, "Laptop", 1000.0);
+
+        Mockito.when(productRepository.findByNameContainingIgnoreCase("Laptop")).thenReturn(mockProducts);
+        Mockito.when(modelMapper.map(any(Product.class), eq(ProductDto.class))).thenReturn(mockDto);
+
+        List<ProductDto> results = productService.searchByName("Laptop");
+
+        assertEquals(1, results.size());
+        assertEquals("Laptop", results.get(0).getName());
+    }
+
+
+   
+    @Test
+    void testAddFeedback() {
+        Product product = new Product(1, "Phone", 500.0);
+        product.setFeedbacks(new ArrayList<>()); // Ensure feedback list is initialized
+
+        Mockito.when(productRepository.findById(1)).thenReturn(Optional.of(product));
+        Mockito.when(productRepository.save(product)).thenReturn(product); // Mock save method
+
+        FeedbackDto feedbackDto = new FeedbackDto("Great phone!", 5, LocalDateTime.now());
+        String result = productService.addFeedback(1, feedbackDto);
+
+        assertEquals("Feedback added successfully!", result);
+        verify(productRepository, times(1)).save(product); // Ensure save is called
+    }
+
+
+    // ✅ Test: Get Feedback for a Product
+    @Test
+    void testGetFeedbackByProduct() {
+        Product product = new Product(1, "Headphones", 150.0);
+        Feedback feedback = new Feedback("Nice sound", 5, LocalDateTime.now());
+        product.setFeedbacks(List.of(feedback));
+
+        Mockito.when(productRepository.findById(1)).thenReturn(Optional.of(product));
+
+        List<FeedbackDto> feedbackList = productService.getFeedbackByProduct(1);
+
+        assertEquals(1, feedbackList.size());
+        assertEquals("Nice sound", feedbackList.get(0).getReviewText());
+    }
+
+    // ✅ Test: Get Stock Availability
+    @Test
+    void testGetProductStockAvailability() {
+        Product product = new Product(1, "Keyboard", 50); // Fix constructor issue
+
+        Mockito.when(productRepository.findByProductIDAndActiveTrue(1))
+               .thenReturn(Optional.of(product));
+
+        ProductStockDTO stock = productService.getProductStockAvailabity(1);
+
+        assertEquals(50, stock.getAvailableStock()); // Ensure stock is correctly retrieved
+        verify(productRepository, times(1)).findByProductIDAndActiveTrue(1); // Ensure repository call happens
+    }
+
+
+    // ✅ Test: Get Product Summaries
+    @Test
+    void testGetProductSummaries() {
+        Product product = new Product(1, "Mouse", 40.0);
+        Mockito.when(productRepository.findAllActiveProducts()).thenReturn(List.of(product));
+
+        List<ProductCartDTO> summaries = productService.getProductSummaries();
+
+        assertEquals(1, summaries.size());
+        assertEquals("Mouse", summaries.get(0).getName());
+        assertEquals(40, summaries.get(0).getPrice());
+    }
 }

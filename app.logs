@@ -1,21 +1,395 @@
-2025-06-13 15:39:32 - Starting ProjectApplication using Java 21.0.6 with PID 19436 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
-2025-06-13 15:39:32 - No active profile set, falling back to 1 default profile: "default"
-2025-06-13 15:39:34 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-13 15:39:35 - Finished Spring Data repository scanning in 294 ms. Found 2 JPA repository interfaces.
-2025-06-13 15:39:35 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
-2025-06-13 15:39:36 - Tomcat initialized with port 8015 (http)
-2025-06-13 15:39:36 - Starting service [Tomcat]
-2025-06-13 15:39:36 - Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-13 15:39:36 - Initializing Spring embedded WebApplicationContext
-2025-06-13 15:39:36 - Root WebApplicationContext: initialization completed in 3388 ms
-2025-06-13 15:39:36 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-13 15:39:36 - HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-13 15:39:36 - HHH000026: Second-level cache disabled
-2025-06-13 15:39:37 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-13 15:39:37 - HikariPool-1 - Starting...
-2025-06-13 15:39:38 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72288480
-2025-06-13 15:39:38 - HikariPool-1 - Start completed.
-2025-06-13 15:39:38 - HHH10001005: Database info:
+2025-06-24 03:02:34 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h52m29s276ms236µs).
+2025-06-24 03:02:35 - Application shutdown requested.
+2025-06-24 03:02:35 - Unregistering application PROJECT with eureka with status DOWN
+2025-06-24 03:02:35 - Saw local status change event StatusChangeEvent [timestamp=1750714355671, current=DOWN, previous=UP]
+2025-06-24 03:02:35 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 03:02:35 - Graceful shutdown complete
+2025-06-24 03:02:35 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 03:02:35 - HikariPool-1 - Shutdown initiated...
+2025-06-24 03:02:35 - HikariPool-1 - Shutdown completed.
+2025-06-24 03:02:35 - Shutting down DiscoveryClient ...
+2025-06-24 03:02:35 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 03:02:35 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/PROJECT": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/PROJECT": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:183)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 21 more
+
+2025-06-24 03:02:35 - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/PROJECT": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2025-06-24 03:02:35 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 03:02:35 - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 03:02:35 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 03:02:35 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/PROJECT": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/PROJECT": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:183)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 22 more
+
+2025-06-24 03:02:35 - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/PROJECT": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2025-06-24 03:02:35 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 03:02:35 - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 03:02:35 - Unregistering ...
+2025-06-24 03:02:35 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/PROJECT/LTIN556294.cts.com:Project:8015": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/PROJECT/LTIN556294.cts.com:Project:8015": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1467)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:183)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 69 more
+
+2025-06-24 03:02:35 - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/PROJECT/LTIN556294.cts.com:Project:8015": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2025-06-24 03:02:35 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1467)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 03:02:35 - Completed shut down of DiscoveryClient
+2025-06-24 08:46:51 - Starting ProjectApplication using Java 21.0.6 with PID 28136 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
+2025-06-24 08:46:51 - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 08:46:52 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24 08:46:52 - Finished Spring Data repository scanning in 111 ms. Found 2 JPA repository interfaces.
+2025-06-24 08:46:52 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
+2025-06-24 08:46:53 - Tomcat initialized with port 8015 (http)
+2025-06-24 08:46:53 - Starting service [Tomcat]
+2025-06-24 08:46:53 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-24 08:46:53 - Initializing Spring embedded WebApplicationContext
+2025-06-24 08:46:53 - Root WebApplicationContext: initialization completed in 1371 ms
+2025-06-24 08:46:53 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24 08:46:53 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-24 08:46:53 - HHH000026: Second-level cache disabled
+2025-06-24 08:46:53 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24 08:46:53 - HikariPool-1 - Starting...
+2025-06-24 08:46:54 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6843fdc4
+2025-06-24 08:46:54 - HikariPool-1 - Start completed.
+2025-06-24 08:46:54 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -23,62 +397,187 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-13 15:39:39 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-13 15:39:40 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-13 15:39:40 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-13 15:39:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-13 15:39:43 - Eureka HTTP Client uses RestTemplate.
-2025-06-13 15:39:43 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-06-13 15:39:43 - Setting initial instance status as: STARTING
-2025-06-13 15:39:43 - Initializing Eureka in region us-east-1
-2025-06-13 15:39:43 - Resolving eureka endpoints via configuration
-2025-06-13 15:39:43 - Disable delta property : false
-2025-06-13 15:39:43 - Single vip registry refresh property : null
-2025-06-13 15:39:43 - Force full registry fetch : false
-2025-06-13 15:39:43 - Application is null : false
-2025-06-13 15:39:43 - Registered Applications size is zero : true
-2025-06-13 15:39:43 - Application version is -1: true
-2025-06-13 15:39:43 - Getting all instance registry info from the eureka server
-2025-06-13 15:39:44 - The response status is 200
-2025-06-13 15:39:44 - Starting heartbeat executor: renew interval is: 30
-2025-06-13 15:39:44 - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-06-13 15:39:44 - Discovery Client initialized at timestamp 1749809384130 with initial instances count: 0
-2025-06-13 15:39:44 - Registering application PROJECT with eureka with status UP
-2025-06-13 15:39:44 - Saw local status change event StatusChangeEvent [timestamp=1749809384136, current=UP, previous=STARTING]
-2025-06-13 15:39:44 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
-2025-06-13 15:39:44 - Tomcat started on port 8015 (http) with context path '/'
-2025-06-13 15:39:44 - Updating port to 8015
-2025-06-13 15:39:44 - Started ProjectApplication in 12.291 seconds (process running for 14.745)
-2025-06-13 15:39:44 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
-2025-06-13 15:40:08 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-13 15:40:08 - Initializing Servlet 'dispatcherServlet'
-2025-06-13 15:40:08 - Completed initialization in 2 ms
-2025-06-13 15:40:10 - Init duration for springdoc-openapi is: 446 ms
-2025-06-13 15:40:14 - Disable delta property : false
-2025-06-13 15:40:14 - Single vip registry refresh property : null
-2025-06-13 15:40:14 - Force full registry fetch : false
-2025-06-13 15:40:14 - Application is null : false
-2025-06-13 15:40:14 - Registered Applications size is zero : true
-2025-06-13 15:40:14 - Application version is -1: false
-2025-06-13 15:40:14 - Getting all instance registry info from the eureka server
-2025-06-13 15:40:14 - The response status is 200
-2025-06-13 15:40:33 - Fetching all active products
-2025-06-13 15:40:33 - Total active products fetched: 0
-2025-06-13 15:42:17 - Adding new product: ProductAddDTO(productID=0, name=zylo, description=beautiful, price=15000.0, gender=female, color=black, material=platinum, type=digital, imageURL=image1, stock=100)
-2025-06-13 15:42:17 - Product added successfully: Product(productID=1, name=zylo, description=beautiful, price=15000.0, gender=female, color=black, material=platinum, type=digital, imageURL=image1, stock=100, active=true, createdTime=2025-06-13T15:42:17.456667300, feedbacks=null)
-2025-06-13 15:42:26 - Fetching all active products
-2025-06-13 15:42:26 - Total active products fetched: 1
-2025-06-13 15:42:50 - Adding feedback for product ID: 1
-2025-06-13 15:42:50 - Invalid rating: 10. Rating must be between 1 and 5.
-2025-06-13 15:42:50 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: Rating must be between 1 and 5] with root cause
-java.lang.IllegalArgumentException: Rating must be between 1 and 5
-	at com.cts.service.ProductServiceImpl.addFeedback(ProductServiceImpl.java:211)
+2025-06-24 08:46:55 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24 08:46:55 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 08:46:55 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24 08:46:56 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 08:46:57 - Eureka HTTP Client uses RestTemplate.
+2025-06-24 08:46:57 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-24 08:46:57 - Setting initial instance status as: STARTING
+2025-06-24 08:46:57 - Initializing Eureka in region us-east-1
+2025-06-24 08:46:57 - Resolving eureka endpoints via configuration
+2025-06-24 08:46:57 - Disable delta property : false
+2025-06-24 08:46:57 - Single vip registry refresh property : null
+2025-06-24 08:46:57 - Force full registry fetch : false
+2025-06-24 08:46:57 - Application is null : false
+2025-06-24 08:46:57 - Registered Applications size is zero : true
+2025-06-24 08:46:57 - Application version is -1: true
+2025-06-24 08:46:57 - Getting all instance registry info from the eureka server
+2025-06-24 08:46:57 - The response status is 200
+2025-06-24 08:46:57 - Starting heartbeat executor: renew interval is: 30
+2025-06-24 08:46:57 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-24 08:46:57 - Discovery Client initialized at timestamp 1750735017952 with initial instances count: 0
+2025-06-24 08:46:57 - Registering application PROJECT with eureka with status UP
+2025-06-24 08:46:57 - Saw local status change event StatusChangeEvent [timestamp=1750735017956, current=UP, previous=STARTING]
+2025-06-24 08:46:57 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 08:46:57 - Tomcat started on port 8015 (http) with context path '/'
+2025-06-24 08:46:57 - Updating port to 8015
+2025-06-24 08:46:57 - Started ProjectApplication in 6.466 seconds (process running for 7.139)
+2025-06-24 08:46:58 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 08:47:21 - Application shutdown requested.
+2025-06-24 08:47:21 - Unregistering application PROJECT with eureka with status DOWN
+2025-06-24 08:47:21 - Saw local status change event StatusChangeEvent [timestamp=1750735041742, current=DOWN, previous=UP]
+2025-06-24 08:47:21 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 08:47:21 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 08:47:21 - Graceful shutdown complete
+2025-06-24 08:47:21 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 08:47:21 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 08:47:21 - HikariPool-1 - Shutdown initiated...
+2025-06-24 08:47:21 - HikariPool-1 - Shutdown completed.
+2025-06-24 08:47:21 - Shutting down DiscoveryClient ...
+2025-06-24 08:47:24 - Unregistering ...
+2025-06-24 08:47:24 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
+2025-06-24 08:47:24 - Completed shut down of DiscoveryClient
+2025-06-24 08:47:27 - Starting ProjectApplication using Java 21.0.6 with PID 7352 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
+2025-06-24 08:47:27 - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 08:47:28 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24 08:47:28 - Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces.
+2025-06-24 08:47:28 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
+2025-06-24 08:47:28 - Tomcat initialized with port 8015 (http)
+2025-06-24 08:47:28 - Starting service [Tomcat]
+2025-06-24 08:47:28 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-24 08:47:28 - Initializing Spring embedded WebApplicationContext
+2025-06-24 08:47:28 - Root WebApplicationContext: initialization completed in 1265 ms
+2025-06-24 08:47:28 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24 08:47:28 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-24 08:47:28 - HHH000026: Second-level cache disabled
+2025-06-24 08:47:29 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24 08:47:29 - HikariPool-1 - Starting...
+2025-06-24 08:47:29 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66456506
+2025-06-24 08:47:29 - HikariPool-1 - Start completed.
+2025-06-24 08:47:29 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-24 08:47:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24 08:47:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 08:47:30 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24 08:47:31 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 08:47:31 - Eureka HTTP Client uses RestTemplate.
+2025-06-24 08:47:31 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-24 08:47:32 - Setting initial instance status as: STARTING
+2025-06-24 08:47:32 - Initializing Eureka in region us-east-1
+2025-06-24 08:47:32 - Resolving eureka endpoints via configuration
+2025-06-24 08:47:32 - Disable delta property : false
+2025-06-24 08:47:32 - Single vip registry refresh property : null
+2025-06-24 08:47:32 - Force full registry fetch : false
+2025-06-24 08:47:32 - Application is null : false
+2025-06-24 08:47:32 - Registered Applications size is zero : true
+2025-06-24 08:47:32 - Application version is -1: true
+2025-06-24 08:47:32 - Getting all instance registry info from the eureka server
+2025-06-24 08:47:32 - The response status is 200
+2025-06-24 08:47:32 - Starting heartbeat executor: renew interval is: 30
+2025-06-24 08:47:32 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-24 08:47:32 - Discovery Client initialized at timestamp 1750735052373 with initial instances count: 0
+2025-06-24 08:47:32 - Registering application PROJECT with eureka with status UP
+2025-06-24 08:47:32 - Saw local status change event StatusChangeEvent [timestamp=1750735052378, current=UP, previous=STARTING]
+2025-06-24 08:47:32 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 08:47:32 - Tomcat started on port 8015 (http) with context path '/'
+2025-06-24 08:47:32 - Updating port to 8015
+2025-06-24 08:47:32 - Started ProjectApplication in 5.396 seconds (process running for 6.082)
+2025-06-24 08:47:32 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 08:48:02 - Disable delta property : false
+2025-06-24 08:48:02 - Single vip registry refresh property : null
+2025-06-24 08:48:02 - Force full registry fetch : false
+2025-06-24 08:48:02 - Application is null : false
+2025-06-24 08:48:02 - Registered Applications size is zero : true
+2025-06-24 08:48:02 - Application version is -1: false
+2025-06-24 08:48:02 - Getting all instance registry info from the eureka server
+2025-06-24 08:48:02 - The response status is 200
+2025-06-24 08:48:14 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 08:48:14 - Initializing Servlet 'dispatcherServlet'
+2025-06-24 08:48:14 - Completed initialization in 1 ms
+2025-06-24 08:48:15 - Init duration for springdoc-openapi is: 184 ms
+2025-06-24 08:50:45 - Adding new product: ProductAddDTO(productID=0, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Elevate your elegance with the Zylo Luna Shine—a statement piece designed for the modern woman. This analog watch features a radiant rose gold finish, paired with a pearlescent dial that catches light beautifully. Crafted from durable alloy and suited for any occasion, it's the perfect blend of timeless sophistication and everyday functionality., price=5699.99, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=9)
+2025-06-24 08:50:46 - SQL Error: 1406, SQLState: 22001
+2025-06-24 08:50:46 - Data truncation: Data too long for column 'longdescription' at row 1
+2025-06-24 08:50:46 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Data truncation: Data too long for column 'longdescription' at row 1] [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]] with root cause
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'longdescription' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:394)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:308)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:651)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy147.save(Unknown Source)
+	at com.cts.service.ProductServiceImpl.addProduct(ProductServiceImpl.java:81)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
-	at com.cts.service.ProductServiceImpl$$SpringCGLIB$$0.addFeedback(<generated>)
-	at com.cts.controller.ProductController.addFeedback(ProductController.java:84)
+	at com.cts.service.ProductServiceImpl$$SpringCGLIB$$0.addProduct(<generated>)
+	at com.cts.controller.ProductController.addProduct(ProductController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
@@ -127,21 +626,83 @@ java.lang.IllegalArgumentException: Rating must be between 1 and 5
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-13 15:43:01 - Adding feedback for product ID: 1
-2025-06-13 15:43:01 - Feedback added successfully for product ID: 1
-2025-06-13 15:43:08 - Adding feedback for product ID: 1
-2025-06-13 15:43:08 - Feedback added successfully for product ID: 1
-2025-06-13 15:43:15 - Adding feedback for product ID: 1
-2025-06-13 15:43:15 - Invalid rating: 6. Rating must be between 1 and 5.
-2025-06-13 15:43:15 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: Rating must be between 1 and 5] with root cause
-java.lang.IllegalArgumentException: Rating must be between 1 and 5
-	at com.cts.service.ProductServiceImpl.addFeedback(ProductServiceImpl.java:211)
+2025-06-24 08:52:32 - Resolving eureka endpoints via configuration
+2025-06-24 08:53:29 - Adding new product: ProductAddDTO(productID=0, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Elevate your elegance with the Zylo Luna Shine—a statement piece designed for the modern woman. This analog watch features a radiant rose gold finish, paired with a pearlescent dial that catches light beautifully. Crafted from durable alloy and suited for any occasion, it's the perfect blend of timeless sophistication and everyday functionality., price=5999.0, gender=female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13)
+2025-06-24 08:53:29 - SQL Error: 1406, SQLState: 22001
+2025-06-24 08:53:29 - Data truncation: Data too long for column 'longdescription' at row 1
+2025-06-24 08:53:29 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Data truncation: Data too long for column 'longdescription' at row 1] [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]] with root cause
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'longdescription' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:394)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:308)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:651)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy147.save(Unknown Source)
+	at com.cts.service.ProductServiceImpl.addProduct(ProductServiceImpl.java:81)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
-	at com.cts.service.ProductServiceImpl$$SpringCGLIB$$0.addFeedback(<generated>)
-	at com.cts.controller.ProductController.addFeedback(ProductController.java:84)
+	at com.cts.service.ProductServiceImpl$$SpringCGLIB$$0.addProduct(<generated>)
+	at com.cts.controller.ProductController.addProduct(ProductController.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
@@ -190,39 +751,41 @@ java.lang.IllegalArgumentException: Rating must be between 1 and 5
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-13 15:44:43 - Resolving eureka endpoints via configuration
-2025-06-13 15:45:25 - Application shutdown requested.
-2025-06-13 15:45:25 - Unregistering application PROJECT with eureka with status DOWN
-2025-06-13 15:45:25 - Saw local status change event StatusChangeEvent [timestamp=1749809725848, current=DOWN, previous=UP]
-2025-06-13 15:45:25 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
-2025-06-13 15:45:25 - Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-13 15:45:25 - Graceful shutdown complete
-2025-06-13 15:45:25 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
-2025-06-13 15:45:25 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-13 15:45:25 - HikariPool-1 - Shutdown initiated...
-2025-06-13 15:45:25 - HikariPool-1 - Shutdown completed.
-2025-06-13 15:45:25 - Shutting down DiscoveryClient ...
-2025-06-13 15:45:28 - Unregistering ...
-2025-06-13 15:45:28 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
-2025-06-13 15:45:28 - Completed shut down of DiscoveryClient
-2025-06-13 15:45:36 - Starting ProjectApplication using Java 21.0.6 with PID 12800 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
-2025-06-13 15:45:36 - No active profile set, falling back to 1 default profile: "default"
-2025-06-13 15:45:37 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-13 15:45:37 - Finished Spring Data repository scanning in 174 ms. Found 2 JPA repository interfaces.
-2025-06-13 15:45:37 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
-2025-06-13 15:45:38 - Tomcat initialized with port 8015 (http)
-2025-06-13 15:45:38 - Starting service [Tomcat]
-2025-06-13 15:45:38 - Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-13 15:45:38 - Initializing Spring embedded WebApplicationContext
-2025-06-13 15:45:38 - Root WebApplicationContext: initialization completed in 2123 ms
-2025-06-13 15:45:38 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-13 15:45:38 - HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-13 15:45:38 - HHH000026: Second-level cache disabled
-2025-06-13 15:45:38 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-13 15:45:39 - HikariPool-1 - Starting...
-2025-06-13 15:45:39 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36453773
-2025-06-13 15:45:39 - HikariPool-1 - Start completed.
-2025-06-13 15:45:39 - HHH10001005: Database info:
+2025-06-24 08:57:10 - Adding new product: ProductAddDTO(productID=0, name=string, shortdescription=string, longdescription=string, price=0.1, gender=string, color=string, material=string, type=string, imageURL=string, stock=0)
+2025-06-24 08:57:10 - Product added successfully: Product(productID=1, name=string, shortdescription=string, longdescription=string, price=0.1, gender=string, color=string, material=string, type=string, imageURL=string, stock=0, active=true, createdTime=2025-06-24T08:57:10.426108500, feedbacks=null)
+2025-06-24 08:57:32 - Resolving eureka endpoints via configuration
+2025-06-24 08:58:12 - Application shutdown requested.
+2025-06-24 08:58:12 - Unregistering application PROJECT with eureka with status DOWN
+2025-06-24 08:58:12 - Saw local status change event StatusChangeEvent [timestamp=1750735692080, current=DOWN, previous=UP]
+2025-06-24 08:58:12 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 08:58:12 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 08:58:12 - Graceful shutdown complete
+2025-06-24 08:58:12 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 08:58:12 - HikariPool-1 - Shutdown initiated...
+2025-06-24 08:58:12 - HikariPool-1 - Shutdown completed.
+2025-06-24 08:58:12 - Shutting down DiscoveryClient ...
+2025-06-24 08:58:12 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 08:58:12 - Unregistering ...
+2025-06-24 08:58:12 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
+2025-06-24 08:58:12 - Completed shut down of DiscoveryClient
+2025-06-24 08:58:15 - Starting ProjectApplication using Java 21.0.6 with PID 16860 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
+2025-06-24 08:58:15 - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 08:58:16 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24 08:58:16 - Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2025-06-24 08:58:17 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
+2025-06-24 08:58:17 - Tomcat initialized with port 8015 (http)
+2025-06-24 08:58:17 - Starting service [Tomcat]
+2025-06-24 08:58:17 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-24 08:58:17 - Initializing Spring embedded WebApplicationContext
+2025-06-24 08:58:17 - Root WebApplicationContext: initialization completed in 1676 ms
+2025-06-24 08:58:17 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24 08:58:17 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-24 08:58:17 - HHH000026: Second-level cache disabled
+2025-06-24 08:58:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24 08:58:17 - HikariPool-1 - Starting...
+2025-06-24 08:58:18 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6843fdc4
+2025-06-24 08:58:18 - HikariPool-1 - Start completed.
+2025-06-24 08:58:18 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -230,58 +793,828 @@ java.lang.IllegalArgumentException: Rating must be between 1 and 5
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-13 15:45:40 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-13 15:45:40 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-13 15:45:41 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-13 15:45:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-13 15:45:42 - Eureka HTTP Client uses RestTemplate.
-2025-06-13 15:45:42 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-06-13 15:45:43 - Setting initial instance status as: STARTING
-2025-06-13 15:45:43 - Initializing Eureka in region us-east-1
-2025-06-13 15:45:43 - Resolving eureka endpoints via configuration
-2025-06-13 15:45:43 - Disable delta property : false
-2025-06-13 15:45:43 - Single vip registry refresh property : null
-2025-06-13 15:45:43 - Force full registry fetch : false
-2025-06-13 15:45:43 - Application is null : false
-2025-06-13 15:45:43 - Registered Applications size is zero : true
-2025-06-13 15:45:43 - Application version is -1: true
-2025-06-13 15:45:43 - Getting all instance registry info from the eureka server
-2025-06-13 15:45:43 - The response status is 200
-2025-06-13 15:45:43 - Starting heartbeat executor: renew interval is: 30
-2025-06-13 15:45:43 - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-06-13 15:45:43 - Discovery Client initialized at timestamp 1749809743596 with initial instances count: 0
-2025-06-13 15:45:43 - Registering application PROJECT with eureka with status UP
-2025-06-13 15:45:43 - Saw local status change event StatusChangeEvent [timestamp=1749809743604, current=UP, previous=STARTING]
-2025-06-13 15:45:43 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
-2025-06-13 15:45:43 - Tomcat started on port 8015 (http) with context path '/'
-2025-06-13 15:45:43 - Updating port to 8015
-2025-06-13 15:45:43 - Started ProjectApplication in 8.162 seconds (process running for 9.339)
-2025-06-13 15:45:43 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
-2025-06-13 15:45:51 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-13 15:45:51 - Initializing Servlet 'dispatcherServlet'
-2025-06-13 15:45:51 - Completed initialization in 4 ms
-2025-06-13 15:45:52 - Init duration for springdoc-openapi is: 275 ms
-2025-06-13 15:46:08 - Adding feedback for product ID: 1
-2025-06-13 15:46:09 - Product not found for feedback, ID: 1
-2025-06-13 15:46:13 - Disable delta property : false
-2025-06-13 15:46:13 - Single vip registry refresh property : null
-2025-06-13 15:46:13 - Force full registry fetch : false
-2025-06-13 15:46:13 - Application is null : false
-2025-06-13 15:46:13 - Registered Applications size is zero : true
-2025-06-13 15:46:13 - Application version is -1: false
-2025-06-13 15:46:13 - Getting all instance registry info from the eureka server
-2025-06-13 15:46:13 - The response status is 200
-2025-06-13 15:46:53 - Application shutdown requested.
-2025-06-13 15:46:53 - Unregistering application PROJECT with eureka with status DOWN
-2025-06-13 15:46:53 - Saw local status change event StatusChangeEvent [timestamp=1749809813503, current=DOWN, previous=UP]
-2025-06-13 15:46:53 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
-2025-06-13 15:46:53 - Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-13 15:46:53 - Graceful shutdown complete
-2025-06-13 15:46:53 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
-2025-06-13 15:46:53 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-13 15:46:53 - HikariPool-1 - Shutdown initiated...
-2025-06-13 15:46:53 - HikariPool-1 - Shutdown completed.
-2025-06-13 15:46:53 - Shutting down DiscoveryClient ...
-2025-06-13 15:46:56 - Unregistering ...
-2025-06-13 15:46:56 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
-2025-06-13 15:46:56 - Completed shut down of DiscoveryClient
+2025-06-24 08:58:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24 08:58:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 08:58:19 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24 08:58:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 08:58:21 - Eureka HTTP Client uses RestTemplate.
+2025-06-24 08:58:21 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-24 08:58:21 - Setting initial instance status as: STARTING
+2025-06-24 08:58:21 - Initializing Eureka in region us-east-1
+2025-06-24 08:58:21 - Resolving eureka endpoints via configuration
+2025-06-24 08:58:21 - Disable delta property : false
+2025-06-24 08:58:21 - Single vip registry refresh property : null
+2025-06-24 08:58:21 - Force full registry fetch : false
+2025-06-24 08:58:21 - Application is null : false
+2025-06-24 08:58:21 - Registered Applications size is zero : true
+2025-06-24 08:58:21 - Application version is -1: true
+2025-06-24 08:58:21 - Getting all instance registry info from the eureka server
+2025-06-24 08:58:21 - The response status is 200
+2025-06-24 08:58:21 - Starting heartbeat executor: renew interval is: 30
+2025-06-24 08:58:21 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-24 08:58:21 - Discovery Client initialized at timestamp 1750735701663 with initial instances count: 1
+2025-06-24 08:58:21 - Registering application PROJECT with eureka with status UP
+2025-06-24 08:58:21 - Saw local status change event StatusChangeEvent [timestamp=1750735701666, current=UP, previous=STARTING]
+2025-06-24 08:58:21 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 08:58:21 - Tomcat started on port 8015 (http) with context path '/'
+2025-06-24 08:58:21 - Updating port to 8015
+2025-06-24 08:58:21 - Started ProjectApplication in 6.405 seconds (process running for 7.55)
+2025-06-24 08:58:21 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 08:58:42 - Application shutdown requested.
+2025-06-24 08:58:42 - Unregistering application PROJECT with eureka with status DOWN
+2025-06-24 08:58:42 - Saw local status change event StatusChangeEvent [timestamp=1750735722183, current=DOWN, previous=UP]
+2025-06-24 08:58:42 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 08:58:42 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 08:58:42 - Graceful shutdown complete
+2025-06-24 08:58:42 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 08:58:42 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 08:58:42 - HikariPool-1 - Shutdown initiated...
+2025-06-24 08:58:42 - HikariPool-1 - Shutdown completed.
+2025-06-24 08:58:42 - Shutting down DiscoveryClient ...
+2025-06-24 08:58:45 - Unregistering ...
+2025-06-24 08:58:45 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
+2025-06-24 08:58:45 - Completed shut down of DiscoveryClient
+2025-06-24 08:58:47 - Starting ProjectApplication using Java 21.0.6 with PID 27452 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
+2025-06-24 08:58:47 - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 08:58:48 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24 08:58:48 - Finished Spring Data repository scanning in 151 ms. Found 2 JPA repository interfaces.
+2025-06-24 08:58:49 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
+2025-06-24 08:58:49 - Tomcat initialized with port 8015 (http)
+2025-06-24 08:58:49 - Starting service [Tomcat]
+2025-06-24 08:58:49 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-24 08:58:49 - Initializing Spring embedded WebApplicationContext
+2025-06-24 08:58:49 - Root WebApplicationContext: initialization completed in 1601 ms
+2025-06-24 08:58:49 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24 08:58:49 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-24 08:58:49 - HHH000026: Second-level cache disabled
+2025-06-24 08:58:49 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24 08:58:50 - HikariPool-1 - Starting...
+2025-06-24 08:58:50 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@719bb60d
+2025-06-24 08:58:50 - HikariPool-1 - Start completed.
+2025-06-24 08:58:50 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-24 08:58:51 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24 08:58:51 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 08:58:51 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24 08:58:52 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 08:58:53 - Eureka HTTP Client uses RestTemplate.
+2025-06-24 08:58:53 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-24 08:58:53 - Setting initial instance status as: STARTING
+2025-06-24 08:58:53 - Initializing Eureka in region us-east-1
+2025-06-24 08:58:53 - Resolving eureka endpoints via configuration
+2025-06-24 08:58:53 - Disable delta property : false
+2025-06-24 08:58:53 - Single vip registry refresh property : null
+2025-06-24 08:58:53 - Force full registry fetch : false
+2025-06-24 08:58:53 - Application is null : false
+2025-06-24 08:58:53 - Registered Applications size is zero : true
+2025-06-24 08:58:53 - Application version is -1: true
+2025-06-24 08:58:53 - Getting all instance registry info from the eureka server
+2025-06-24 08:58:54 - The response status is 200
+2025-06-24 08:58:54 - Starting heartbeat executor: renew interval is: 30
+2025-06-24 08:58:54 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-24 08:58:54 - Discovery Client initialized at timestamp 1750735734059 with initial instances count: 1
+2025-06-24 08:58:54 - Registering application PROJECT with eureka with status UP
+2025-06-24 08:58:54 - Saw local status change event StatusChangeEvent [timestamp=1750735734065, current=UP, previous=STARTING]
+2025-06-24 08:58:54 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 08:58:54 - Tomcat started on port 8015 (http) with context path '/'
+2025-06-24 08:58:54 - Updating port to 8015
+2025-06-24 08:58:54 - Started ProjectApplication in 6.732 seconds (process running for 7.41)
+2025-06-24 08:58:54 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 08:59:51 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 08:59:51 - Initializing Servlet 'dispatcherServlet'
+2025-06-24 08:59:51 - Completed initialization in 2 ms
+2025-06-24 08:59:52 - Init duration for springdoc-openapi is: 626 ms
+2025-06-24 09:02:12 - Adding new product: ProductAddDTO(productID=0, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Elevate your elegance with the Zylo Luna Shine—a statement piece designed for the modern woman. This analog watch features a radiant rose gold finish, paired with a pearlescent dial that catches light beautifully. Crafted from durable alloy and suited for any occasion, it's the perfect blend of timeless sophistication and everyday functionality., price=5699.99, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=130)
+2025-06-24 09:02:12 - SQL Error: 1406, SQLState: 22001
+2025-06-24 09:02:12 - Data truncation: Data too long for column 'longdescription' at row 1
+2025-06-24 09:02:12 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Data truncation: Data too long for column 'longdescription' at row 1] [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]] with root cause
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'longdescription' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:394)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:308)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:651)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy147.save(Unknown Source)
+	at com.cts.service.ProductServiceImpl.addProduct(ProductServiceImpl.java:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.cts.service.ProductServiceImpl$$SpringCGLIB$$0.addProduct(<generated>)
+	at com.cts.controller.ProductController.addProduct(ProductController.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 09:02:41 - Application shutdown requested.
+2025-06-24 09:02:41 - Unregistering application PROJECT with eureka with status DOWN
+2025-06-24 09:02:41 - Saw local status change event StatusChangeEvent [timestamp=1750735961236, current=DOWN, previous=UP]
+2025-06-24 09:02:41 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 09:02:41 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 09:02:41 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 09:02:41 - Graceful shutdown complete
+2025-06-24 09:02:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 09:02:41 - HikariPool-1 - Shutdown initiated...
+2025-06-24 09:02:41 - HikariPool-1 - Shutdown completed.
+2025-06-24 09:02:41 - Shutting down DiscoveryClient ...
+2025-06-24 09:02:44 - Unregistering ...
+2025-06-24 09:02:44 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
+2025-06-24 09:02:44 - Completed shut down of DiscoveryClient
+2025-06-24 09:02:49 - Starting ProjectApplication using Java 21.0.6 with PID 29904 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
+2025-06-24 09:02:49 - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:02:50 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24 09:02:50 - Finished Spring Data repository scanning in 160 ms. Found 2 JPA repository interfaces.
+2025-06-24 09:02:50 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
+2025-06-24 09:02:50 - Tomcat initialized with port 8015 (http)
+2025-06-24 09:02:50 - Starting service [Tomcat]
+2025-06-24 09:02:50 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-24 09:02:50 - Initializing Spring embedded WebApplicationContext
+2025-06-24 09:02:50 - Root WebApplicationContext: initialization completed in 1610 ms
+2025-06-24 09:02:51 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24 09:02:51 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-24 09:02:51 - HHH000026: Second-level cache disabled
+2025-06-24 09:02:51 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24 09:02:51 - HikariPool-1 - Starting...
+2025-06-24 09:02:52 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3abadb65
+2025-06-24 09:02:52 - HikariPool-1 - Start completed.
+2025-06-24 09:02:52 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-24 09:02:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24 09:02:53 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 09:02:53 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24 09:02:54 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 09:02:54 - Eureka HTTP Client uses RestTemplate.
+2025-06-24 09:02:54 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-24 09:02:55 - Setting initial instance status as: STARTING
+2025-06-24 09:02:55 - Initializing Eureka in region us-east-1
+2025-06-24 09:02:55 - Resolving eureka endpoints via configuration
+2025-06-24 09:02:55 - Disable delta property : false
+2025-06-24 09:02:55 - Single vip registry refresh property : null
+2025-06-24 09:02:55 - Force full registry fetch : false
+2025-06-24 09:02:55 - Application is null : false
+2025-06-24 09:02:55 - Registered Applications size is zero : true
+2025-06-24 09:02:55 - Application version is -1: true
+2025-06-24 09:02:55 - Getting all instance registry info from the eureka server
+2025-06-24 09:02:55 - The response status is 200
+2025-06-24 09:02:55 - Starting heartbeat executor: renew interval is: 30
+2025-06-24 09:02:55 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-24 09:02:55 - Discovery Client initialized at timestamp 1750735975590 with initial instances count: 1
+2025-06-24 09:02:55 - Registering application PROJECT with eureka with status UP
+2025-06-24 09:02:55 - Saw local status change event StatusChangeEvent [timestamp=1750735975596, current=UP, previous=STARTING]
+2025-06-24 09:02:55 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 09:02:55 - Tomcat started on port 8015 (http) with context path '/'
+2025-06-24 09:02:55 - Updating port to 8015
+2025-06-24 09:02:55 - Started ProjectApplication in 6.982 seconds (process running for 8.987)
+2025-06-24 09:02:55 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 09:03:08 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 09:03:08 - Initializing Servlet 'dispatcherServlet'
+2025-06-24 09:03:08 - Completed initialization in 1 ms
+2025-06-24 09:03:09 - Init duration for springdoc-openapi is: 237 ms
+2025-06-24 09:03:23 - Adding new product: ProductAddDTO(productID=0, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Elevate your elegance with the Zylo Luna Shine—a statement piece designed for the modern woman. This analog watch features a radiant rose gold finish, paired with a pearlescent dial that catches light beautifully. Crafted from durable alloy and suited for any occasion, it's the perfect blend of timeless sophistication and everyday functionality., price=5699.99, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=130)
+2025-06-24 09:03:23 - SQL Error: 1406, SQLState: 22001
+2025-06-24 09:03:23 - Data truncation: Data too long for column 'longdescription' at row 1
+2025-06-24 09:03:23 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Data truncation: Data too long for column 'longdescription' at row 1] [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into e_product (active,color,created_time,gender,imageurl,longdescription,material,name,price,shortdescription,stock,type) values (?,?,?,?,?,?,?,?,?,?,?,?)]] with root cause
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'longdescription' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:394)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:308)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:651)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy147.save(Unknown Source)
+	at com.cts.service.ProductServiceImpl.addProduct(ProductServiceImpl.java:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.cts.service.ProductServiceImpl$$SpringCGLIB$$0.addProduct(<generated>)
+	at com.cts.controller.ProductController.addProduct(ProductController.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-24 09:03:41 - Adding new product: ProductAddDTO(productID=0, name=string, shortdescription=string, longdescription=string, price=0.1, gender=string, color=string, material=string, type=string, imageURL=string, stock=0)
+2025-06-24 09:03:41 - Product added successfully: Product(productID=1, name=string, shortdescription=string, longdescription=string, price=0.1, gender=string, color=string, material=string, type=string, imageURL=string, stock=0, active=true, createdTime=2025-06-24T09:03:41.306216800, feedbacks=null)
+2025-06-24 09:07:20 - Application shutdown requested.
+2025-06-24 09:07:20 - Unregistering application PROJECT with eureka with status DOWN
+2025-06-24 09:07:20 - Saw local status change event StatusChangeEvent [timestamp=1750736240035, current=DOWN, previous=UP]
+2025-06-24 09:07:20 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 09:07:20 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 09:07:20 - Graceful shutdown complete
+2025-06-24 09:07:20 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 09:07:20 - HikariPool-1 - Shutdown initiated...
+2025-06-24 09:07:20 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 09:07:20 - HikariPool-1 - Shutdown completed.
+2025-06-24 09:07:20 - Shutting down DiscoveryClient ...
+2025-06-24 09:07:23 - Unregistering ...
+2025-06-24 09:07:23 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
+2025-06-24 09:07:23 - Completed shut down of DiscoveryClient
+2025-06-24 09:07:26 - Starting ProjectApplication using Java 21.0.6 with PID 20096 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
+2025-06-24 09:07:26 - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:07:27 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24 09:07:27 - Finished Spring Data repository scanning in 102 ms. Found 2 JPA repository interfaces.
+2025-06-24 09:07:27 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
+2025-06-24 09:07:27 - Tomcat initialized with port 8015 (http)
+2025-06-24 09:07:27 - Starting service [Tomcat]
+2025-06-24 09:07:27 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-24 09:07:27 - Initializing Spring embedded WebApplicationContext
+2025-06-24 09:07:27 - Root WebApplicationContext: initialization completed in 1341 ms
+2025-06-24 09:07:28 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24 09:07:28 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-24 09:07:28 - HHH000026: Second-level cache disabled
+2025-06-24 09:07:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24 09:07:28 - HikariPool-1 - Starting...
+2025-06-24 09:07:28 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46a97805
+2025-06-24 09:07:28 - HikariPool-1 - Start completed.
+2025-06-24 09:07:28 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-24 09:07:29 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24 09:07:29 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 09:07:29 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24 09:07:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 09:07:31 - Eureka HTTP Client uses RestTemplate.
+2025-06-24 09:07:31 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-24 09:07:31 - Setting initial instance status as: STARTING
+2025-06-24 09:07:31 - Initializing Eureka in region us-east-1
+2025-06-24 09:07:31 - Resolving eureka endpoints via configuration
+2025-06-24 09:07:31 - Disable delta property : false
+2025-06-24 09:07:31 - Single vip registry refresh property : null
+2025-06-24 09:07:31 - Force full registry fetch : false
+2025-06-24 09:07:31 - Application is null : false
+2025-06-24 09:07:31 - Registered Applications size is zero : true
+2025-06-24 09:07:31 - Application version is -1: true
+2025-06-24 09:07:31 - Getting all instance registry info from the eureka server
+2025-06-24 09:07:31 - The response status is 200
+2025-06-24 09:07:31 - Starting heartbeat executor: renew interval is: 30
+2025-06-24 09:07:31 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-24 09:07:31 - Discovery Client initialized at timestamp 1750736251653 with initial instances count: 0
+2025-06-24 09:07:31 - Registering application PROJECT with eureka with status UP
+2025-06-24 09:07:31 - Saw local status change event StatusChangeEvent [timestamp=1750736251657, current=UP, previous=STARTING]
+2025-06-24 09:07:31 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 09:07:31 - Tomcat started on port 8015 (http) with context path '/'
+2025-06-24 09:07:31 - Updating port to 8015
+2025-06-24 09:07:31 - Started ProjectApplication in 5.564 seconds (process running for 6.679)
+2025-06-24 09:07:31 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 09:07:40 - Application shutdown requested.
+2025-06-24 09:07:40 - Unregistering application PROJECT with eureka with status DOWN
+2025-06-24 09:07:40 - Saw local status change event StatusChangeEvent [timestamp=1750736260967, current=DOWN, previous=UP]
+2025-06-24 09:07:40 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 09:07:40 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-24 09:07:40 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 09:07:40 - Graceful shutdown complete
+2025-06-24 09:07:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 09:07:41 - HikariPool-1 - Shutdown initiated...
+2025-06-24 09:07:41 - HikariPool-1 - Shutdown completed.
+2025-06-24 09:07:41 - Shutting down DiscoveryClient ...
+2025-06-24 09:07:44 - Unregistering ...
+2025-06-24 09:07:44 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - deregister  status: 200
+2025-06-24 09:07:44 - Completed shut down of DiscoveryClient
+2025-06-24 09:07:46 - Starting ProjectApplication using Java 21.0.6 with PID 16052 (C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project\target\classes started by 2406708 in C:\Users\2406708\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\Project)
+2025-06-24 09:07:46 - No active profile set, falling back to 1 default profile: "default"
+2025-06-24 09:07:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24 09:07:47 - Finished Spring Data repository scanning in 106 ms. Found 2 JPA repository interfaces.
+2025-06-24 09:07:47 - BeanFactory id=d1a4d663-2803-3c02-91ac-20227f73d6ff
+2025-06-24 09:07:47 - Tomcat initialized with port 8015 (http)
+2025-06-24 09:07:47 - Starting service [Tomcat]
+2025-06-24 09:07:47 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-24 09:07:47 - Initializing Spring embedded WebApplicationContext
+2025-06-24 09:07:47 - Root WebApplicationContext: initialization completed in 1298 ms
+2025-06-24 09:07:48 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24 09:07:48 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-24 09:07:48 - HHH000026: Second-level cache disabled
+2025-06-24 09:07:48 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24 09:07:48 - HikariPool-1 - Starting...
+2025-06-24 09:07:48 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@771afdd5
+2025-06-24 09:07:48 - HikariPool-1 - Start completed.
+2025-06-24 09:07:48 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-24 09:07:49 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24 09:07:49 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24 09:07:49 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24 09:07:50 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 09:07:51 - Eureka HTTP Client uses RestTemplate.
+2025-06-24 09:07:51 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-24 09:07:51 - Setting initial instance status as: STARTING
+2025-06-24 09:07:51 - Initializing Eureka in region us-east-1
+2025-06-24 09:07:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:07:51 - Disable delta property : false
+2025-06-24 09:07:51 - Single vip registry refresh property : null
+2025-06-24 09:07:51 - Force full registry fetch : false
+2025-06-24 09:07:51 - Application is null : false
+2025-06-24 09:07:51 - Registered Applications size is zero : true
+2025-06-24 09:07:51 - Application version is -1: true
+2025-06-24 09:07:51 - Getting all instance registry info from the eureka server
+2025-06-24 09:07:51 - The response status is 200
+2025-06-24 09:07:51 - Starting heartbeat executor: renew interval is: 30
+2025-06-24 09:07:51 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-24 09:07:51 - Discovery Client initialized at timestamp 1750736271770 with initial instances count: 0
+2025-06-24 09:07:51 - Registering application PROJECT with eureka with status UP
+2025-06-24 09:07:51 - Saw local status change event StatusChangeEvent [timestamp=1750736271774, current=UP, previous=STARTING]
+2025-06-24 09:07:51 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015: registering service...
+2025-06-24 09:07:51 - Tomcat started on port 8015 (http) with context path '/'
+2025-06-24 09:07:51 - Updating port to 8015
+2025-06-24 09:07:51 - Started ProjectApplication in 5.622 seconds (process running for 6.268)
+2025-06-24 09:07:51 - DiscoveryClient_PROJECT/LTIN556294.cts.com:Project:8015 - registration status: 204
+2025-06-24 09:08:21 - Disable delta property : false
+2025-06-24 09:08:21 - Single vip registry refresh property : null
+2025-06-24 09:08:21 - Force full registry fetch : false
+2025-06-24 09:08:21 - Application is null : false
+2025-06-24 09:08:21 - Registered Applications size is zero : true
+2025-06-24 09:08:21 - Application version is -1: false
+2025-06-24 09:08:21 - Getting all instance registry info from the eureka server
+2025-06-24 09:08:21 - The response status is 200
+2025-06-24 09:08:47 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24 09:08:47 - Initializing Servlet 'dispatcherServlet'
+2025-06-24 09:08:47 - Completed initialization in 1 ms
+2025-06-24 09:08:47 - Init duration for springdoc-openapi is: 165 ms
+2025-06-24 09:12:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:17:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:22:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:23:30 - Fetching all active products
+2025-06-24 09:23:30 - Total active products fetched: 0
+2025-06-24 09:23:30 - Fetching all active products
+2025-06-24 09:23:30 - Total active products fetched: 0
+2025-06-24 09:25:36 - Adding new product: ProductAddDTO(productID=0, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13)
+2025-06-24 09:25:37 - Product added successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541300, feedbacks=null)
+2025-06-24 09:27:15 - Adding new product: ProductAddDTO(productID=0, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Redefine grace with the Zylo Luna Shine. Its rose gold alloy casing and pearlescent dial make it a perfect gift or personal statement for the fashion-forward woman., price=5699.99, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP._FDbBeZhG9HhED3VuW-zhQHaH5?w=183&h=195&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=10)
+2025-06-24 09:27:15 - Product added successfully: Product(productID=2, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Redefine grace with the Zylo Luna Shine. Its rose gold alloy casing and pearlescent dial make it a perfect gift or personal statement for the fashion-forward woman., price=5699.99, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP._FDbBeZhG9HhED3VuW-zhQHaH5?w=183&h=195&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=10, active=true, createdTime=2025-06-24T09:27:15.874249200, feedbacks=null)
+2025-06-24 09:27:30 - Adding new product: ProductAddDTO(productID=0, name=Zylo Eclipse, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Eclipse is a refined analog watch built with premium rose gold-toned alloy. Its polished case and artful dial design bring sophistication to every wrist it adorns., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse4.mm.bing.net/th/id/OIP.Fa9P82x_j9IyVASX92nazQHaHa?w=180&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=17)
+2025-06-24 09:27:30 - Product added successfully: Product(productID=3, name=Zylo Eclipse, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Eclipse is a refined analog watch built with premium rose gold-toned alloy. Its polished case and artful dial design bring sophistication to every wrist it adorns., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse4.mm.bing.net/th/id/OIP.Fa9P82x_j9IyVASX92nazQHaHa?w=180&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=17, active=true, createdTime=2025-06-24T09:27:30.715904600, feedbacks=null)
+2025-06-24 09:27:47 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Boldly unisex, the Zylo Vantage combines the allure of rose gold with a minimalist analog interface. Comfortable, stylish, and engineered for timeless impact., price=15699.99, gender=Unisex, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:27:47 - Product added successfully: Product(productID=4, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Boldly unisex, the Zylo Vantage combines the allure of rose gold with a minimalist analog interface. Comfortable, stylish, and engineered for timeless impact., price=15699.99, gender=Unisex, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:27:47.300852800, feedbacks=null)
+2025-06-24 09:27:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:28:03 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25)
+2025-06-24 09:28:03 - Product added successfully: Product(productID=5, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25, active=true, createdTime=2025-06-24T09:28:03.271823500, feedbacks=null)
+2025-06-24 09:31:59 - Fetching all active products
+2025-06-24 09:31:59 - Total active products fetched: 5
+2025-06-24 09:32:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:33:24 - Adding new product: ProductAddDTO(productID=0, name=Zylo Chrono, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=A bold take on classic style, Zylo Chrono features a masculine analog design, rose gold polish, and alloy durability—designed for men who make statements., price=5699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.lvJEqMMJvh_b_pc7khFCywHaNK?w=115&h=181&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=16)
+2025-06-24 09:33:24 - Product added successfully: Product(productID=6, name=Zylo Chrono, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=A bold take on classic style, Zylo Chrono features a masculine analog design, rose gold polish, and alloy durability—designed for men who make statements., price=5699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.lvJEqMMJvh_b_pc7khFCywHaNK?w=115&h=181&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=16, active=true, createdTime=2025-06-24T09:33:24.847044600, feedbacks=null)
+2025-06-24 09:37:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:38:23 - Adding new product: ProductAddDTO(productID=0, name=Zylo Eclipse, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Zylo Eclipse blends precision and power. Crafted for modern men, its rose gold alloy casing and analog charm turn moments into milestones., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse4.mm.bing.net/th/id/OIP.Fa9P82x_j9IyVASX92nazQHaHa?w=180&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=17)
+2025-06-24 09:38:23 - Product added successfully: Product(productID=7, name=Zylo Eclipse, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Zylo Eclipse blends precision and power. Crafted for modern men, its rose gold alloy casing and analog charm turn moments into milestones., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse4.mm.bing.net/th/id/OIP.Fa9P82x_j9IyVASX92nazQHaHa?w=180&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=17, active=true, createdTime=2025-06-24T09:38:23.338888200, feedbacks=null)
+2025-06-24 09:39:09 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:39:09 - Product added successfully: Product(productID=8, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:39:09.990208600, feedbacks=null)
+2025-06-24 09:40:22 - Fetching all active products
+2025-06-24 09:40:22 - Total active products fetched: 8
+2025-06-24 09:40:52 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:40:52 - Product added successfully: Product(productID=9, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:40:52.761952800, feedbacks=null)
+2025-06-24 09:40:53 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:40:53 - Product added successfully: Product(productID=10, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:40:53.878124800, feedbacks=null)
+2025-06-24 09:40:54 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:40:54 - Product added successfully: Product(productID=11, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:40:54.860327400, feedbacks=null)
+2025-06-24 09:40:55 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:40:55 - Product added successfully: Product(productID=12, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:40:55.963737200, feedbacks=null)
+2025-06-24 09:40:56 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:40:56 - Product added successfully: Product(productID=13, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:40:56.946335200, feedbacks=null)
+2025-06-24 09:40:57 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18)
+2025-06-24 09:40:57 - Product added successfully: Product(productID=14, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=With a sleek alloy body and rose gold accents, Zylo Vantage is an analog timepiece tailored for those who value elegance, regardless of gender., price=15699.99, gender=Male, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse3.mm.bing.net/th/id/OIP.HUkO_l7Rwf73OYMG93HVqwHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=18, active=true, createdTime=2025-06-24T09:40:57.940308900, feedbacks=null)
+2025-06-24 09:41:05 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25)
+2025-06-24 09:41:05 - Product added successfully: Product(productID=15, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25, active=true, createdTime=2025-06-24T09:41:05.165071400, feedbacks=null)
+2025-06-24 09:41:06 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25)
+2025-06-24 09:41:06 - Product added successfully: Product(productID=16, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25, active=true, createdTime=2025-06-24T09:41:06.212095100, feedbacks=null)
+2025-06-24 09:41:07 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25)
+2025-06-24 09:41:07 - Product added successfully: Product(productID=17, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25, active=true, createdTime=2025-06-24T09:41:07.263527300, feedbacks=null)
+2025-06-24 09:41:08 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25)
+2025-06-24 09:41:08 - Product added successfully: Product(productID=18, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25, active=true, createdTime=2025-06-24T09:41:08.589583800, feedbacks=null)
+2025-06-24 09:41:09 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25)
+2025-06-24 09:41:09 - Product added successfully: Product(productID=19, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25, active=true, createdTime=2025-06-24T09:41:09.475132800, feedbacks=null)
+2025-06-24 09:41:10 - Adding new product: ProductAddDTO(productID=0, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25)
+2025-06-24 09:41:10 - Product added successfully: Product(productID=20, name=Zylo Vantage, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=The Zylo Vantage delivers lasting impressions with its unisex design, black accents, and platinum body. Functional elegance you can wear anywhere, from boardrooms to brunches., price=15699.99, gender=Unisex, color=Black, material=Platinum, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP.tHymrcPVC-iKGTXjApnCgQHaHa?w=200&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=25, active=true, createdTime=2025-06-24T09:41:10.397064100, feedbacks=null)
+2025-06-24 09:42:37 - Fetching all active products
+2025-06-24 09:42:37 - Total active products fetched: 20
+2025-06-24 09:42:37 - Fetching all active products
+2025-06-24 09:42:37 - Total active products fetched: 20
+2025-06-24 09:42:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:44:50 - Fetching product with ID: 2
+2025-06-24 09:44:50 - Fetching feedback for product ID: 2
+2025-06-24 09:44:50 - Checking stock for product ID: 2
+2025-06-24 09:44:50 - Product fetched successfully: Product(productID=2, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Redefine grace with the Zylo Luna Shine. Its rose gold alloy casing and pearlescent dial make it a perfect gift or personal statement for the fashion-forward woman., price=5699.99, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP._FDbBeZhG9HhED3VuW-zhQHaH5?w=183&h=195&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=10, active=true, createdTime=2025-06-24T09:27:15.874249, feedbacks=[])
+2025-06-24 09:44:50 - Total feedback items retrieved: 0
+2025-06-24 09:44:50 - Fetching product with ID: 2
+2025-06-24 09:44:50 - Fetching feedback for product ID: 2
+2025-06-24 09:44:50 - Product fetched successfully: Product(productID=2, name=Zylo Luna Shine, shortdescription=A sleek rose gold watch with a pearlescent dial., longdescription=Redefine grace with the Zylo Luna Shine. Its rose gold alloy casing and pearlescent dial make it a perfect gift or personal statement for the fashion-forward woman., price=5699.99, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://tse1.mm.bing.net/th/id/OIP._FDbBeZhG9HhED3VuW-zhQHaH5?w=183&h=195&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3, stock=10, active=true, createdTime=2025-06-24T09:27:15.874249, feedbacks=[])
+2025-06-24 09:44:50 - Total feedback items retrieved: 0
+2025-06-24 09:44:50 - Stock info for product ID 2: 10
+2025-06-24 09:44:50 - Checking stock for product ID: 2
+2025-06-24 09:44:50 - Stock info for product ID 2: 10
+2025-06-24 09:44:54 - Fetching all active products
+2025-06-24 09:44:54 - Total active products fetched: 20
+2025-06-24 09:44:54 - Fetching all active products
+2025-06-24 09:44:54 - Total active products fetched: 20
+2025-06-24 09:44:57 - Fetching feedback for product ID: 1
+2025-06-24 09:44:57 - Fetching product with ID: 1
+2025-06-24 09:44:57 - Checking stock for product ID: 1
+2025-06-24 09:44:57 - Stock info for product ID 1: 13
+2025-06-24 09:44:57 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 09:44:57 - Total feedback items retrieved: 0
+2025-06-24 09:44:57 - Checking stock for product ID: 1
+2025-06-24 09:44:57 - Fetching product with ID: 1
+2025-06-24 09:44:57 - Fetching feedback for product ID: 1
+2025-06-24 09:44:57 - Stock info for product ID 1: 13
+2025-06-24 09:44:57 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 09:44:57 - Total feedback items retrieved: 0
+2025-06-24 09:47:17 - Fetching all active products
+2025-06-24 09:47:17 - Total active products fetched: 20
+2025-06-24 09:47:17 - Fetching all active products
+2025-06-24 09:47:17 - Total active products fetched: 20
+2025-06-24 09:47:19 - Fetching all active products
+2025-06-24 09:47:19 - Total active products fetched: 20
+2025-06-24 09:47:19 - Fetching all active products
+2025-06-24 09:47:19 - Total active products fetched: 20
+2025-06-24 09:47:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:49:08 - Fetching all active products
+2025-06-24 09:49:08 - Total active products fetched: 20
+2025-06-24 09:49:08 - Fetching all active products
+2025-06-24 09:49:08 - Total active products fetched: 20
+2025-06-24 09:49:11 - Fetching product with ID: 1
+2025-06-24 09:49:11 - Fetching feedback for product ID: 1
+2025-06-24 09:49:11 - Checking stock for product ID: 1
+2025-06-24 09:49:11 - Stock info for product ID 1: 13
+2025-06-24 09:49:11 - Total feedback items retrieved: 0
+2025-06-24 09:49:11 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 09:49:11 - Checking stock for product ID: 1
+2025-06-24 09:49:11 - Fetching product with ID: 1
+2025-06-24 09:49:11 - Fetching feedback for product ID: 1
+2025-06-24 09:49:11 - Stock info for product ID 1: 13
+2025-06-24 09:49:11 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 09:49:11 - Total feedback items retrieved: 0
+2025-06-24 09:52:51 - Resolving eureka endpoints via configuration
+2025-06-24 09:57:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:02:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:04:30 - Checking stock for product ID: 1
+2025-06-24 10:04:30 - Fetching product with ID: 1
+2025-06-24 10:04:30 - Fetching feedback for product ID: 1
+2025-06-24 10:04:30 - Stock info for product ID 1: 13
+2025-06-24 10:04:30 - Total feedback items retrieved: 0
+2025-06-24 10:04:30 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:04:30 - Checking stock for product ID: 1
+2025-06-24 10:04:30 - Fetching feedback for product ID: 1
+2025-06-24 10:04:30 - Fetching product with ID: 1
+2025-06-24 10:04:30 - Stock info for product ID 1: 13
+2025-06-24 10:04:30 - Total feedback items retrieved: 0
+2025-06-24 10:04:30 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:07:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:12:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:17:01 - Fetching feedback for product ID: 1
+2025-06-24 10:17:01 - Fetching product with ID: 1
+2025-06-24 10:17:01 - Checking stock for product ID: 1
+2025-06-24 10:17:01 - Stock info for product ID 1: 13
+2025-06-24 10:17:01 - Total feedback items retrieved: 0
+2025-06-24 10:17:01 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:17:01 - Checking stock for product ID: 1
+2025-06-24 10:17:01 - Fetching product with ID: 1
+2025-06-24 10:17:01 - Fetching feedback for product ID: 1
+2025-06-24 10:17:01 - Stock info for product ID 1: 13
+2025-06-24 10:17:01 - Total feedback items retrieved: 0
+2025-06-24 10:17:01 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:17:10 - Fetching all active products
+2025-06-24 10:17:10 - Total active products fetched: 20
+2025-06-24 10:17:10 - Fetching all active products
+2025-06-24 10:17:10 - Total active products fetched: 20
+2025-06-24 10:17:13 - Fetching all active products
+2025-06-24 10:17:13 - Total active products fetched: 20
+2025-06-24 10:17:13 - Fetching all active products
+2025-06-24 10:17:13 - Total active products fetched: 20
+2025-06-24 10:17:28 - Checking stock for product ID: 1
+2025-06-24 10:17:28 - Fetching product with ID: 1
+2025-06-24 10:17:28 - Fetching feedback for product ID: 1
+2025-06-24 10:17:28 - Stock info for product ID 1: 13
+2025-06-24 10:17:28 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:17:28 - Total feedback items retrieved: 0
+2025-06-24 10:17:28 - Checking stock for product ID: 1
+2025-06-24 10:17:28 - Fetching feedback for product ID: 1
+2025-06-24 10:17:28 - Fetching product with ID: 1
+2025-06-24 10:17:28 - Stock info for product ID 1: 13
+2025-06-24 10:17:28 - Total feedback items retrieved: 0
+2025-06-24 10:17:28 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:17:28 - Fetching all active products
+2025-06-24 10:17:28 - Total active products fetched: 20
+2025-06-24 10:17:28 - Fetching all active products
+2025-06-24 10:17:28 - Total active products fetched: 20
+2025-06-24 10:17:50 - Fetching product with ID: 1
+2025-06-24 10:17:50 - Checking stock for product ID: 1
+2025-06-24 10:17:50 - Fetching feedback for product ID: 1
+2025-06-24 10:17:50 - Stock info for product ID 1: 13
+2025-06-24 10:17:50 - Total feedback items retrieved: 0
+2025-06-24 10:17:50 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:17:50 - Checking stock for product ID: 1
+2025-06-24 10:17:50 - Fetching product with ID: 1
+2025-06-24 10:17:50 - Fetching feedback for product ID: 1
+2025-06-24 10:17:50 - Stock info for product ID 1: 13
+2025-06-24 10:17:50 - Total feedback items retrieved: 0
+2025-06-24 10:17:50 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:17:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:17:58 - Fetching all active products
+2025-06-24 10:17:58 - Total active products fetched: 20
+2025-06-24 10:17:58 - Fetching all active products
+2025-06-24 10:17:58 - Total active products fetched: 20
+2025-06-24 10:18:48 - Fetching all active products
+2025-06-24 10:18:48 - Total active products fetched: 20
+2025-06-24 10:18:48 - Fetching all active products
+2025-06-24 10:18:48 - Total active products fetched: 20
+2025-06-24 10:18:51 - Fetching product with ID: 1
+2025-06-24 10:18:51 - Checking stock for product ID: 1
+2025-06-24 10:18:51 - Fetching feedback for product ID: 1
+2025-06-24 10:18:51 - Stock info for product ID 1: 13
+2025-06-24 10:18:51 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:18:51 - Total feedback items retrieved: 0
+2025-06-24 10:18:51 - Checking stock for product ID: 1
+2025-06-24 10:18:51 - Fetching product with ID: 1
+2025-06-24 10:18:51 - Fetching feedback for product ID: 1
+2025-06-24 10:18:51 - Stock info for product ID 1: 13
+2025-06-24 10:18:51 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:18:51 - Total feedback items retrieved: 0
+2025-06-24 10:18:58 - Fetching all active products
+2025-06-24 10:18:58 - Total active products fetched: 20
+2025-06-24 10:18:58 - Fetching all active products
+2025-06-24 10:18:58 - Total active products fetched: 20
+2025-06-24 10:19:21 - Filtering products with parameters - Min Price: null, Max Price: null, Type: null, Gender: null, Color: Black, Material: null, Name: null
+2025-06-24 10:19:21 - Total filtered products found: 7
+2025-06-24 10:19:30 - Filtering products with parameters - Min Price: null, Max Price: null, Type: null, Gender: Male, Color: null, Material: null, Name: null
+2025-06-24 10:19:30 - Total filtered products found: 10
+2025-06-24 10:19:39 - Filtering products with parameters - Min Price: null, Max Price: null, Type: null, Gender: Female, Color: null, Material: null, Name: null
+2025-06-24 10:19:39 - Total filtered products found: 2
+2025-06-24 10:19:48 - Filtering products with parameters - Min Price: null, Max Price: null, Type: null, Gender: Unisex, Color: null, Material: null, Name: null
+2025-06-24 10:19:48 - Total filtered products found: 8
+2025-06-24 10:22:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:27:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:31:41 - Fetching all active products
+2025-06-24 10:31:41 - Total active products fetched: 20
+2025-06-24 10:31:41 - Fetching all active products
+2025-06-24 10:31:41 - Total active products fetched: 20
+2025-06-24 10:31:45 - Fetching all active products
+2025-06-24 10:31:45 - Total active products fetched: 20
+2025-06-24 10:31:45 - Fetching all active products
+2025-06-24 10:31:45 - Total active products fetched: 20
+2025-06-24 10:31:49 - Fetching feedback for product ID: 1
+2025-06-24 10:31:49 - Fetching product with ID: 1
+2025-06-24 10:31:49 - Checking stock for product ID: 1
+2025-06-24 10:31:49 - Stock info for product ID 1: 13
+2025-06-24 10:31:49 - Total feedback items retrieved: 0
+2025-06-24 10:31:49 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:31:49 - Fetching feedback for product ID: 1
+2025-06-24 10:31:49 - Checking stock for product ID: 1
+2025-06-24 10:31:49 - Fetching product with ID: 1
+2025-06-24 10:31:49 - Stock info for product ID 1: 13
+2025-06-24 10:31:49 - Total feedback items retrieved: 0
+2025-06-24 10:31:49 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:31:58 - Fetching all active products
+2025-06-24 10:31:58 - Total active products fetched: 20
+2025-06-24 10:31:58 - Fetching all active products
+2025-06-24 10:31:58 - Total active products fetched: 20
+2025-06-24 10:32:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:37:21 - Fetching all active products
+2025-06-24 10:37:21 - Total active products fetched: 20
+2025-06-24 10:37:21 - Fetching all active products
+2025-06-24 10:37:21 - Total active products fetched: 20
+2025-06-24 10:37:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:39:02 - Fetching product with ID: 1
+2025-06-24 10:39:02 - Fetching feedback for product ID: 1
+2025-06-24 10:39:02 - Checking stock for product ID: 1
+2025-06-24 10:39:02 - Stock info for product ID 1: 13
+2025-06-24 10:39:02 - Total feedback items retrieved: 0
+2025-06-24 10:39:02 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:39:02 - Checking stock for product ID: 1
+2025-06-24 10:39:02 - Fetching feedback for product ID: 1
+2025-06-24 10:39:02 - Fetching product with ID: 1
+2025-06-24 10:39:02 - Stock info for product ID 1: 13
+2025-06-24 10:39:02 - Total feedback items retrieved: 0
+2025-06-24 10:39:02 - Product fetched successfully: Product(productID=1, name=Zylo Luna Shine, shortdescription=Elegant rose gold analog watch for women., longdescription=The Zylo Luna Shine exudes sophistication with its shimmering rose gold finish and pearlescent dial. Crafted from durable alloy, this analog timepiece is perfect for both everyday elegance and special occasions., price=5999.0, gender=Female, color=Rose Gold, material=Alloy, type=Analog, imageURL=https://i.pinimg.com/originals/7d/73/7e/7d737e3e1c9e8b245ffde128a55256ac.jpg, stock=13, active=true, createdTime=2025-06-24T09:25:36.976541, feedbacks=[])
+2025-06-24 10:39:15 - Fetching all active products
+2025-06-24 10:39:15 - Total active products fetched: 20
+2025-06-24 10:39:15 - Fetching all active products
+2025-06-24 10:39:15 - Total active products fetched: 20
+2025-06-24 10:42:51 - Resolving eureka endpoints via configuration
+2025-06-24 10:56:23 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m2s867ms280µs900ns).
+2025-06-24 10:57:37 - Resolving eureka endpoints via configuration
+2025-06-24 11:04:48 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m24s960ms765µs700ns).
+2025-06-24 11:07:45 - Resolving eureka endpoints via configuration
+2025-06-24 11:12:45 - Resolving eureka endpoints via configuration

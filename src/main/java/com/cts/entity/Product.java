@@ -2,6 +2,7 @@ package com.cts.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -9,13 +10,15 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "e_product")
+@NoArgsConstructor
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int productID;
 
 	private String name;
-	private String description;
+	private String shortdescription;
+	private String longdescription;
 	private Double price;
 	private String gender;
 	private String color;
@@ -45,5 +48,19 @@ public class Product {
 
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	private List<Feedback> feedbacks; // Stores reviews for this product
+	
+	public Product(int productID, String name, Double price) {
+	    this.productID = productID;
+	    this.name = name;
+	    this.price = price;
+	}
+	
+	public Product(int productID, String name, int stock) {
+	    this.productID = productID;
+	    this.name = name;
+	    this.stock = stock;
+	}
+
+
 
 }

@@ -2,11 +2,14 @@ package com.cts.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Table(name = "e_feedback")
+@NoArgsConstructor
 public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +29,13 @@ public class Feedback {
     @ManyToOne
     @JoinColumn(name = "productID", nullable = false) // Links feedback to a product
     private Product product;
+    
+    
+    
+    public Feedback(String reviewText, int rating, LocalDateTime createdTime) {
+        this.reviewText = reviewText;
+        this.rating = rating;
+        this.createdTime = createdTime;
+    }
+
 }

@@ -34,10 +34,22 @@ public class ProductServiceImpl implements IProductService {
 	@Autowired
 	ModelMapper modelMapper;
 
-	private ProductDto convertToDTO(Product product) {
-		logger.debug("Converting Product entity to DTO: {}", product);
-		return modelMapper.map(product, ProductDto.class);
+	public ProductDto convertToDTO(Product product) {
+	    ProductDto dto = modelMapper.map(product, ProductDto.class);
+	    List<Feedback> feedbacks = product.getFeedbacks();
+	    
+	    if (feedbacks != null && !feedbacks.isEmpty()) {
+	        double average = feedbacks.stream()
+	            .mapToInt(Feedback::getRating)
+	            .average()
+	            .orElse(0.0);
+	        dto.setAvgRating(average);
+	    } else {
+	        dto.setAvgRating(0.0); // No feedbacks yet = zero rating
+	    }
+	    return dto;
 	}
+
 
 	private Product convertToEntity(ProductDto dto) {
 		logger.debug("Converting Product DTO to entity: {}", dto);
@@ -79,7 +91,8 @@ public class ProductServiceImpl implements IProductService {
 		});
 
 		product.setName(productAddDTO.getName());
-		product.setDescription(productAddDTO.getDescription());
+		product.setShortdescription(productAddDTO.getShortdescription());
+		product.setLongdescription(productAddDTO.getLongdescription());
 		product.setPrice(productAddDTO.getPrice());
 		product.setGender(productAddDTO.getGender());
 		product.setColor(productAddDTO.getColor());
@@ -93,11 +106,18 @@ public class ProductServiceImpl implements IProductService {
 	}
 
 	public String deleteProduct(int id) {
-		logger.info("Deleting product with ID: {}", id);
-		productRepository.deleteById(id);
-		logger.info("Product deleted successfully with ID: {}", id);
-		return "Deleted Successfully";
+	    logger.info("Attempting to delete product with ID: {}", id);
+
+	    if (!productRepository.existsById(id)) {
+	        logger.error("Product not found with ID: {}", id);
+	        throw new ResourceNotFoundException("Product not found");
+	    }
+
+	    productRepository.deleteById(id);
+	    logger.info("Product deleted successfully with ID: {}", id);
+	    return "Deleted Successfully";
 	}
+
 
 	@Override
 	public ProductDto getProductById(int id) {
@@ -133,6 +153,8 @@ public class ProductServiceImpl implements IProductService {
 				.collect(Collectors.toList());
 
 		logger.info("Total active products fetched: {}", products.size());
+		
+		
 		return products;
 	}
 
@@ -148,7 +170,8 @@ public class ProductServiceImpl implements IProductService {
 						&& (gender == null || p.getGender().equalsIgnoreCase(gender))
 						&& (color == null || p.getColor().equalsIgnoreCase(color))
 						&& (material == null || p.getMaterial().equalsIgnoreCase(material))
-						&& (name == null || p.getName().equalsIgnoreCase(name)))
+						&&(name == null || (p.getName() != null && p.getName().toLowerCase().contains(name.toLowerCase()))))
+
 				.map(this::convertToDTO).collect(Collectors.toList());
 
 		logger.info("Total filtered products found: {}", filteredProducts.size());

@@ -1,16 +1,13 @@
 package com.cts.controller;
-
 import java.util.List;
-
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +19,7 @@ import com.cts.dto.ProductDto;
 import com.cts.dto.ProductStockDTO;
 import com.cts.service.IProductService;
 
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -29,92 +27,115 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class ProductController {
-	private final IProductService productService;
 
-	@PostMapping("/addProduct")
-	public ResponseEntity<ProductDto> addProduct(@RequestBody ProductAddDTO dto) {
-		return new ResponseEntity<ProductDto>(productService.addProduct(dto),HttpStatus.OK);
-	}
+    private final IProductService productService;
 
-	@PutMapping("/updateProduct/{id}")
-	public ResponseEntity<ProductDto> updateProduct(@PathVariable int id, @RequestBody ProductAddDTO dto) {
-		return new ResponseEntity<ProductDto>(productService.updateProduct(id, dto),HttpStatus.OK);
-	}
+    // --- Publicly Accessible Endpoints ---
 
-	@DeleteMapping("/deleteProduct/{id}")
-	public ResponseEntity<String> deleteProduct(@PathVariable int id) {
-		return new ResponseEntity<String>(productService.deleteProduct(id),HttpStatus.OK);
-	}
+    @GetMapping("/getAllProducts")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<List<ProductDto>> getAllProducts() {
+        return ResponseEntity.ok(productService.getAllProducts());
+    }
 
-	@GetMapping("/getProductById/{id}")
-	public ResponseEntity<ProductDto> getProductById(@PathVariable int id) {
-		return new ResponseEntity<ProductDto>(productService.getProductById(id),HttpStatus.OK);
-	}
+    @GetMapping("/getProductById/{id}")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<ProductDto> getProductById(@PathVariable int id) {
+        return ResponseEntity.ok(productService.getProductById(id));
+    }
 
-	@GetMapping("/get")
-	public ResponseEntity<List<ProductDto>> getAllProducts() {
-		return new  ResponseEntity<List<ProductDto>>(productService.getAllProducts(),HttpStatus.OK);
-	}
+    @GetMapping("/searchByName")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<List<ProductDto>> searchByName(@RequestParam String keyword) {
+        return ResponseEntity.ok(productService.searchByName(keyword));
+    }
 
-	@GetMapping("/search")
-	public ResponseEntity<List<ProductDto>> searchByName(@RequestParam String keyword) {
-		return new ResponseEntity<List<ProductDto>>(productService.searchByName(keyword),HttpStatus.OK);
-	}
+    @GetMapping("/filter")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<List<ProductDto>> filter(
+            @RequestParam(required = false) Double minPrice,
+            @RequestParam(required = false) Double maxPrice,
+            @RequestParam(required = false) String type,
+            @RequestParam(required = false) String gender,
+            @RequestParam(required = false) String color,
+            @RequestParam(required = false) String material,
+            @RequestParam(required = false) String name) {
+        return ResponseEntity.ok(productService.filterByAttribute(minPrice, maxPrice, type, gender, color, material, name));
+    }
 
-	@GetMapping("/filter")
-	public ResponseEntity<List<ProductDto>> filter(@RequestParam Double minPrice, @RequestParam Double maxPrice,
-			@RequestParam(required = false) String type, @RequestParam(required = false) String gender,
-			@RequestParam(required = false) String color, @RequestParam(required = false) String material,
-			@RequestParam(required = false) String name) {
-		return new ResponseEntity<List<ProductDto>>(productService.filterByAttribute(minPrice, maxPrice, type, gender, color, material, name),HttpStatus.OK);
-	}
+    @GetMapping("/products/getStockAvailability")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<ProductStockDTO> getProductStockAvailability(@RequestParam Integer productId) {
+        return ResponseEntity.ok(productService.getProductStockAvailabity(productId));
+    }
 
-	@PutMapping("/products/{id}/soft-delete")
-	public ResponseEntity<String> softDeleteProduct(@PathVariable int id) {
-		return new ResponseEntity<String>(productService.softDeleteProduct(id),HttpStatus.OK);
-	}
+    @GetMapping("/products/getProductForCart")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<ProductCartDTO> getProductForCart(@RequestParam int id) {
+        return ResponseEntity.ok(productService.getProductForCart(id));
+    }
 
-	@PutMapping("/products/{id}/restore")
-	public ResponseEntity<String> restoreProduct(@PathVariable int id) {
-		return new ResponseEntity<String>(productService.restoreProduct(id),HttpStatus.OK);
-	}
+    @GetMapping("/products/getSummaries")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<List<ProductCartDTO>> getProductSummaries() {
+        return ResponseEntity.ok(productService.getProductSummaries());
+    }
 
-	@PostMapping("/products/{productId}/feedback")
-	public ResponseEntity<String> addFeedback(@PathVariable int productId, @RequestBody FeedbackDto feedbackDto) {
-		return new ResponseEntity<String>(productService.addFeedback(productId, feedbackDto),HttpStatus.OK);
-	}
+    @GetMapping("/products/{productId}/getFeedbackByProduct")
+    @PreAuthorize("permitAll()")
+    public ResponseEntity<List<FeedbackDto>> getFeedbackByProduct(@PathVariable int productId) {
+        return ResponseEntity.ok(productService.getFeedbackByProduct(productId));
+    }
 
-	@GetMapping("/products/{productId}/feedback")
-	public ResponseEntity<List<FeedbackDto>> getFeedbackByProduct(@PathVariable int productId) {
-		return new ResponseEntity<List<FeedbackDto>>(productService.getFeedbackByProduct(productId),HttpStatus.OK);
-	}
+    @PostMapping("/products/{productId}/addFeedback")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<String> addFeedback(@PathVariable int productId, @RequestBody FeedbackDto feedbackDto) {
+        return ResponseEntity.ok(productService.addFeedback(productId, feedbackDto));
+    }
 
-	@PutMapping("/products/{productId}/reduceStock/{quantity}")
-	public ResponseEntity<String> reduceStock(@PathVariable int productId, @PathVariable int quantity) {
-		productService.reduceStock(productId, quantity);
-		return new ResponseEntity<String>("Stock reduced successfully",HttpStatus.OK);
-	}
+    // --- Admin-Only Endpoints ---
 
-	@PutMapping("/products/{productId}/updateStock/{quantity}")
-	public ResponseEntity<String> updateStock(@PathVariable int productId, @PathVariable int quantity) {
-		productService.updateStock(productId, quantity);
-		return new ResponseEntity<String>("Stock updated successfully",HttpStatus.OK);
-	}
+    @PostMapping("/addProduct")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<ProductDto> addProduct(@RequestBody ProductAddDTO dto) {
+        return ResponseEntity.ok(productService.addProduct(dto));
+    }
 
-	@GetMapping("/products/getProductForCart")
-	public ResponseEntity<ProductCartDTO> getProductForCart(int id) {
-		return new ResponseEntity<ProductCartDTO>(productService.getProductForCart(id),HttpStatus.OK);
-	}
+    @PutMapping("/updateProduct/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<ProductDto> updateProduct(@PathVariable int id, @RequestBody ProductAddDTO dto) {
+        return ResponseEntity.ok(productService.updateProduct(id, dto));
+    }
 
-	@GetMapping("/products/getStockAvailability")
-	public ResponseEntity<ProductStockDTO> getProductStockAvailabity(Integer productId) {
-		return new ResponseEntity<ProductStockDTO>(productService.getProductStockAvailabity(productId),HttpStatus.OK);
-	}
+    @DeleteMapping("/deleteProduct/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<String> deleteProduct(@PathVariable int id) {
+        return ResponseEntity.ok(productService.deleteProduct(id));
+    }
 
-	@GetMapping("/products/getSummaries")
-	public ResponseEntity<List<ProductCartDTO>> getProductSummaries() {
-		List<ProductCartDTO> summaries = productService.getProductSummaries();
-		return ResponseEntity.ok(summaries);
-	}
+    @PutMapping("/products/{id}/soft-delete")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<String> softDeleteProduct(@PathVariable int id) {
+        return ResponseEntity.ok(productService.softDeleteProduct(id));
+    }
 
+    @PutMapping("/products/{id}/restoreProduct")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<String> restoreProduct(@PathVariable int id) {
+        return ResponseEntity.ok(productService.restoreProduct(id));
+    }
+
+    @PutMapping("/products/{productId}/reduceStock/{quantity}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<String> reduceStock(@PathVariable int productId, @PathVariable int quantity) {
+        productService.reduceStock(productId, quantity);
+        return ResponseEntity.ok("Stock reduced successfully");
+    }
+
+    @PutMapping("/products/{productId}/updateStock/{quantity}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<String> updateStock(@PathVariable int productId, @PathVariable int quantity) {
+        productService.updateStock(productId, quantity);
+        return ResponseEntity.ok("Stock updated successfully");
+    }
 }
