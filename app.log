@@ -1,0 +1,69 @@
+2025-06-27 08:44:58 - Starting OrderServiceApplication using Java 21.0.6 with PID 18408 (C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2\target\classes started by 2406679 in C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2)
+2025-06-27 08:44:58 - No active profile set, falling back to 1 default profile: "default"
+2025-06-27 08:45:03 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27 08:45:04 - Finished Spring Data repository scanning in 673 ms. Found 3 JPA repository interfaces.
+2025-06-27 08:45:05 - BeanFactory id=91c13b37-8427-312a-86db-ccde1fc08773
+2025-06-27 08:45:07 - Tomcat initialized with port 9997 (http)
+2025-06-27 08:45:07 - Starting service [Tomcat]
+2025-06-27 08:45:07 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-27 08:45:07 - Initializing Spring embedded WebApplicationContext
+2025-06-27 08:45:07 - Root WebApplicationContext: initialization completed in 8713 ms
+2025-06-27 08:45:08 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-27 08:45:08 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-27 08:45:08 - HHH000026: Second-level cache disabled
+2025-06-27 08:45:10 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27 08:45:10 - HikariPool-1 - Starting...
+2025-06-27 08:45:11 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36885319
+2025-06-27 08:45:11 - HikariPool-1 - Start completed.
+2025-06-27 08:45:12 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-27 08:45:16 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-27 08:45:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 08:45:19 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27 08:45:19 - For 'user3' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 08:45:20 - For 'Project' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 08:45:20 - For 'payment' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 08:45:20 - For 'CartModule' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 08:45:21 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-06-27 08:45:23 - Eureka HTTP Client uses RestTemplate.
+2025-06-27 08:45:23 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-27 08:45:23 - Setting initial instance status as: STARTING
+2025-06-27 08:45:23 - Initializing Eureka in region us-east-1
+2025-06-27 08:45:23 - Resolving eureka endpoints via configuration
+2025-06-27 08:45:23 - Disable delta property : false
+2025-06-27 08:45:23 - Single vip registry refresh property : null
+2025-06-27 08:45:23 - Force full registry fetch : false
+2025-06-27 08:45:23 - Application is null : false
+2025-06-27 08:45:23 - Registered Applications size is zero : true
+2025-06-27 08:45:23 - Application version is -1: true
+2025-06-27 08:45:23 - Getting all instance registry info from the eureka server
+2025-06-27 08:45:25 - The response status is 200
+2025-06-27 08:45:25 - Starting heartbeat executor: renew interval is: 30
+2025-06-27 08:45:25 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-27 08:45:25 - Discovery Client initialized at timestamp 1750994125447 with initial instances count: 0
+2025-06-27 08:45:25 - Registering application ORDERSERVICE with eureka with status UP
+2025-06-27 08:45:25 - Saw local status change event StatusChangeEvent [timestamp=1750994125474, current=UP, previous=STARTING]
+2025-06-27 08:45:25 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 08:45:25 - Tomcat started on port 9997 (http) with context path '/'
+2025-06-27 08:45:25 - Updating port to 9997
+2025-06-27 08:45:25 - Started OrderServiceApplication in 29.161 seconds (process running for 32.405)
+2025-06-27 08:45:25 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 08:45:55 - Disable delta property : false
+2025-06-27 08:45:55 - Single vip registry refresh property : null
+2025-06-27 08:45:55 - Force full registry fetch : false
+2025-06-27 08:45:55 - Application is null : false
+2025-06-27 08:45:55 - Registered Applications size is zero : true
+2025-06-27 08:45:55 - Application version is -1: false
+2025-06-27 08:45:55 - Getting all instance registry info from the eureka server
+2025-06-27 08:45:55 - The response status is 200
+2025-06-27 08:50:23 - Resolving eureka endpoints via configuration
+2025-06-27 08:55:23 - Resolving eureka endpoints via configuration
+2025-06-27 09:00:23 - Resolving eureka endpoints via configuration
+2025-06-27 09:05:23 - Resolving eureka endpoints via configuration
+2025-06-27 09:10:24 - Resolving eureka endpoints via configuration
