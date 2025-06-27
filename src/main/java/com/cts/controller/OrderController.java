@@ -209,4 +209,11 @@ public class OrderController {
                     .body(Map.of("error", ex.getMessage()));
         }
     }
+    
+    @GetMapping("/report/product-frequency")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Map<String, ProductStats>> getProductFrequencies() {
+        return ResponseEntity.ok(orderService.getOverallProductStats());
+    }
+
 }

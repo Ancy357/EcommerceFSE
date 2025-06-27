@@ -9533,3 +9533,1003 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
 2025-06-27 18:31:50 - Searching for order with ID: 0164708859
 2025-06-27 18:31:50 - Direct order found with ID: 0164708859
 2025-06-27 18:31:50 - Final OrderDTO (direct) → orderAmount: ₹100000.0
+2025-06-27 18:36:49 - Resolving eureka endpoints via configuration
+2025-06-27 18:41:49 - Resolving eureka endpoints via configuration
+2025-06-27 18:46:49 - Resolving eureka endpoints via configuration
+2025-06-27 18:51:49 - Resolving eureka endpoints via configuration
+2025-06-27 18:56:49 - Resolving eureka endpoints via configuration
+2025-06-27 19:01:49 - Resolving eureka endpoints via configuration
+2025-06-27 19:03:28 - Application shutdown requested.
+2025-06-27 19:03:28 - Unregistering application ORDERSERVICE with eureka with status DOWN
+2025-06-27 19:03:28 - Saw local status change event StatusChangeEvent [timestamp=1751031208582, current=DOWN, previous=UP]
+2025-06-27 19:03:28 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 19:03:28 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 19:03:28 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27 19:03:28 - Graceful shutdown complete
+2025-06-27 19:03:28 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 19:03:28 - HikariPool-1 - Shutdown initiated...
+2025-06-27 19:03:28 - HikariPool-1 - Shutdown completed.
+2025-06-27 19:03:28 - Shutting down DiscoveryClient ...
+2025-06-27 19:03:31 - Unregistering ...
+2025-06-27 19:03:31 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - deregister  status: 200
+2025-06-27 19:03:31 - Completed shut down of DiscoveryClient
+2025-06-27 19:03:46 - Starting OrderServiceApplication using Java 21.0.6 with PID 25260 (C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2\target\classes started by 2406679 in C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2)
+2025-06-27 19:03:46 - No active profile set, falling back to 1 default profile: "default"
+2025-06-27 19:03:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27 19:03:48 - Finished Spring Data repository scanning in 161 ms. Found 3 JPA repository interfaces.
+2025-06-27 19:03:48 - BeanFactory id=91c13b37-8427-312a-86db-ccde1fc08773
+2025-06-27 19:03:48 - Tomcat initialized with port 9997 (http)
+2025-06-27 19:03:48 - Starting service [Tomcat]
+2025-06-27 19:03:48 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-27 19:03:48 - Initializing Spring embedded WebApplicationContext
+2025-06-27 19:03:48 - Root WebApplicationContext: initialization completed in 2702 ms
+2025-06-27 19:03:49 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-27 19:03:49 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-27 19:03:49 - HHH000026: Second-level cache disabled
+2025-06-27 19:03:49 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27 19:03:49 - HikariPool-1 - Starting...
+2025-06-27 19:03:50 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a0f43dc
+2025-06-27 19:03:50 - HikariPool-1 - Start completed.
+2025-06-27 19:03:50 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-27 19:03:51 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-27 19:03:51 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 19:03:52 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27 19:03:52 - For 'user3' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:03:52 - For 'Project' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:03:52 - For 'payment' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:03:52 - For 'CartModule' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:03:53 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-06-27 19:03:54 - Eureka HTTP Client uses RestTemplate.
+2025-06-27 19:03:54 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-27 19:03:54 - Setting initial instance status as: STARTING
+2025-06-27 19:03:54 - Initializing Eureka in region us-east-1
+2025-06-27 19:03:54 - Resolving eureka endpoints via configuration
+2025-06-27 19:03:54 - Disable delta property : false
+2025-06-27 19:03:54 - Single vip registry refresh property : null
+2025-06-27 19:03:54 - Force full registry fetch : false
+2025-06-27 19:03:54 - Application is null : false
+2025-06-27 19:03:54 - Registered Applications size is zero : true
+2025-06-27 19:03:54 - Application version is -1: true
+2025-06-27 19:03:54 - Getting all instance registry info from the eureka server
+2025-06-27 19:03:55 - The response status is 200
+2025-06-27 19:03:55 - Starting heartbeat executor: renew interval is: 30
+2025-06-27 19:03:55 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-27 19:03:55 - Discovery Client initialized at timestamp 1751031235691 with initial instances count: 7
+2025-06-27 19:03:55 - Registering application ORDERSERVICE with eureka with status UP
+2025-06-27 19:03:55 - Saw local status change event StatusChangeEvent [timestamp=1751031235705, current=UP, previous=STARTING]
+2025-06-27 19:03:55 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 19:03:55 - Tomcat started on port 9997 (http) with context path '/'
+2025-06-27 19:03:55 - Updating port to 9997
+2025-06-27 19:03:55 - Started OrderServiceApplication in 10.098 seconds (process running for 11.844)
+2025-06-27 19:03:55 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 19:08:54 - Resolving eureka endpoints via configuration
+2025-06-27 19:13:54 - Resolving eureka endpoints via configuration
+2025-06-27 19:15:32 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-27 19:15:32 - Initializing Servlet 'dispatcherServlet'
+2025-06-27 19:15:32 - Completed initialization in 3 ms
+2025-06-27 19:15:32 - Searching orders for user ID: 1
+2025-06-27 19:15:32 - Found 0 direct orders for user ID: 1
+2025-06-27 19:15:32 - Found 0 cart orders for user ID: 1
+2025-06-27 19:15:32 - ⚠️ No orders found for user ID: 1
+2025-06-27 19:15:32 - Searching orders for user ID: 1
+2025-06-27 19:15:32 - Searching orders for user ID: 2
+2025-06-27 19:15:32 - Found 0 direct orders for user ID: 1
+2025-06-27 19:15:32 - Found 0 cart orders for user ID: 1
+2025-06-27 19:15:32 - ⚠️ No orders found for user ID: 1
+2025-06-27 19:15:32 - Found 7 direct orders for user ID: 2
+2025-06-27 19:15:32 - Found 2 cart orders for user ID: 2
+2025-06-27 19:15:33 - Searching orders for user ID: 3
+2025-06-27 19:15:33 - Searching orders for user ID: 2
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 3
+2025-06-27 19:15:33 - Found 7 direct orders for user ID: 2
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 3
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 3
+2025-06-27 19:15:33 - Found 2 cart orders for user ID: 2
+2025-06-27 19:15:33 - Searching orders for user ID: 4
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 4
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 4
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 4
+2025-06-27 19:15:33 - Searching orders for user ID: 5
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 5
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 5
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 5
+2025-06-27 19:15:33 - Searching orders for user ID: 6
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 6
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 6
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 6
+2025-06-27 19:15:33 - Searching orders for user ID: 3
+2025-06-27 19:15:33 - Searching orders for user ID: 7
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 3
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 7
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 3
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 7
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 3
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 7
+2025-06-27 19:15:33 - Searching orders for user ID: 4
+2025-06-27 19:15:33 - Searching orders for user ID: 8
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 4
+2025-06-27 19:15:33 - Found 2 direct orders for user ID: 8
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 4
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 4
+2025-06-27 19:15:33 - Found 2 cart orders for user ID: 8
+2025-06-27 19:15:33 - Searching orders for user ID: 5
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 5
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 5
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 5
+2025-06-27 19:15:33 - Searching orders for user ID: 6
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 6
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 6
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 6
+2025-06-27 19:15:33 - Searching orders for user ID: 7
+2025-06-27 19:15:33 - Found 0 direct orders for user ID: 7
+2025-06-27 19:15:33 - Found 0 cart orders for user ID: 7
+2025-06-27 19:15:33 - ⚠️ No orders found for user ID: 7
+2025-06-27 19:15:33 - Searching orders for user ID: 8
+2025-06-27 19:15:33 - Found 2 direct orders for user ID: 8
+2025-06-27 19:15:33 - Found 2 cart orders for user ID: 8
+2025-06-27 19:18:54 - Resolving eureka endpoints via configuration
+2025-06-27 19:20:37 - Init duration for springdoc-openapi is: 1819 ms
+2025-06-27 19:23:54 - Resolving eureka endpoints via configuration
+2025-06-27 19:28:54 - Resolving eureka endpoints via configuration
+2025-06-27 19:33:55 - Resolving eureka endpoints via configuration
+2025-06-27 19:33:57 - Application shutdown requested.
+2025-06-27 19:33:57 - Unregistering application ORDERSERVICE with eureka with status DOWN
+2025-06-27 19:33:57 - Saw local status change event StatusChangeEvent [timestamp=1751033037438, current=DOWN, previous=UP]
+2025-06-27 19:33:57 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 19:33:57 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27 19:33:57 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 19:33:57 - Graceful shutdown complete
+2025-06-27 19:33:57 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 19:33:57 - HikariPool-1 - Shutdown initiated...
+2025-06-27 19:33:57 - HikariPool-1 - Shutdown completed.
+2025-06-27 19:33:57 - Shutting down DiscoveryClient ...
+2025-06-27 19:34:00 - Unregistering ...
+2025-06-27 19:34:00 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - deregister  status: 200
+2025-06-27 19:34:00 - Completed shut down of DiscoveryClient
+2025-06-27 19:34:09 - Starting OrderServiceApplication using Java 21.0.6 with PID 28724 (C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2\target\classes started by 2406679 in C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2)
+2025-06-27 19:34:09 - No active profile set, falling back to 1 default profile: "default"
+2025-06-27 19:34:10 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27 19:34:10 - Finished Spring Data repository scanning in 125 ms. Found 3 JPA repository interfaces.
+2025-06-27 19:34:11 - BeanFactory id=91c13b37-8427-312a-86db-ccde1fc08773
+2025-06-27 19:34:11 - Tomcat initialized with port 9997 (http)
+2025-06-27 19:34:11 - Starting service [Tomcat]
+2025-06-27 19:34:11 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-27 19:34:11 - Initializing Spring embedded WebApplicationContext
+2025-06-27 19:34:11 - Root WebApplicationContext: initialization completed in 1843 ms
+2025-06-27 19:34:11 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-27 19:34:12 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-27 19:34:12 - HHH000026: Second-level cache disabled
+2025-06-27 19:34:12 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27 19:34:12 - HikariPool-1 - Starting...
+2025-06-27 19:34:12 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36885319
+2025-06-27 19:34:12 - HikariPool-1 - Start completed.
+2025-06-27 19:34:12 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-27 19:34:13 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-27 19:34:13 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 19:34:14 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27 19:34:14 - For 'user3' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:34:14 - For 'Project' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:34:14 - For 'payment' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:34:14 - For 'CartModule' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:34:15 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-06-27 19:34:15 - Eureka HTTP Client uses RestTemplate.
+2025-06-27 19:34:15 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-27 19:34:15 - Setting initial instance status as: STARTING
+2025-06-27 19:34:15 - Initializing Eureka in region us-east-1
+2025-06-27 19:34:15 - Resolving eureka endpoints via configuration
+2025-06-27 19:34:15 - Disable delta property : false
+2025-06-27 19:34:15 - Single vip registry refresh property : null
+2025-06-27 19:34:15 - Force full registry fetch : false
+2025-06-27 19:34:15 - Application is null : false
+2025-06-27 19:34:15 - Registered Applications size is zero : true
+2025-06-27 19:34:15 - Application version is -1: true
+2025-06-27 19:34:15 - Getting all instance registry info from the eureka server
+2025-06-27 19:34:16 - The response status is 200
+2025-06-27 19:34:16 - Starting heartbeat executor: renew interval is: 30
+2025-06-27 19:34:16 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-27 19:34:16 - Discovery Client initialized at timestamp 1751033056153 with initial instances count: 7
+2025-06-27 19:34:16 - Registering application ORDERSERVICE with eureka with status UP
+2025-06-27 19:34:16 - Saw local status change event StatusChangeEvent [timestamp=1751033056165, current=UP, previous=STARTING]
+2025-06-27 19:34:16 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 19:34:16 - Tomcat started on port 9997 (http) with context path '/'
+2025-06-27 19:34:16 - Updating port to 9997
+2025-06-27 19:34:16 - Started OrderServiceApplication in 6.79 seconds (process running for 8.136)
+2025-06-27 19:34:16 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 19:34:46 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-27 19:34:46 - Initializing Servlet 'dispatcherServlet'
+2025-06-27 19:34:46 - Completed initialization in 1 ms
+2025-06-27 19:35:58 - Application shutdown requested.
+2025-06-27 19:35:58 - Unregistering application ORDERSERVICE with eureka with status DOWN
+2025-06-27 19:35:58 - Saw local status change event StatusChangeEvent [timestamp=1751033158289, current=DOWN, previous=UP]
+2025-06-27 19:35:58 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 19:35:58 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27 19:35:58 - Graceful shutdown complete
+2025-06-27 19:35:58 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 19:35:58 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 19:35:58 - HikariPool-1 - Shutdown initiated...
+2025-06-27 19:35:58 - HikariPool-1 - Shutdown completed.
+2025-06-27 19:35:58 - Shutting down DiscoveryClient ...
+2025-06-27 19:36:01 - Unregistering ...
+2025-06-27 19:36:01 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - deregister  status: 200
+2025-06-27 19:36:01 - Completed shut down of DiscoveryClient
+2025-06-27 19:36:10 - Starting OrderServiceApplication using Java 21.0.6 with PID 26436 (C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2\target\classes started by 2406679 in C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2)
+2025-06-27 19:36:10 - No active profile set, falling back to 1 default profile: "default"
+2025-06-27 19:36:11 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27 19:36:11 - Finished Spring Data repository scanning in 135 ms. Found 3 JPA repository interfaces.
+2025-06-27 19:36:11 - BeanFactory id=91c13b37-8427-312a-86db-ccde1fc08773
+2025-06-27 19:36:12 - Tomcat initialized with port 9997 (http)
+2025-06-27 19:36:12 - Starting service [Tomcat]
+2025-06-27 19:36:12 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-27 19:36:12 - Initializing Spring embedded WebApplicationContext
+2025-06-27 19:36:12 - Root WebApplicationContext: initialization completed in 1951 ms
+2025-06-27 19:36:12 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-27 19:36:12 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-27 19:36:12 - HHH000026: Second-level cache disabled
+2025-06-27 19:36:12 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27 19:36:12 - HikariPool-1 - Starting...
+2025-06-27 19:36:13 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@144dc2f7
+2025-06-27 19:36:13 - HikariPool-1 - Start completed.
+2025-06-27 19:36:13 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-27 19:36:14 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-27 19:36:14 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 19:36:14 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27 19:36:14 - For 'user3' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:36:14 - For 'Project' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:36:14 - For 'payment' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:36:14 - For 'CartModule' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 19:36:15 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-06-27 19:36:15 - Eureka HTTP Client uses RestTemplate.
+2025-06-27 19:36:15 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-27 19:36:15 - Setting initial instance status as: STARTING
+2025-06-27 19:36:15 - Initializing Eureka in region us-east-1
+2025-06-27 19:36:15 - Resolving eureka endpoints via configuration
+2025-06-27 19:36:15 - Disable delta property : false
+2025-06-27 19:36:15 - Single vip registry refresh property : null
+2025-06-27 19:36:15 - Force full registry fetch : false
+2025-06-27 19:36:15 - Application is null : false
+2025-06-27 19:36:15 - Registered Applications size is zero : true
+2025-06-27 19:36:15 - Application version is -1: true
+2025-06-27 19:36:15 - Getting all instance registry info from the eureka server
+2025-06-27 19:36:16 - The response status is 200
+2025-06-27 19:36:16 - Starting heartbeat executor: renew interval is: 30
+2025-06-27 19:36:16 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-27 19:36:16 - Discovery Client initialized at timestamp 1751033176184 with initial instances count: 7
+2025-06-27 19:36:16 - Registering application ORDERSERVICE with eureka with status UP
+2025-06-27 19:36:16 - Saw local status change event StatusChangeEvent [timestamp=1751033176190, current=UP, previous=STARTING]
+2025-06-27 19:36:16 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 19:36:16 - Tomcat started on port 9997 (http) with context path '/'
+2025-06-27 19:36:16 - Updating port to 9997
+2025-06-27 19:36:16 - Started OrderServiceApplication in 6.268 seconds (process running for 7.529)
+2025-06-27 19:36:16 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 19:36:38 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-27 19:36:38 - Initializing Servlet 'dispatcherServlet'
+2025-06-27 19:36:38 - Completed initialization in 1 ms
+2025-06-27 19:38:40 - Searching orders for user ID: 1
+2025-06-27 19:38:40 - Found 0 direct orders for user ID: 1
+2025-06-27 19:38:40 - Found 0 cart orders for user ID: 1
+2025-06-27 19:38:40 - ⚠️ No orders found for user ID: 1
+2025-06-27 19:38:40 - Searching orders for user ID: 1
+2025-06-27 19:38:40 - Searching orders for user ID: 2
+2025-06-27 19:38:40 - Found 7 direct orders for user ID: 2
+2025-06-27 19:38:40 - Found 0 direct orders for user ID: 1
+2025-06-27 19:38:40 - Found 0 cart orders for user ID: 1
+2025-06-27 19:38:40 - Found 2 cart orders for user ID: 2
+2025-06-27 19:38:40 - ⚠️ No orders found for user ID: 1
+2025-06-27 19:38:41 - Searching orders for user ID: 2
+2025-06-27 19:38:41 - Searching orders for user ID: 3
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 3
+2025-06-27 19:38:41 - Found 7 direct orders for user ID: 2
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 3
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 3
+2025-06-27 19:38:41 - Found 2 cart orders for user ID: 2
+2025-06-27 19:38:41 - Searching orders for user ID: 4
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 4
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 4
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 4
+2025-06-27 19:38:41 - Searching orders for user ID: 5
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 5
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 5
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 5
+2025-06-27 19:38:41 - Searching orders for user ID: 6
+2025-06-27 19:38:41 - Searching orders for user ID: 3
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 3
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 6
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 3
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 6
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 3
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 6
+2025-06-27 19:38:41 - Searching orders for user ID: 4
+2025-06-27 19:38:41 - Searching orders for user ID: 7
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 4
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 7
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 7
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 4
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 7
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 4
+2025-06-27 19:38:41 - Searching orders for user ID: 8
+2025-06-27 19:38:41 - Searching orders for user ID: 5
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 5
+2025-06-27 19:38:41 - Found 2 direct orders for user ID: 8
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 5
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 5
+2025-06-27 19:38:41 - Found 2 cart orders for user ID: 8
+2025-06-27 19:38:41 - Searching orders for user ID: 6
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 6
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 6
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 6
+2025-06-27 19:38:41 - Searching orders for user ID: 7
+2025-06-27 19:38:41 - Found 0 direct orders for user ID: 7
+2025-06-27 19:38:41 - Found 0 cart orders for user ID: 7
+2025-06-27 19:38:41 - ⚠️ No orders found for user ID: 7
+2025-06-27 19:38:41 - Searching orders for user ID: 8
+2025-06-27 19:38:41 - Found 2 direct orders for user ID: 8
+2025-06-27 19:38:41 - Found 2 cart orders for user ID: 8
+2025-06-27 19:41:09 - Searching orders for user ID: 2
+2025-06-27 19:41:09 - Found 7 direct orders for user ID: 2
+2025-06-27 19:41:09 - Found 2 cart orders for user ID: 2
+2025-06-27 19:41:09 - Searching orders for user ID: 2
+2025-06-27 19:41:09 - Found 7 direct orders for user ID: 2
+2025-06-27 19:41:09 - Found 2 cart orders for user ID: 2
+2025-06-27 19:41:15 - Resolving eureka endpoints via configuration
+2025-06-27 19:46:08 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:09 - Generated unique order ID: 0175081885
+2025-06-27 19:46:10 - Order placed successfully for user ID: 8
+2025-06-27 19:46:15 - Resolving eureka endpoints via configuration
+2025-06-27 19:46:16 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:16 - Generated unique order ID: 0959045307
+2025-06-27 19:46:16 - Order placed successfully for user ID: 8
+2025-06-27 19:46:19 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:19 - Generated unique order ID: 0296704971
+2025-06-27 19:46:19 - Order placed successfully for user ID: 8
+2025-06-27 19:46:23 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:23 - Generated unique order ID: 0789070074
+2025-06-27 19:46:23 - Order placed successfully for user ID: 8
+2025-06-27 19:46:24 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:24 - Generated unique order ID: 0188741450
+2025-06-27 19:46:24 - Order placed successfully for user ID: 8
+2025-06-27 19:46:25 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:25 - Generated unique order ID: 0340468352
+2025-06-27 19:46:25 - Order placed successfully for user ID: 8
+2025-06-27 19:46:26 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:26 - Generated unique order ID: 0948016341
+2025-06-27 19:46:26 - Order placed successfully for user ID: 8
+2025-06-27 19:46:30 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:30 - Generated unique order ID: 0875526975
+2025-06-27 19:46:30 - Order placed successfully for user ID: 8
+2025-06-27 19:46:30 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:31 - Generated unique order ID: 0879506133
+2025-06-27 19:46:31 - Order placed successfully for user ID: 8
+2025-06-27 19:46:31 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:31 - Generated unique order ID: 0210271443
+2025-06-27 19:46:31 - Order placed successfully for user ID: 8
+2025-06-27 19:46:32 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:32 - Generated unique order ID: 0392332539
+2025-06-27 19:46:32 - Order placed successfully for user ID: 8
+2025-06-27 19:46:33 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:33 - Generated unique order ID: 0105490002
+2025-06-27 19:46:33 - Order placed successfully for user ID: 8
+2025-06-27 19:46:38 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:38 - Generated unique order ID: 0281205512
+2025-06-27 19:46:38 - Order placed successfully for user ID: 8
+2025-06-27 19:46:38 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:39 - Generated unique order ID: 0620245291
+2025-06-27 19:46:39 - Order placed successfully for user ID: 8
+2025-06-27 19:46:39 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:39 - Generated unique order ID: 0086398025
+2025-06-27 19:46:39 - Order placed successfully for user ID: 8
+2025-06-27 19:46:40 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:40 - Generated unique order ID: 0425500108
+2025-06-27 19:46:40 - Order placed successfully for user ID: 8
+2025-06-27 19:46:41 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 19:46:41 - Generated unique order ID: 0092241829
+2025-06-27 19:46:41 - Order placed successfully for user ID: 8
+2025-06-27 19:51:15 - Resolving eureka endpoints via configuration
+2025-06-27 21:32:56 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h41m12s817ms225µs100ns).
+2025-06-27 21:34:40 - Application shutdown requested.
+2025-06-27 21:34:40 - Unregistering application ORDERSERVICE with eureka with status DOWN
+2025-06-27 21:34:40 - Saw local status change event StatusChangeEvent [timestamp=1751040280425, current=DOWN, previous=UP]
+2025-06-27 21:34:40 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 21:34:40 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27 21:34:40 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 21:34:40 - Graceful shutdown complete
+2025-06-27 21:34:40 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 21:34:40 - HikariPool-1 - Shutdown initiated...
+2025-06-27 21:34:40 - HikariPool-1 - Shutdown completed.
+2025-06-27 21:34:40 - Shutting down DiscoveryClient ...
+2025-06-27 21:34:43 - Unregistering ...
+2025-06-27 21:34:43 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1467)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:183)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 68 more
+
+2025-06-27 21:34:43 - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2025-06-27 21:34:43 - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1467)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:183)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 69 more
+
+2025-06-27 21:34:43 - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2025-06-27 21:34:43 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1467)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-27 21:34:43 - Completed shut down of DiscoveryClient
+2025-06-27 21:36:35 - Starting OrderServiceApplication using Java 21.0.6 with PID 14184 (C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2\target\classes started by 2406679 in C:\Users\2406679\OneDrive - Cognizant\Desktop\OrderManagementModule\orderService2)
+2025-06-27 21:36:35 - No active profile set, falling back to 1 default profile: "default"
+2025-06-27 21:36:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27 21:36:42 - Finished Spring Data repository scanning in 888 ms. Found 3 JPA repository interfaces.
+2025-06-27 21:36:43 - BeanFactory id=91c13b37-8427-312a-86db-ccde1fc08773
+2025-06-27 21:36:45 - Tomcat initialized with port 9997 (http)
+2025-06-27 21:36:45 - Starting service [Tomcat]
+2025-06-27 21:36:45 - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-27 21:36:46 - Initializing Spring embedded WebApplicationContext
+2025-06-27 21:36:46 - Root WebApplicationContext: initialization completed in 10406 ms
+2025-06-27 21:36:47 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-27 21:36:47 - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-27 21:36:47 - HHH000026: Second-level cache disabled
+2025-06-27 21:36:48 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27 21:36:49 - HikariPool-1 - Starting...
+2025-06-27 21:36:50 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77e1dacd
+2025-06-27 21:36:50 - HikariPool-1 - Start completed.
+2025-06-27 21:36:51 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-27 21:36:55 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-27 21:36:56 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 21:36:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27 21:36:59 - For 'user3' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 21:36:59 - For 'Project' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 21:36:59 - For 'payment' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 21:36:59 - For 'CartModule' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 21:37:01 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-06-27 21:37:03 - Eureka HTTP Client uses RestTemplate.
+2025-06-27 21:37:03 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-27 21:37:04 - Setting initial instance status as: STARTING
+2025-06-27 21:37:04 - Initializing Eureka in region us-east-1
+2025-06-27 21:37:04 - Resolving eureka endpoints via configuration
+2025-06-27 21:37:04 - Disable delta property : false
+2025-06-27 21:37:04 - Single vip registry refresh property : null
+2025-06-27 21:37:04 - Force full registry fetch : false
+2025-06-27 21:37:04 - Application is null : false
+2025-06-27 21:37:04 - Registered Applications size is zero : true
+2025-06-27 21:37:04 - Application version is -1: true
+2025-06-27 21:37:04 - Getting all instance registry info from the eureka server
+2025-06-27 21:37:06 - The response status is 200
+2025-06-27 21:37:06 - Starting heartbeat executor: renew interval is: 30
+2025-06-27 21:37:06 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-27 21:37:06 - Discovery Client initialized at timestamp 1751040426523 with initial instances count: 2
+2025-06-27 21:37:06 - Registering application ORDERSERVICE with eureka with status UP
+2025-06-27 21:37:06 - Saw local status change event StatusChangeEvent [timestamp=1751040426553, current=UP, previous=STARTING]
+2025-06-27 21:37:06 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997: registering service...
+2025-06-27 21:37:06 - Tomcat started on port 9997 (http) with context path '/'
+2025-06-27 21:37:06 - Updating port to 9997
+2025-06-27 21:37:06 - Started OrderServiceApplication in 34.061 seconds (process running for 38.984)
+2025-06-27 21:37:06 - DiscoveryClient_ORDERSERVICE/DESKTOP-KL8K1MJ.cts.com:orderService:9997 - registration status: 204
+2025-06-27 21:38:13 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-27 21:38:13 - Initializing Servlet 'dispatcherServlet'
+2025-06-27 21:38:13 - Completed initialization in 3 ms
+2025-06-27 21:38:13 - Searching orders for user ID: 1
+2025-06-27 21:38:14 - Found 0 direct orders for user ID: 1
+2025-06-27 21:38:14 - Found 0 cart orders for user ID: 1
+2025-06-27 21:38:14 - ⚠️ No orders found for user ID: 1
+2025-06-27 21:38:14 - Searching orders for user ID: 1
+2025-06-27 21:38:14 - Searching orders for user ID: 2
+2025-06-27 21:38:14 - Found 0 direct orders for user ID: 1
+2025-06-27 21:38:14 - Found 0 cart orders for user ID: 1
+2025-06-27 21:38:14 - ⚠️ No orders found for user ID: 1
+2025-06-27 21:38:14 - Found 7 direct orders for user ID: 2
+2025-06-27 21:38:14 - Found 2 cart orders for user ID: 2
+2025-06-27 21:38:15 - Searching orders for user ID: 3
+2025-06-27 21:38:15 - Searching orders for user ID: 2
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 3
+2025-06-27 21:38:15 - Found 7 direct orders for user ID: 2
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 3
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 3
+2025-06-27 21:38:15 - Found 2 cart orders for user ID: 2
+2025-06-27 21:38:15 - Searching orders for user ID: 4
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 4
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 4
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 4
+2025-06-27 21:38:15 - Searching orders for user ID: 5
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 5
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 5
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 5
+2025-06-27 21:38:15 - Searching orders for user ID: 3
+2025-06-27 21:38:15 - Searching orders for user ID: 6
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 6
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 3
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 6
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 6
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 3
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 3
+2025-06-27 21:38:15 - Searching orders for user ID: 7
+2025-06-27 21:38:15 - Searching orders for user ID: 4
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 7
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 4
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 7
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 7
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 4
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 4
+2025-06-27 21:38:15 - Searching orders for user ID: 8
+2025-06-27 21:38:15 - Searching orders for user ID: 5
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 5
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 5
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 5
+2025-06-27 21:38:15 - Found 19 direct orders for user ID: 8
+2025-06-27 21:38:15 - Found 2 cart orders for user ID: 8
+2025-06-27 21:38:15 - Searching orders for user ID: 6
+2025-06-27 21:38:15 - Found 0 direct orders for user ID: 6
+2025-06-27 21:38:15 - Found 0 cart orders for user ID: 6
+2025-06-27 21:38:15 - ⚠️ No orders found for user ID: 6
+2025-06-27 21:38:15 - Searching orders for user ID: 7
+2025-06-27 21:38:16 - Found 0 direct orders for user ID: 7
+2025-06-27 21:38:16 - Found 0 cart orders for user ID: 7
+2025-06-27 21:38:16 - ⚠️ No orders found for user ID: 7
+2025-06-27 21:38:16 - Searching orders for user ID: 8
+2025-06-27 21:38:16 - Found 19 direct orders for user ID: 8
+2025-06-27 21:38:16 - Found 2 cart orders for user ID: 8
+2025-06-27 21:38:24 - Searching for order with ID: 0409276715
+2025-06-27 21:38:24 - Cart order found with ID: 0409276715
+2025-06-27 21:38:24 - Fetched totalPrice from cartOrder: ₹200000.0
+2025-06-27 21:38:24 - Final OrderDTO (cart) → orderAmount: ₹200000.0
+2025-06-27 21:38:24 - Searching for order with ID: 0409276715
+2025-06-27 21:38:24 - Cart order found with ID: 0409276715
+2025-06-27 21:38:24 - Fetched totalPrice from cartOrder: ₹200000.0
+2025-06-27 21:38:24 - Final OrderDTO (cart) → orderAmount: ₹200000.0
+2025-06-27 21:42:04 - Resolving eureka endpoints via configuration
+2025-06-27 21:47:04 - Resolving eureka endpoints via configuration
+2025-06-27 21:52:04 - Resolving eureka endpoints via configuration
+2025-06-27 21:57:04 - Resolving eureka endpoints via configuration
+2025-06-27 21:58:36 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 21:58:37 - Generated unique order ID: 0614933258
+2025-06-27 21:58:37 - Order placed successfully for user ID: 8
+2025-06-27 21:59:05 - Searching orders for user ID: 1
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 1
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 1
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 1
+2025-06-27 21:59:05 - Searching orders for user ID: 2
+2025-06-27 21:59:05 - Found 7 direct orders for user ID: 2
+2025-06-27 21:59:05 - Found 2 cart orders for user ID: 2
+2025-06-27 21:59:05 - Searching orders for user ID: 1
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 1
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 1
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 1
+2025-06-27 21:59:05 - Searching orders for user ID: 2
+2025-06-27 21:59:05 - Searching orders for user ID: 3
+2025-06-27 21:59:05 - Found 7 direct orders for user ID: 2
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 3
+2025-06-27 21:59:05 - Found 2 cart orders for user ID: 2
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 3
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 3
+2025-06-27 21:59:05 - Searching orders for user ID: 4
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 4
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 4
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 4
+2025-06-27 21:59:05 - Searching orders for user ID: 5
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 5
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 5
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 5
+2025-06-27 21:59:05 - Searching orders for user ID: 3
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 3
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 3
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 3
+2025-06-27 21:59:05 - Searching orders for user ID: 6
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 6
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 6
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 6
+2025-06-27 21:59:05 - Searching orders for user ID: 4
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 4
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 4
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 4
+2025-06-27 21:59:05 - Searching orders for user ID: 7
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 7
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 7
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 7
+2025-06-27 21:59:05 - Searching orders for user ID: 5
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 5
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 5
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 5
+2025-06-27 21:59:05 - Searching orders for user ID: 8
+2025-06-27 21:59:05 - Found 20 direct orders for user ID: 8
+2025-06-27 21:59:05 - Found 2 cart orders for user ID: 8
+2025-06-27 21:59:05 - Searching orders for user ID: 6
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 6
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 6
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 6
+2025-06-27 21:59:05 - Searching orders for user ID: 7
+2025-06-27 21:59:05 - Found 0 direct orders for user ID: 7
+2025-06-27 21:59:05 - Found 0 cart orders for user ID: 7
+2025-06-27 21:59:05 - ⚠️ No orders found for user ID: 7
+2025-06-27 21:59:05 - Searching orders for user ID: 8
+2025-06-27 21:59:05 - Found 20 direct orders for user ID: 8
+2025-06-27 21:59:06 - Found 2 cart orders for user ID: 8
+2025-06-27 21:59:21 - Searching for order with ID: 0614933258
+2025-06-27 21:59:21 - Direct order found with ID: 0614933258
+2025-06-27 21:59:21 - Final OrderDTO (direct) → orderAmount: ₹2000000.0
+2025-06-27 21:59:21 - Searching for order with ID: 0614933258
+2025-06-27 21:59:21 - Direct order found with ID: 0614933258
+2025-06-27 21:59:21 - Final OrderDTO (direct) → orderAmount: ₹2000000.0
+2025-06-27 21:59:24 - Marking order as delivered for ID: 0614933258
+2025-06-27 21:59:24 - Direct order marked as delivered: 0614933258
+2025-06-27 21:59:24 - Searching orders for user ID: 8
+2025-06-27 21:59:24 - Found 20 direct orders for user ID: 8
+2025-06-27 21:59:24 - Found 2 cart orders for user ID: 8
+2025-06-27 21:59:26 - Searching for order with ID: 0614933258
+2025-06-27 21:59:26 - Direct order found with ID: 0614933258
+2025-06-27 21:59:26 - Final OrderDTO (direct) → orderAmount: ₹2000000.0
+2025-06-27 21:59:26 - Searching for order with ID: 0614933258
+2025-06-27 21:59:26 - Direct order found with ID: 0614933258
+2025-06-27 21:59:26 - Final OrderDTO (direct) → orderAmount: ₹2000000.0
+2025-06-27 21:59:42 - Init duration for springdoc-openapi is: 699 ms
+2025-06-27 22:00:37 - Searching orders for user ID: 2
+2025-06-27 22:00:38 - Found 7 direct orders for user ID: 2
+2025-06-27 22:00:38 - Found 2 cart orders for user ID: 2
+2025-06-27 22:00:38 - Searching orders for user ID: 2
+2025-06-27 22:00:38 - Found 7 direct orders for user ID: 2
+2025-06-27 22:00:38 - Found 2 cart orders for user ID: 2
+2025-06-27 22:00:49 - Searching orders for user ID: 2
+2025-06-27 22:00:50 - Found 7 direct orders for user ID: 2
+2025-06-27 22:00:50 - Found 2 cart orders for user ID: 2
+2025-06-27 22:00:50 - Searching orders for user ID: 2
+2025-06-27 22:00:50 - Found 7 direct orders for user ID: 2
+2025-06-27 22:00:50 - Found 2 cart orders for user ID: 2
+2025-06-27 22:00:54 - Searching orders for user ID: 2
+2025-06-27 22:00:54 - Found 7 direct orders for user ID: 2
+2025-06-27 22:00:54 - Found 2 cart orders for user ID: 2
+2025-06-27 22:00:54 - Searching orders for user ID: 2
+2025-06-27 22:00:54 - Found 7 direct orders for user ID: 2
+2025-06-27 22:00:54 - Found 2 cart orders for user ID: 2
+2025-06-27 22:01:33 - Searching orders for user ID: 2
+2025-06-27 22:01:33 - Found 7 direct orders for user ID: 2
+2025-06-27 22:01:33 - Found 2 cart orders for user ID: 2
+2025-06-27 22:01:33 - Searching orders for user ID: 2
+2025-06-27 22:01:33 - Found 7 direct orders for user ID: 2
+2025-06-27 22:01:33 - Found 2 cart orders for user ID: 2
+2025-06-27 22:02:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:06:09 - Searching orders for user ID: 2
+2025-06-27 22:06:09 - Found 7 direct orders for user ID: 2
+2025-06-27 22:06:09 - Found 2 cart orders for user ID: 2
+2025-06-27 22:06:09 - Searching orders for user ID: 2
+2025-06-27 22:06:09 - Found 7 direct orders for user ID: 2
+2025-06-27 22:06:09 - Found 2 cart orders for user ID: 2
+2025-06-27 22:07:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:07:36 - Placing order with Cash on Delivery for user ID: 8
+2025-06-27 22:07:37 - User validation failed: [500] during [GET] to [http://user3/api/v1/users/8/id] [UserFC#getUserId(int)]: [An unexpected error occurred: Access Denied]
+2025-06-27 22:08:53 - Placing order with Cash on Delivery for user ID: 2
+2025-06-27 22:09:17 - Placing order with Cash on Delivery for user ID: 2
+2025-06-27 22:09:17 - Generated unique order ID: 0344703155
+2025-06-27 22:09:17 - Order placed successfully for user ID: 2
+2025-06-27 22:09:25 - Searching orders for user ID: 2
+2025-06-27 22:09:25 - Found 8 direct orders for user ID: 2
+2025-06-27 22:09:25 - Found 2 cart orders for user ID: 2
+2025-06-27 22:09:25 - Searching orders for user ID: 2
+2025-06-27 22:09:25 - Found 8 direct orders for user ID: 2
+2025-06-27 22:09:25 - Found 2 cart orders for user ID: 2
+2025-06-27 22:09:41 - Placing order with Cash on Delivery for user ID: 2
+2025-06-27 22:09:41 - Generated unique order ID: 0071847816
+2025-06-27 22:09:41 - Order placed successfully for user ID: 2
+2025-06-27 22:09:47 - Searching orders for user ID: 2
+2025-06-27 22:09:47 - Found 9 direct orders for user ID: 2
+2025-06-27 22:09:47 - Found 2 cart orders for user ID: 2
+2025-06-27 22:09:47 - Searching orders for user ID: 2
+2025-06-27 22:09:47 - Found 9 direct orders for user ID: 2
+2025-06-27 22:09:47 - Found 2 cart orders for user ID: 2
+2025-06-27 22:12:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:17:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:22:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:27:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:32:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:37:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:42:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:43:09 - Searching orders for user ID: 2
+2025-06-27 22:43:09 - Found 9 direct orders for user ID: 2
+2025-06-27 22:43:09 - Found 2 cart orders for user ID: 2
+2025-06-27 22:43:10 - Searching orders for user ID: 2
+2025-06-27 22:43:10 - Found 9 direct orders for user ID: 2
+2025-06-27 22:43:10 - Found 2 cart orders for user ID: 2
+2025-06-27 22:43:14 - Searching orders for user ID: 2
+2025-06-27 22:43:14 - Found 9 direct orders for user ID: 2
+2025-06-27 22:43:14 - Found 2 cart orders for user ID: 2
+2025-06-27 22:43:14 - Searching orders for user ID: 2
+2025-06-27 22:43:14 - Found 9 direct orders for user ID: 2
+2025-06-27 22:43:14 - Found 2 cart orders for user ID: 2
+2025-06-27 22:45:57 - Searching orders for user ID: 2
+2025-06-27 22:45:57 - Found 9 direct orders for user ID: 2
+2025-06-27 22:45:57 - Found 2 cart orders for user ID: 2
+2025-06-27 22:45:57 - Searching orders for user ID: 2
+2025-06-27 22:45:57 - Found 9 direct orders for user ID: 2
+2025-06-27 22:45:57 - Found 2 cart orders for user ID: 2
+2025-06-27 22:47:04 - Resolving eureka endpoints via configuration
+2025-06-27 22:52:04 - Resolving eureka endpoints via configuration

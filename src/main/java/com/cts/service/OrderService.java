@@ -4,8 +4,10 @@ import com.cts.dto.CartClientDTO;
 import com.cts.dto.CartClientOnlineDTO;
 import com.cts.dto.OfflineDTO;
 import com.cts.dto.OrderDTO;
+import com.cts.dto.ProductStats;
 
 import java.util.List;
+import java.util.Map;
 
 public interface OrderService {
 	OfflineDTO placeOrderCashOnDelivery(OfflineDTO offlineDTO);
@@ -35,5 +37,8 @@ public interface OrderService {
 	OrderDTO finalizeCartOnlineOrder(Long paymentId);
 
 	public OrderDTO trackOrderById(String orderId);
+	
+	public Map<String, ProductStats> getOverallProductStats();
+
 
 }

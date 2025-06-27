@@ -14,6 +14,7 @@ import com.cts.dto.PaymentRequestDto;
 import com.cts.dto.PaymentResponseDto;
 import com.cts.dto.ProductCartDTO;
 import com.cts.dto.ProductResponse;
+import com.cts.dto.ProductStats;
 import com.cts.dto.ProductStockDTO;
 import com.cts.dto.ProductSummary;
 import com.cts.entity.CartItem;
@@ -46,9 +47,13 @@ import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -1188,6 +1193,66 @@ public class OrderServiceImpl implements OrderService {
 	    return dto;
 
 	}
+	
+	@Override
+	public Map<String, ProductStats> getOverallProductStats() {
+	    Map<String, ProductStats> stats = new HashMap<>();
+	    LocalDate today = LocalDate.now();
+
+	    // 🔹 1. Pre-fill with all available products (zeroed stats)
+	    try {
+	        List<ProductCartDTO> allProducts = productFC.getProductSummaries();
+	        for (ProductCartDTO product : allProducts) {
+	            stats.put(product.getName(), new ProductStats());
+	        }
+	    } catch (Exception e) {
+	        System.out.println("❌ Failed to fetch product list from ProductFC: " + e.getMessage());
+	    }
+
+	    // 🔹 2. Direct orders
+	    for (Order o : orderRepository.findAll()) {
+	        String name = o.getProductName();
+	        int qty = o.getQuantity();
+	        LocalDate date = o.getOrderTime().toLocalDate();
+
+	        stats.computeIfAbsent(name, k -> new ProductStats());
+	        ProductStats s = stats.get(name);
+
+	        long days = ChronoUnit.DAYS.between(date, today);
+	        if (days <= 7) s.setWeek(s.getWeek() + qty);
+	        if (days <= 30) s.setMonth(s.getMonth() + qty);
+	        if (days <= 365) s.setYear(s.getYear() + qty);
+	    }
+
+	    // 🔹 3. Cart orders
+	    for (CartOrder co : cartOrderRepository.findAll()) {
+	        LocalDate date = co.getOrderTime().toLocalDate();
+	        List<CartItem> items = cartItemRepository.findByOrderId(co.getOrderId());
+
+	        for (CartItem item : items) {
+	            String name;
+	            try {
+	                ProductCartDTO product = productFC.getProductById(item.getProductId());
+	                name = product.getName();
+	            } catch (Exception e) {
+	                name = "Unknown Product";
+	            }
+
+	            int qty = item.getQuantity();
+
+	            stats.computeIfAbsent(name, k -> new ProductStats());
+	            ProductStats s = stats.get(name);
+
+	            long days = ChronoUnit.DAYS.between(date, today);
+	            if (days <= 7) s.setWeek(s.getWeek() + qty);
+	            if (days <= 30) s.setMonth(s.getMonth() + qty);
+	            if (days <= 365) s.setYear(s.getYear() + qty);
+	        }
+	    }
+
+	    return stats;
+	}
+
 
 
 }
