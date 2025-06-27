@@ -20,12 +20,12 @@ import lombok.NoArgsConstructor;
 public class RegisterRequest {
 
     @NotBlank(message = "First name cannot be empty")
-    @Size(min = 2, max = 50, message = "First name must be between 2 and 50 characters")
+    @Size(min = 1, max = 50, message = "First name must be between 2 and 50 characters")
     @Pattern(regexp = "^[a-zA-Z\\s\\-]+$", message = "First name can only contain letters, spaces, or hyphens")
     private String firstName;
 
     @NotBlank(message = "Last name cannot be empty")
-    @Size(min = 2, max = 50, message = "Last name must be between 2 and 50 characters")
+    @Size(min = 1, max = 50, message = "Last name must be between 2 and 50 characters")
     @Pattern(regexp = "^[a-zA-Z\\s\\-]+$", message = "Last name can only contain letters, spaces, or hyphens")
     private String lastName;
 

@@ -223,7 +223,7 @@ public class UserController {
 
     // Delete user (soft delete): Only accessible by ADMIN.
     @DeleteMapping("/softdelete/{userId}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or #userId == authentication.principal.claims['userId']")
     public ResponseEntity<Void> softdeleteUser(@PathVariable int userId) {
         logger.info("API Request: Soft deleting user with ID: {}", userId);
         userService.softdeleteUser(userId);

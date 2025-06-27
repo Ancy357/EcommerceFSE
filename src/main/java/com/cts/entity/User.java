@@ -1,3 +1,4 @@
+// src/main/java/com/cts/entity/User.java (Modified onCreate for lastLogin)
 package com.cts.entity;
 
 import com.cts.enums.Role;
@@ -52,8 +53,14 @@ public class User {
     private LocalDateTime blockedUntil;
 
     private String verificationToken;
-   
+
+    @Column(columnDefinition = "LONGTEXT") // Assuming you want to keep LONGTEXT for profileimg
     private String profileimg;
+
+    // Ensure lastLogin is present in your User entity
+    // If you MUST keep it NOT NULL in DB, initialize it here.
+    // Otherwise, the `ALTER TABLE` is the cleaner solution.
+    private LocalDateTime lastLogin;
 
 
     @Column(nullable = false, updatable = false)
@@ -66,6 +73,12 @@ public class User {
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
+        // If last_login column MUST be NOT NULL in the database,
+        // initialize it here for new users.
+        // Otherwise, making the DB column NULLABLE is generally preferred.
+        if (this.lastLogin == null) {
+            this.lastLogin = LocalDateTime.now(); // Set to current time on creation
+        }
     }
 
     @PreUpdate
@@ -73,4 +86,3 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 }
-

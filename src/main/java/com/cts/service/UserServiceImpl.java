@@ -1,4 +1,4 @@
-package com.cts.service; // Your existing package
+package com.cts.service;
 
 import com.cts.dto.*;
 import com.cts.entity.User;
@@ -8,24 +8,30 @@ import com.cts.exception.UserNotFoundException;
 import com.cts.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+// NEW IMPORTS for Spring Security Exceptions
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.authentication.LockedException;
+
+
+import com.cts.client.CartServiceClient;
+import com.cts.client.OrderServiceClient;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.Optional;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.cts.client.CartServiceClient;
-import com.cts.client.OrderServiceClient;
 
 @Service
 @RequiredArgsConstructor
@@ -45,8 +51,8 @@ public class UserServiceImpl implements IUserService {
     
     private final OrderServiceClient orderServiceClient;
 
-    // Existing methods (login, registerUser, getUserById, etc.) ...
     @Override
+    @Transactional // Ensure transactionality for database operations
     public String login(LoginRequest request) {
         logger.info("Attempting login for user with email: {}", request.getEmail());
         User user;
@@ -62,24 +68,32 @@ public class UserServiceImpl implements IUserService {
             throw new RuntimeException("An unexpected error occurred during login.", e);
         }
 
-        if (user.isBlocked() && user.getBlockedUntil().isAfter(LocalDateTime.now())) {
+        // Removed the isActive check from here, as it's now handled in getUserAuthDetailsByEmail
+        // for authentication flow (UserDetailsService context).
+
+        // Added null check for blockedUntil for robustness
+        if (user.isBlocked() && user.getBlockedUntil() != null && user.getBlockedUntil().isAfter(LocalDateTime.now())) {
             logger.warn("Login attempt for blocked user: {}. Blocked until: {}", user.getEmail(), user.getBlockedUntil());
             throw new RuntimeException("User is blocked until " + user.getBlockedUntil());
         }
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             logger.warn("Invalid password for user: {}. Handling failed login.", user.getEmail());
+            // This call runs in a new transaction to ensure login attempts are persisted
             handleFailedLogin(user.getEmail());
             throw new RuntimeException("Invalid credentials");
         }
 
         try {
+            // Only reset login attempts if login is successful
             user.setLoginAttempts(0);
+            // NEW: Set the lastLogin timestamp to the current time
+            user.setLastLogin(LocalDateTime.now());
             userRepository.save(user);
-            logger.info("User {} logged in successfully. Login attempts reset.", user.getEmail());
+            logger.info("User {} logged in successfully. Login attempts reset and last login updated.", user.getEmail());
         } catch (Exception e) {
-            logger.error("Error resetting login attempts for user {}: {}", user.getEmail(), e.getMessage(), e);
-            throw new RuntimeException("Error during login, failed to reset attempts.", e);
+            logger.error("Error resetting login attempts or updating last login for user {}: {}", user.getEmail(), e.getMessage(), e);
+            throw new RuntimeException("Error during login, failed to reset attempts or update last login.", e);
         }
 
         return "Login successful";
@@ -98,6 +112,9 @@ public class UserServiceImpl implements IUserService {
             user.setCreatedAt(LocalDateTime.now());
             user.setUpdatedAt(LocalDateTime.now());
             user.setRoles(Set.of(Role.USER));
+            // Ensure new users are active by default
+            user.setActive(true); // Explicitly set to active
+            user.setBlocked(false); // Explicitly set to not blocked
 
             User savedUser = userRepository.save(user);
             logger.info("User registered successfully with email: {}. User ID: {}", savedUser.getEmail(), savedUser.getUserID());
@@ -116,15 +133,15 @@ public class UserServiceImpl implements IUserService {
                 }
             } catch (feign.FeignException.FeignClientException e) {
                 logger.error("Client error from Cart Service when creating cart for user ID {}: Status: {}, Message: {}",
-                             savedUser.getUserID(), e.status(), e.contentUTF8(), e);
+                                 savedUser.getUserID(), e.status(), e.contentUTF8(), e);
                 throw new RuntimeException("Error from Cart Service (client error): " + e.getMessage(), e);
             } catch (feign.FeignException.FeignServerException e) {
                 logger.error("Server error from Cart Service when creating cart for user ID {}: Status: {}, Message: {}",
-                             savedUser.getUserID(), e.status(), e.contentUTF8(), e);
+                                 savedUser.getUserID(), e.status(), e.contentUTF8(), e);
                 throw new RuntimeException("Cart Service internal error (server error): " + e.getMessage(), e);
             } catch (Exception e) {
                 logger.error("Unexpected error communicating with Cart Service to create cart for user ID {}: {}",
-                             savedUser.getUserID(), e.getMessage(), e);
+                                 savedUser.getUserID(), e.getMessage(), e);
                 throw new RuntimeException("Error communicating with Cart Service during cart creation.", e);
             }
 
@@ -151,9 +168,6 @@ public class UserServiceImpl implements IUserService {
         } catch (UserNotFoundException e) {
             logger.warn("User fetch failed: User with ID {} not found. Error: {}", userId, e.getMessage());
             throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while fetching user by ID {}: {}", userId, e.getMessage(), e);
-            throw new RuntimeException("Failed to fetch user profile.", e);
         }
     }
 
@@ -162,12 +176,23 @@ public class UserServiceImpl implements IUserService {
         logger.info("Fetching all users.");
         try {
             List<UserSummaryResponse> users = userRepository.findAll().stream()
-                    .map(user -> new UserSummaryResponse(
-                            user.getUserID(),
-                            user.getFirstName(),
-                            user.getLastName(),
-                            user.getEmail(),
-                            user.isActive()))
+                    .map(user -> {
+                        List<String> userRoles = user.getRoles() != null ?
+                                user.getRoles().stream()
+                                    .map(role -> role.name())
+                                    .collect(Collectors.toList()) :
+                                Collections.emptyList();
+
+                        return new UserSummaryResponse(
+                                user.getUserID(),
+                                user.getFirstName(),
+                                user.getLastName(),
+                                user.getEmail(),
+                                user.isActive(),
+                                user.isBlocked(),
+                                userRoles
+                        );
+                    })
                     .collect(Collectors.toList());
             logger.debug("Successfully fetched {} users.", users.size());
             return users;
@@ -193,9 +218,6 @@ public class UserServiceImpl implements IUserService {
         } catch (UserNotFoundException e) {
             logger.warn("User profile update failed: User with ID {} not found. Error: {}", userId, e.getMessage());
             throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while updating profile for user ID {}: {}", userId, e.getMessage(), e);
-            throw new RuntimeException("Failed to update user profile.", e);
         }
     }
 
@@ -207,31 +229,20 @@ public class UserServiceImpl implements IUserService {
                     .orElseThrow(() -> new UserNotFoundException("User not found"));
             logger.debug("Found user {} for profile image update.", user.getEmail());
 
-            // Directly set the profile image URL from the request
             user.setProfileimg(request.getProfileimg());
-            user.setUpdatedAt(LocalDateTime.now()); // Update timestamp
+            user.setUpdatedAt(LocalDateTime.now());
 
             userRepository.save(user);
             logger.info("User profile image updated successfully for ID: {}", userId);
 
-            // Map the updated user to a response DTO
-            // IMPORTANT: Ensure your UserProfileResponse DTO has a 'profileimg' field
-            // if you want this URL to be returned to the client.
             UserProfileResponse response = modelMapper.map(user, UserProfileResponse.class);
-            // If ModelMapper doesn't automatically map profileimg from User to UserProfileResponse,
-            // you might need to explicitly set it:
-            // response.setProfileimg(user.getProfileimg());
             return response;
         } catch (UserNotFoundException e) {
             logger.warn("User profile image update failed: User with ID {} not found. Error: {}", userId, e.getMessage());
             throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while updating profile image for user ID {}: {}", userId, e.getMessage(), e);
-            throw new RuntimeException("Failed to update user profile image.", e);
         }
     }
 
-    // Existing methods continue...
     @Override
     public void changePassword(ChangePasswordRequest request) {
         logger.info("Attempting to change password for user with email: {}", request.getEmail());
@@ -246,9 +257,6 @@ public class UserServiceImpl implements IUserService {
         } catch (UserNotFoundException e) {
             logger.warn("Password change failed: User with email {} not found. Error: {}", request.getEmail(), e.getMessage());
             throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while changing password for user {}: {}", request.getEmail(), e.getMessage(), e);
-            throw new RuntimeException("Failed to change password.", e);
         }
     }
 
@@ -267,9 +275,6 @@ public class UserServiceImpl implements IUserService {
         } catch (UserNotFoundException e) {
             logger.warn("Forgot password failed: User with email {} not found. Error: {}", request.getEmail(), e.getMessage());
             throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred during forgot password for user {}: {}", request.getEmail(), e.getMessage(), e);
-            throw new RuntimeException("Failed to process forgot password.", e);
         }
     }
 
@@ -295,298 +300,230 @@ public class UserServiceImpl implements IUserService {
         } catch (RuntimeException e) {
             logger.warn("Password reset failed due to invalid token for user {}: {}", request.getEmail(), e.getMessage());
             throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred during password reset for user {}: {}", request.getEmail(), e.getMessage(), e);
-            throw new RuntimeException("Failed to reset password.", e);
         }
     }
 
     @Override
     public void recoverAccount(AccountRecoveryRequest request) {
-        logger.info("Attempting account recovery for email: {}", request.getEmail());
+        logger.info("Processing account recovery request for email: {}", request.getEmail());
         try {
             User user = userRepository.findByEmail(request.getEmail())
                     .orElseThrow(() -> new UserNotFoundException("User not found"));
             logger.debug("Found user {} for account recovery.", user.getEmail());
 
             user.setPassword(passwordEncoder.encode(request.getNewPassword()));
-            user.setActive(true);
+            user.setActive(true); // Assume recovery implies reactivation
+            user.setBlocked(false); // Assume recovery implies unblocking
+            user.setLoginAttempts(0); // Reset login attempts on successful recovery
+            user.setBlockedUntil(null); // Clear any blocked until time
+            user.setUpdatedAt(LocalDateTime.now()); // Update timestamp
             userRepository.save(user);
-            logger.info("Account recovered and reactivated for user: {}", request.getEmail());
+            logger.info("Account recovered and password updated for user: {}", request.getEmail());
         } catch (UserNotFoundException e) {
             logger.warn("Account recovery failed: User with email {} not found. Error: {}", request.getEmail(), e.getMessage());
             throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred during account recovery for user {}: {}", request.getEmail(), e.getMessage(), e);
-            throw new RuntimeException("Failed to recover account.", e);
-        }
-    }
-
-    @Override // This annotation is necessary as you have a method for handleFailedLogin in IUserService
-    public void handleFailedLogin(String email) {
-        logger.debug("Handling failed login attempt for email: {}", email);
-        User user;
-        try {
-            user = userRepository.findByEmail(email)
-                    .orElseThrow(() -> new UserNotFoundException("User not found"));
-        } catch (UserNotFoundException e) {
-            logger.error("Failed login attempt for non-existent user email: {}. Error: {}", email, e.getMessage(), e);
-            throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while finding user {} for failed login handling: {}", email, e.getMessage(), e);
-            throw new RuntimeException("Error during failed login handling.", e);
-        }
-
-        if (user.isBlocked() && user.getBlockedUntil().isAfter(LocalDateTime.now())) {
-            logger.warn("Failed login attempt for already blocked user: {}. Blocked until: {}", user.getEmail(), user.getBlockedUntil());
-            throw new RuntimeException("User is blocked. Try again later.");
-        }
-
-        try {
-            user.setLoginAttempts(user.getLoginAttempts() + 1);
-            logger.info("Incremented login attempts for user {}. Current attempts: {}", user.getEmail(), user.getLoginAttempts());
-
-            if (user.getLoginAttempts() >= 3) {
-                user.setBlocked(true);
-                user.setBlockedUntil(LocalDateTime.now().plusMinutes(30));
-                logger.warn("User {} has exceeded login attempts and is now blocked until: {}", user.getEmail(), user.getBlockedUntil());
-            }
-
-            userRepository.save(user);
-            logger.debug("User {} login attempts updated and saved.", user.getEmail());
-        } catch (Exception e) {
-            logger.error("Error updating login attempts or blocking user {}: {}", user.getEmail(), e.getMessage(), e);
-            throw new RuntimeException("Failed to update user login attempts.", e);
         }
     }
 
     @Override
-    public UserBlockStatusResponse getBlockStatus(String email) {
-        logger.debug("Checking block status for user with email: {}", email);
-        try {
-            User user = userRepository.findByEmail(email)
-                    .orElseThrow(() -> new UserNotFoundException("User not found"));
-            logger.info("Block status for user {}: Blocked={}, Until={}", user.getEmail(), user.isBlocked(), user.getBlockedUntil());
-            return new UserBlockStatusResponse(user.isBlocked(), user.getBlockedUntil());
-        } catch (UserNotFoundException e) {
-            logger.warn("Failed to get block status: User with email {} not found. Error: {}", email, e.getMessage());
-            throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while getting block status for user {}: {}", email, e.getMessage(), e);
-            throw new RuntimeException("Failed to retrieve user block status.", e);
-        }
-    }
-
-    @Override
+    @Transactional // Ensure transactionality
     public void unlockUser(String email) {
         logger.info("Attempting to unlock user with email: {}", email);
-        try {
-            User user = userRepository.findByEmail(email)
-                    .orElseThrow(() -> new UserNotFoundException("User not found"));
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UserNotFoundException("User not found with email: " + email));
 
-            user.setBlocked(false);
-            user.setBlockedUntil(null);
-            user.setLoginAttempts(0);
+        if (!user.isBlocked() && user.getLoginAttempts() < 3) {
+            logger.warn("User {} is not blocked or has less than 3 login attempts. No unlock action needed.", email);
+        }
 
+        user.setBlocked(false);
+        user.setBlockedUntil(null);
+        user.setLoginAttempts(0); // Reset login attempts on unlock
+        user.setUpdatedAt(LocalDateTime.now());
+        userRepository.save(user);
+        logger.info("User {} unlocked successfully. Login attempts reset.", email);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW) // NEW: Use REQUIRES_NEW for separate transaction
+    public void handleFailedLogin(String email) {
+        logger.warn("Handling failed login attempt for email: {}", email);
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            int attempts = user.getLoginAttempts() + 1;
+            user.setLoginAttempts(attempts);
+            user.setUpdatedAt(LocalDateTime.now());
+
+            if (attempts >= 3) {
+                user.setBlocked(true);
+                user.setBlockedUntil(LocalDateTime.now().plusMinutes(5)); // Block for 5 minutes
+                logger.warn("User {} blocked for 5 minutes due to {} failed login attempts.", email, attempts);
+            }
             userRepository.save(user);
-            logger.info("User {} unlocked successfully and login attempts reset.", user.getEmail());
-        } catch (UserNotFoundException e) {
-            logger.warn("Unlock user failed: User with email {} not found. Error: {}", email, e.getMessage());
-            throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while unlocking user {}: {}", email, e.getMessage(), e);
-            throw new RuntimeException("Failed to unlock user.", e);
+        } else {
+            logger.warn("Failed login attempt for non-existent user: {}", email);
         }
     }
 
     @Override
     public void assignRoles(RoleAssignmentRequest request) {
-        logger.info("Attempting to assign roles to user ID: {}. Roles: {}", request.getUserId(), request.getRoles());
-        try {
-            User user = userRepository.findById(request.getUserId())
-                    .orElseThrow(() -> new UserNotFoundException("User not found"));
-            logger.debug("Found user {} for role assignment.", user.getEmail());
+        logger.info("Attempting to assign roles for user ID: {}", request.getUserId());
+        User user = userRepository.findById(request.getUserId())
+                .orElseThrow(() -> new UserNotFoundException("User not found with ID: " + request.getUserId()));
 
-            user.setRoles(request.getRoles());
-            userRepository.save(user);
-            logger.info("Roles assigned successfully to user ID: {}. New roles: {}", request.getUserId(), request.getRoles());
-        } catch (UserNotFoundException e) {
-            logger.warn("Role assignment failed: User with ID {} not found. Error: {}", request.getUserId(), e.getMessage());
-            throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while assigning roles to user ID {}: {}", request.getUserId(), e.getMessage(), e);
-            throw new RuntimeException("Failed to assign roles.", e);
-        }
+        user.setRoles(request.getRoles()); // Direct assignment
+        user.setUpdatedAt(LocalDateTime.now());
+        userRepository.save(user);
+        logger.info("Roles assigned successfully for user ID {}. New roles: {}", request.getUserId(), user.getRoles());
     }
 
     @Override
+    public UserBlockStatusResponse getBlockStatus(String email) {
+        logger.debug("Fetching block status for email: {}", email);
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UserNotFoundException("User not found with email: " + email));
+
+        return new UserBlockStatusResponse(user.isBlocked(), user.getBlockedUntil());
+    }
+
+    @Override
+    @Transactional
     public void updateUserStatus(int userId, UserStatusUpdateRequest request) {
-        logger.info("Attempting to update status for user ID: {}. Active: {}, Blocked: {}", userId, request.isActive(), request.isBlocked());
-        try {
-            User user = userRepository.findById(userId)
-                    .orElseThrow(() -> new UserNotFoundException("User not found"));
-            logger.debug("Found user {} for status update.", user.getEmail());
+        logger.info("Attempting to update status for user ID: {}", userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with ID: " + userId));
 
-            user.setActive(request.isActive());
-            user.setBlocked(request.isBlocked());
-            userRepository.save(user);
-            logger.info("User status updated successfully for ID: {}. Active: {}, Blocked: {}", userId, user.isActive(), user.isBlocked());
-        } catch (UserNotFoundException e) {
-            logger.warn("User status update failed: User with ID {} not found. Error: {}", userId, e.getMessage());
-            throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while updating status for user ID {}: {}", userId, e.getMessage(), e);
-            throw new RuntimeException("Failed to update user status.", e);
+        user.setActive(request.isActive());
+        user.setBlocked(request.isBlocked());
+        user.setUpdatedAt(LocalDateTime.now());
+
+        if (request.isBlocked() && user.getBlockedUntil() == null) {
+            // If blocking user and no blockedUntil is set, set a default (e.g., 5 mins)
+            // Or, if your request body includes blockedUntil, use that.
+            // For simplicity here, if blocked, it's just blocked until admin unblocks.
+        } else if (!request.isBlocked()) {
+            user.setBlockedUntil(null); // Clear blockedUntil if unblocked
+            user.setLoginAttempts(0); // Reset login attempts when unblocked
         }
-    }
 
+        userRepository.save(user);
+        logger.info("User status updated successfully for ID: {}. Active: {}, Blocked: {}", userId, user.isActive(), user.isBlocked());
+    }
+    
     @Override
+    @Transactional // Ensure transactionality
     public void softdeleteUser(int userId) {
-        logger.info("Attempting to delete (deactivate) user with ID: {}", userId);
-        try {
-            User user = userRepository.findById(userId)
-                    .orElseThrow(() -> new UserNotFoundException("User not found"));
-            logger.debug("Found user {} for deletion (deactivation).", user.getEmail());
+        logger.info("Attempting to soft delete user with ID: {}", userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with ID: " + userId));
 
-            user.setActive(false);
-            userRepository.save(user);
-            logger.info("User ID {} successfully deactivated.", userId);
-        } catch (UserNotFoundException e) {
-            logger.warn("User deletion (deactivation) failed: User with ID {} not found. Error: {}", userId, e.getMessage());
-            throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while deleting (deactivating) user ID {}: {}", userId, e.getMessage(), e);
-            throw new RuntimeException("Failed to delete user.", e);
-        }
+        user.setActive(false); // Mark user as inactive - THIS IS THE CRUCIAL PART FOR SOFT DELETE
+        user.setUpdatedAt(LocalDateTime.now()); // Update timestamp
+        User savedUser = userRepository.save(user); // Capture the saved user to log its state
+        logger.info("User with ID: {} soft deleted (marked inactive) successfully. New isActive status: {}", savedUser.getUserID(), savedUser.isActive());
     }
 
     @Override
+    @Transactional
     public void hardDeleteUser(int userId) {
-        logger.warn("Attempting PERMANENTLY delete user with ID: {}. This action is IRREVERSIBLE and requires cross-service coordination.", userId);
-        try {
-            if (!userRepository.existsById(userId)) {
-                logger.warn("Permanent user deletion failed: User with ID {} not found.", userId);
-                throw new UserNotFoundException("User not found for permanent deletion.");
-            }
-
-            userRepository.deleteById(userId);
-            logger.info("User ID {} PERMANENTLY DELETED from the database.", userId);
-
-        } catch (UserNotFoundException e) {
-            throw e;
-        } catch (Exception e) {
-            logger.error("An unexpected error occurred while permanently deleting user ID {}: {}", userId, e.getMessage(), e);
-            throw new RuntimeException("Failed to permanently delete user due to an unexpected error.", e);
+        logger.warn("PERMANENTLY DELETING user with ID: {}", userId);
+        if (!userRepository.existsById(userId)) {
+            throw new UserNotFoundException("User not found with ID: " + userId);
         }
+        userRepository.deleteById(userId);
+        logger.info("User with ID: {} permanently deleted.", userId);
+        // Additional cleanup like deleting associated carts/orders can be added here
+        // For example: cartServiceClient.deleteCart(userId);
+        // orderServiceClient.deleteUserOrders(userId);
     }
-    @Override
-    public int getUserId(int userId) {
-        return userRepository.findById(userId)
-                .map(User::getUserID)
-                .orElseThrow(() -> new RuntimeException("User not found"));
 
+    @Override
+    public Integer getUserId(int userId) {
+        logger.debug("Fetching user ID (internal service call) for ID: {}", userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with ID: " + userId));
+        return user.getUserID();
     }
 
     @Override
     public List<CartItemDTO> getUserCartItems(Integer userId) {
-        logger.info("Attempting to retrieve cart items for user ID: {}", userId);
-
-        if (!userRepository.existsById(userId)) {
-            logger.warn("Cart item retrieval failed: User with ID {} not found in User Service.", userId);
-            throw new UserNotFoundException("User not found with ID: " + userId);
-        }
-
+        logger.info("Fetching cart items for user ID: {}", userId);
         try {
-            ResponseEntity<List<CartItemDTO>> cartItemsResponse = cartServiceClient.getCartItems(userId);
-
-            if (cartItemsResponse.getStatusCode().is2xxSuccessful() && cartItemsResponse.getBody() != null) {
-                logger.info("Successfully retrieved {} cart items for user ID {} from Cart Service.",
-                                cartItemsResponse.getBody().size(), userId);
-                return cartItemsResponse.getBody();
-            } else if (cartItemsResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
-                logger.info("No cart found or cart is empty for user ID {} in Cart Service (Status 404). Returning empty list.", userId);
-                return Collections.emptyList();
+            ResponseEntity<List<CartItemDTO>> response = cartServiceClient.getCartItems(userId);
+            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
+                logger.info("Successfully fetched {} cart items for user ID: {}", response.getBody().size(), userId);
+                return response.getBody();
             } else {
-                logger.error("Cart Service returned non-successful status for user ID {}: Status: {}, Body: {}",
-                                userId, cartItemsResponse.getStatusCode(), cartItemsResponse.getBody());
-                throw new RuntimeException("Failed to retrieve cart items from Cart Service. Status: " + cartItemsResponse.getStatusCode());
-            }
-        } catch (feign.FeignException.FeignClientException e) {
-            logger.error("Client error from Cart Service when fetching cart items for user ID {}: Status: {}, Message: {}",
-                           userId, e.status(), e.contentUTF8(), e);
-            if (e.status() == HttpStatus.NOT_FOUND.value()) {
-                logger.info("No cart found for user ID {} in Cart Service (FeignClientException 404). Returning empty list.", userId);
+                logger.warn("Failed to fetch cart items for user {}. Status: {}. Body: {}", userId, response.getStatusCode(), response.getBody());
                 return Collections.emptyList();
             }
-            throw new RuntimeException("Error from Cart Service (client error) while fetching cart items for user " + userId + ": " + e.getMessage(), e);
-        } catch (feign.FeignException.FeignServerException e) {
-            logger.error("Server error from Cart Service when fetching cart items for user ID {}: Status: {}, Message: {}",
-                           userId, e.status(), e.contentUTF8(), e);
-            throw new RuntimeException("Cart Service internal error (server error) while fetching cart items for user " + userId + ": " + e.getMessage(), e);
         } catch (Exception e) {
-            logger.error("An unexpected error occurred while communicating with Cart Service for user ID {}: {}",
-                           userId, e.getMessage(), e);
-            throw new RuntimeException("Failed to retrieve cart items due to an unexpected error.", e);
+            logger.error("Error fetching cart items for user ID {}: {}", userId, e.getMessage(), e);
+            return Collections.emptyList(); // Return empty list on error
         }
     }
 
-    //get order details
     @Override
     public List<OrderDTO> getOrdersOfUser(int userId) {
-        logger.info("Attempting to fetch orders for userId: {} from Order Microservice", userId);
+        logger.info("Fetching orders for user ID: {}", userId);
         try {
             ResponseEntity<List<OrderDTO>> response = orderServiceClient.getOrdersByUserId(userId);
             if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
-                logger.info("Successfully fetched {} orders for userId: {}", response.getBody().size(), userId);
+                logger.info("Successfully fetched {} orders for user ID: {}", response.getBody().size(), userId);
                 return response.getBody();
             } else {
-                logger.warn("Failed to fetch orders for userId: {}. Status: {}", userId, response.getStatusCode());
-                // Handle specific HTTP statuses if needed (e.g., 404 for no orders found)
-                return List.of(); // Return empty list if no orders or non-successful status
+                logger.warn("Failed to fetch orders for user {}. Status: {}. Body: {}", userId, response.getStatusCode(), response.getBody());
+                return Collections.emptyList();
             }
-        } catch (feign.FeignException.NotFound e) {
-            logger.warn("No orders found or user not found in Order Microservice for userId: {}. Error: {}", userId, e.getMessage());
-            return List.of(); // Return empty list for 404 (no orders or user not found)
-        } catch (feign.FeignException e) {
-            logger.error("Error fetching orders for userId: {} from Order Microservice. Status: {}, Message: {}", userId, e.status(), e.getMessage());
-            // Re-throw or handle more gracefully based on your error handling strategy
-            throw new RuntimeException("Failed to fetch orders from Order Service for user " + userId, e);
+        } catch (Exception e) {
+            logger.error("Error fetching orders for user ID {}: {}", userId, e.getMessage(), e);
+            return Collections.emptyList(); // Return empty list on error
         }
     }
-    
-    
-    // --- NEW: Implementation for Authentication Service to fetch user details by email ---
+
     @Override
     public Optional<User> findByEmail(String email) {
+        logger.debug("Fetching User entity by email: {}", email);
         return userRepository.findByEmail(email);
     }
 
+    // --- Implementation for IUserService.getUserAuthDetailsByEmail(String) ---
+    // This returns the DTO with authentication details. This is where the core logic
+    // for preventing login of inactive users should reside for Spring Security integration.
     @Override
     public UserAuthDetailsDto getUserAuthDetailsByEmail(String email) {
-        logger.debug("Attempting to fetch user authentication details for email: {}", email);
-        Optional<User> userOptional = userRepository.findByEmail(email);
-
-        if (userOptional.isEmpty()) {
-            logger.warn("User not found for authentication details lookup: {}", email);
-            return null; // Or throw UserNotFoundException if you want to propagate specific exceptions
+        logger.info("Fetching authentication details for email: {}", email);
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UserNotFoundException("User not found with email: " + email));
+        
+        logger.debug("User {} isActive status during auth details fetch: {}", user.getEmail(), user.isActive());
+        
+        // FIX: Throw Spring Security specific exceptions for better handling
+        if (!user.isActive()) {
+            logger.warn("Authentication attempt failed for inactive user: {}. Throwing DisabledException.", user.getEmail());
+            throw new DisabledException("Account is inactive. Please contact support or an administrator."); 
+        }
+        
+        if (user.isBlocked()) { // Check if blocked in addition to inactive
+            logger.warn("Authentication attempt failed for blocked user: {}. Throwing LockedException.", user.getEmail());
+            // You can include blockedUntil in the message if you want.
+            String blockedMessage = "Account is locked";
+            if (user.getBlockedUntil() != null) {
+                blockedMessage += " until " + user.getBlockedUntil() + ".";
+            } else {
+                blockedMessage += ". Please contact support or an administrator.";
+            }
+            throw new LockedException(blockedMessage);
         }
 
-        User user = userOptional.get();
-        UserAuthDetailsDto dto = new UserAuthDetailsDto();
-        dto.setUserId(user.getUserID());
-        dto.setUsername(user.getEmail()); // Assuming 'email' is used as 'username' for login
-        dto.setPassword(user.getPassword()); // This must be the ENCODED password
-
-        // Map roles from Set<Role> to List<String>
-        if (user.getRoles() != null) {
-            dto.setRoles(user.getRoles().stream()
-                               .map(Role::name) // Assuming Role enum has `name()` to get string value
-                               .collect(Collectors.toList()));
-        } else {
-            dto.setRoles(Collections.emptyList());
-        }
-
-        logger.info("Successfully fetched authentication details for user: {}", email);
-        return dto;
+        return new UserAuthDetailsDto(
+                user.getUserID(),
+                user.getEmail(),
+                user.getPassword(),
+                user.getRoles().stream().map(role -> role.name()).collect(Collectors.toSet()),
+                user.isActive(), 
+                user.isBlocked()
+        );
     }
 }

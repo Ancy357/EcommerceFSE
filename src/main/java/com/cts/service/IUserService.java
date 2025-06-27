@@ -39,7 +39,7 @@ public interface IUserService {
     
     
     //methods for feign client
-    int getUserId(int userId);
+    Integer getUserId(int userId);
     List<CartItemDTO> getUserCartItems(Integer userId);
     List<OrderDTO> getOrdersOfUser(int userId);
     

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cts.dto.CartItemDTO;
 
-@FeignClient(name = "CartModule")  //, url = "${cart-service.url:http://localhost:9926}") // Adjust port if different
+@FeignClient(name = "CartModule", configuration = FeignClientConfig.class)  //, url = "${cart-service.url:http://localhost:9926}") // Adjust port if different
 public interface CartServiceClient {
 
  @PostMapping("/api/v1/cart/{userId}/create")
