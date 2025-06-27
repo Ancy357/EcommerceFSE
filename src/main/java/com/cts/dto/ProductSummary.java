@@ -7,5 +7,7 @@ public class ProductSummary {
     private int productId;
     private String productName;
     private String status;
+    
+    private int quantity;
 
 }

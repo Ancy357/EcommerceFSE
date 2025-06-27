@@ -47,6 +47,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
@@ -521,14 +522,28 @@ public class OrderServiceImpl implements OrderService {
 	public OrderDTO searchOrderById(String orderId) {
 	    logger.info("Searching for order with ID: {}", orderId);
 
-	    // 🔹 Try searching in the direct Order table first
+	    // 🔹 Try direct order first
 	    Order order = orderRepository.findByOrderId(orderId);
 	    if (order != null) {
 	        logger.info("Direct order found with ID: {}", orderId);
-	        return modelMapper.map(order, OrderDTO.class);
+
+	        OrderDTO dto = modelMapper.map(order, OrderDTO.class);
+	        dto.setOrderAmount(order.getTotalPrice()); // ✅ make sure amount is set
+
+	        // ⛑ Wrap direct order into product summary
+	        ProductSummary summary = new ProductSummary();
+	        summary.setProductId(order.getProductId());
+	        summary.setProductName(order.getProductName());
+	        summary.setQuantity(order.getQuantity());
+	        summary.setStatus(order.getOrderStatus());
+
+	        dto.setProducts(List.of(summary));
+
+	        logger.info("Final OrderDTO (direct) → orderAmount: ₹{}", dto.getOrderAmount());
+	        return dto;
 	    }
 
-	    // 🔹 Fallback to searching in CartOrder table
+	    // 🔹 Fallback to cart order
 	    CartOrder cartOrder = cartOrderRepository.findByOrderId(orderId);
 	    if (cartOrder == null) {
 	        logger.error("Order not found in both direct and cart orders: {}", orderId);
@@ -536,20 +551,41 @@ public class OrderServiceImpl implements OrderService {
 	    }
 
 	    logger.info("Cart order found with ID: {}", orderId);
+	    logger.info("Fetched totalPrice from cartOrder: ₹{}", cartOrder.getTotalPrice());
 
-	    // 🔁 New: Fetch cart items
+	    // 🔁 Fetch cart items
 	    List<CartItem> cartItems = cartItemRepository.findByOrderId(orderId);
 
-	    // 🧱 Build DTO manually
+	    // 🧱 Build DTO
 	    OrderDTO dto = new OrderDTO();
 	    dto.setOrderId(cartOrder.getOrderId());
 	    dto.setUserId(cartOrder.getUserId());
-	    dto.setOrderAmount(cartOrder.getTotalPrice());
+	    dto.setOrderAmount(cartOrder.getTotalPrice()); // ✅ set here for cart orders
 	    dto.setPaymentStatus(cartOrder.getPaymentStatus());
 	    dto.setAddressId(cartOrder.getAddressId());
 	    dto.setQuantity(cartItems.stream().mapToInt(CartItem::getQuantity).sum());
-	    dto.setProductName("Cart items"); // Optional: you can join item names if needed
+	    dto.setProductName("Cart items");
 
+	    // 🧩 Build products[]
+	    List<ProductSummary> summaries = cartItems.stream().map(item -> {
+	        ProductSummary summary = new ProductSummary();
+	        summary.setProductId(item.getProductId());
+	        summary.setQuantity(item.getQuantity());
+	        summary.setStatus(item.getStatus());
+
+	        try {
+	            var product = productFC.getProductById(item.getProductId());
+	            summary.setProductName(product.getName());
+	        } catch (Exception e) {
+	            summary.setProductName("Unknown Product");
+	        }
+
+	        return summary;
+	    }).collect(Collectors.toList());
+
+	    dto.setProducts(summaries);
+
+	    logger.info("Final OrderDTO (cart) → orderAmount: ₹{}", dto.getOrderAmount());
 	    return dto;
 	}
 
@@ -620,15 +656,18 @@ public class OrderServiceImpl implements OrderService {
 	    logger.info("Found {} cart orders for user ID: {}", cartOrders.size(), userId);
 
 	    if ((directOrders == null || directOrders.isEmpty()) &&
-	        (cartOrders == null || cartOrders.isEmpty())) {
-	        logger.error("No orders found for user ID: {}", userId);
-	        throw new OrderNotFoundException("No orders found for user ID: " + userId);
-	    }
+	    	    (cartOrders == null || cartOrders.isEmpty())) {
+	    	    logger.warn("⚠️ No orders found for user ID: {}", userId);
+	    	    return Collections.emptyList(); // Gracefully return empty list
+	    	}
+
 
 	    // 🔹 Convert direct orders and attach single-product list
 	    List<OrderDTO> orderDTOs = directOrders.stream()
 	        .map(order -> {
 	            OrderDTO dto = modelMapper.map(order, OrderDTO.class);
+	            
+	            dto.setTotalPrice(order.getTotalPrice());
 
 	            // Wrap productId/productName into List<ProductSummary>
 	            ProductSummary summary = new ProductSummary();
@@ -913,6 +952,12 @@ public class OrderServiceImpl implements OrderService {
 	        item.setOrderId(generatedOrderId);
 	        cartItemRepository.save(item);
 	    }
+	    
+	    for (CartItem item : cartItems) {
+	        productFC.reduceStock(item.getProductId(), item.getQuantity());
+	    }
+	    
+	    
 
 
 	    // 🔹 Step 6: Save order
@@ -928,6 +973,8 @@ public class OrderServiceImpl implements OrderService {
 	    cartClientDTO.setAddressId(addressId);
 	    cartClientDTO.setTotalPrice(order.getTotalPrice());
 	    cartClientDTO.setItems(cartDTOs); // returning original DTOs for response
+	    
+	    
 
 	    logger.info("Cart order successfully placed: {}", order.getOrderId());
 	    return cartClientDTO;
@@ -1044,6 +1091,8 @@ public class OrderServiceImpl implements OrderService {
 	    for (CartItem item : cartItems) {
 	        item.setOrderId(generatedOrderId);
 	        cartItemRepository.save(item);
+	        
+	        productFC.reduceStock(item.getProductId(), item.getQuantity());
 	    }
 
 

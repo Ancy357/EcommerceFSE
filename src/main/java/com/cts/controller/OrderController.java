@@ -9,12 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.util.*;
 
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
+
 
     @Autowired
     private OrderService orderService;
@@ -99,7 +105,7 @@ public class OrderController {
     }
 
     @GetMapping("/search/{userId}/{orderId}")
-    @PreAuthorize(" #userId == authentication.principal.claims['userId']")
+    @PreAuthorize("hasRole('ADMIN') || #userId == authentication.principal.claims['userId']")
     public ResponseEntity<OrderDTO> searchOrderById(@PathVariable int userId, @PathVariable String orderId) {
         return ResponseEntity.ok(orderService.searchOrderById(orderId));
     }
@@ -112,10 +118,15 @@ public class OrderController {
 
     @GetMapping("/user/{userId}")
     @PreAuthorize("hasRole('ADMIN') || #userId == authentication.principal.claims['userId']")
-
     public ResponseEntity<List<OrderDTO>> getOrdersByUserId(@PathVariable int userId) {
-        return ResponseEntity.ok(orderService.searchOrderByUserId(userId));
+        try {
+            return ResponseEntity.ok(orderService.searchOrderByUserId(userId));
+        } catch (Exception e) {
+            logger.error("❌ Error fetching orders for user ID {}: {}", userId, e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Collections.emptyList());
+        }
     }
+
 
     @PutMapping("/admin/deliver/{orderId}")
     @PreAuthorize("hasRole('ADMIN')")
