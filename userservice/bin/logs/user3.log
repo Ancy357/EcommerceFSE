@@ -1,0 +1,283 @@
+2025-06-27 00:53:59.140 [HikariPool-1:housekeeper] WARN  user3:com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h14m30s987ms613µs400ns).
+2025-06-27 08:11:41.049 [HikariPool-1:housekeeper] WARN  user3:com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h17m50s199ms389µs400ns).
+2025-06-27 08:14:56.872 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:19:56.885 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:24:56.888 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:29:56.904 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:34:56.908 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:39:56.917 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:44:56.919 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:49:56.928 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:54:56.942 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 08:59:56.973 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:04:27.047 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-06-27 09:04:27.074 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application USER3 with eureka with status DOWN
+2025-06-27 09:04:27.075 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1750995267075, current=DOWN, previous=UP]
+2025-06-27 09:04:27.076 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003: registering service...
+2025-06-27 09:04:27.127 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - registration status: 204
+2025-06-27 09:04:27.150 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27 09:04:27.168 [tomcat-shutdown] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-27 09:04:27.201 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 09:04:27.231 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-27 09:04:27.237 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-27 09:04:27.239 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-06-27 09:04:30.250 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-06-27 09:04:30.300 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - deregister  status: 200
+2025-06-27 09:04:30.302 [RMI TCP Connection(480)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-06-27 09:04:38.396 [main] INFO  user3:com.cts.User2Application - Starting User2Application using Java 21.0.6 with PID 50532 (C:\Users\2406357\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\user3\target\classes started by 2406357 in C:\Users\2406357\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\user3)
+2025-06-27 09:04:38.397 [main] INFO  user3:com.cts.User2Application - No active profile set, falling back to 1 default profile: "default"
+2025-06-27 09:04:39.939 [main] INFO  user3:o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27 09:04:40.100 [main] INFO  user3:o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 154 ms. Found 2 JPA repository interfaces.
+2025-06-27 09:04:40.364 [main] INFO  user3:o.s.cloud.context.scope.GenericScope - BeanFactory id=29e8d9e2-299f-367f-9333-4b6717258a77
+2025-06-27 09:04:40.699 [main] INFO  user3:o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 7003 (http)
+2025-06-27 09:04:40.712 [main] INFO  user3:o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-27 09:04:40.712 [main] INFO  user3:o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-27 09:04:40.789 [main] INFO  user3:o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-27 09:04:40.789 [main] INFO  user3:o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2350 ms
+2025-06-27 09:04:41.316 [main] INFO  user3:o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27 09:04:41.348 [main] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-27 09:04:41.649 [main] INFO  user3:com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@776a7ec6
+2025-06-27 09:04:41.651 [main] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-27 09:04:42.707 [main] INFO  user3:o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 09:04:43.218 [main] WARN  user3:o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27 09:04:43.315 [main] INFO  user3:o.s.c.o.FeignClientFactoryBean - For 'CartModule' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 09:04:43.361 [main] INFO  user3:o.s.c.o.FeignClientFactoryBean - For 'orderService' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 09:04:43.652 [main] INFO  user3:o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-06-27 09:04:43.806 [main] DEBUG user3:o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, BearerTokenAuthenticationFilter, AuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-06-27 09:04:44.217 [main] INFO  user3:o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-06-27 09:04:44.246 [main] WARN  user3:o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-27 09:04:44.304 [main] INFO  user3:o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-06-27 09:04:44.330 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-06-27 09:04:44.334 [main] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:04:44.346 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-06-27 09:04:44.346 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-06-27 09:04:44.346 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-06-27 09:04:44.346 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-06-27 09:04:44.346 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-06-27 09:04:44.346 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-06-27 09:04:44.347 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-06-27 09:04:44.717 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-06-27 09:04:44.719 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-06-27 09:04:44.721 [main] INFO  user3:c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-27 09:04:44.723 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1750995284722 with initial instances count: 4
+2025-06-27 09:04:44.726 [main] INFO  user3:o.s.c.n.e.s.EurekaServiceRegistry - Registering application USER3 with eureka with status UP
+2025-06-27 09:04:44.727 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1750995284727, current=UP, previous=STARTING]
+2025-06-27 09:04:44.729 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003: registering service...
+2025-06-27 09:04:44.765 [main] INFO  user3:o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 7003 (http) with context path '/'
+2025-06-27 09:04:44.766 [main] INFO  user3:o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 7003
+2025-06-27 09:04:44.779 [main] INFO  user3:com.cts.User2Application - Started User2Application in 6.785 seconds (process running for 7.972)
+2025-06-27 09:04:44.792 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - registration status: 204
+2025-06-27 09:07:39.403 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-06-27 09:07:39.404 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application USER3 with eureka with status DOWN
+2025-06-27 09:07:39.404 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1750995459404, current=DOWN, previous=UP]
+2025-06-27 09:07:39.405 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003: registering service...
+2025-06-27 09:07:39.407 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27 09:07:39.411 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - registration status: 204
+2025-06-27 09:07:39.412 [tomcat-shutdown] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-27 09:07:39.419 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 09:07:39.422 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-27 09:07:39.434 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-27 09:07:39.435 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-06-27 09:07:42.443 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-06-27 09:07:42.460 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - deregister  status: 200
+2025-06-27 09:07:42.460 [RMI TCP Connection(11)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-06-27 09:07:49.302 [main] INFO  user3:com.cts.User2Application - Starting User2Application using Java 21.0.6 with PID 11784 (C:\Users\2406357\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\user3\target\classes started by 2406357 in C:\Users\2406357\Documents\workspace-spring-tool-suite-4-4.29.1.RELEASE project\user3)
+2025-06-27 09:07:49.304 [main] INFO  user3:com.cts.User2Application - No active profile set, falling back to 1 default profile: "default"
+2025-06-27 09:07:50.220 [main] INFO  user3:o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-27 09:07:50.369 [main] INFO  user3:o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 2 JPA repository interfaces.
+2025-06-27 09:07:50.613 [main] INFO  user3:o.s.cloud.context.scope.GenericScope - BeanFactory id=29e8d9e2-299f-367f-9333-4b6717258a77
+2025-06-27 09:07:50.904 [main] INFO  user3:o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 7003 (http)
+2025-06-27 09:07:50.916 [main] INFO  user3:o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-27 09:07:50.916 [main] INFO  user3:o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-27 09:07:50.984 [main] INFO  user3:o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-27 09:07:50.984 [main] INFO  user3:o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1630 ms
+2025-06-27 09:07:51.409 [main] INFO  user3:o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-27 09:07:51.435 [main] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-27 09:07:51.698 [main] INFO  user3:com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42734b71
+2025-06-27 09:07:51.700 [main] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-27 09:07:52.706 [main] INFO  user3:o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 09:07:53.147 [main] WARN  user3:o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-27 09:07:53.230 [main] INFO  user3:o.s.c.o.FeignClientFactoryBean - For 'CartModule' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 09:07:53.277 [main] INFO  user3:o.s.c.o.FeignClientFactoryBean - For 'orderService' URL not provided. Will try picking an instance via load-balancing.
+2025-06-27 09:07:53.546 [main] INFO  user3:o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-06-27 09:07:53.664 [main] DEBUG user3:o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, BearerTokenAuthenticationFilter, AuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-06-27 09:07:54.002 [main] INFO  user3:o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-06-27 09:07:54.034 [main] WARN  user3:o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-27 09:07:54.087 [main] INFO  user3:o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-06-27 09:07:54.118 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-06-27 09:07:54.123 [main] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:07:54.138 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-06-27 09:07:54.139 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-06-27 09:07:54.139 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-06-27 09:07:54.139 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-06-27 09:07:54.139 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-06-27 09:07:54.139 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-06-27 09:07:54.139 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-06-27 09:07:54.466 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-06-27 09:07:54.468 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-06-27 09:07:54.471 [main] INFO  user3:c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-06-27 09:07:54.472 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1750995474472 with initial instances count: 5
+2025-06-27 09:07:54.476 [main] INFO  user3:o.s.c.n.e.s.EurekaServiceRegistry - Registering application USER3 with eureka with status UP
+2025-06-27 09:07:54.476 [main] INFO  user3:c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1750995474476, current=UP, previous=STARTING]
+2025-06-27 09:07:54.478 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003: registering service...
+2025-06-27 09:07:54.498 [main] INFO  user3:o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 7003 (http) with context path '/'
+2025-06-27 09:07:54.499 [main] INFO  user3:o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 7003
+2025-06-27 09:07:54.508 [main] INFO  user3:com.cts.User2Application - Started User2Application in 5.623 seconds (process running for 6.356)
+2025-06-27 09:07:54.514 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - registration status: 204
+2025-06-27 09:08:15.664 [http-nio-7003-exec-2] INFO  user3:o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-27 09:08:15.665 [http-nio-7003-exec-2] INFO  user3:o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-27 09:08:15.666 [http-nio-7003-exec-2] INFO  user3:o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-27 09:08:15.679 [http-nio-7003-exec-2] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/ancysharmila@gmail.com
+2025-06-27 09:08:15.685 [http-nio-7003-exec-2] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 09:08:15.687 [http-nio-7003-exec-2] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/ancysharmila@gmail.com
+2025-06-27 09:08:15.708 [http-nio-7003-exec-2] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: ancysharmila@gmail.com
+2025-06-27 09:08:15.709 [http-nio-7003-exec-2] INFO  user3:com.cts.service.UserServiceImpl - Fetching authentication details for email: ancysharmila@gmail.com
+2025-06-27 09:08:15.856 [http-nio-7003-exec-2] DEBUG user3:com.cts.service.UserServiceImpl - User ancysharmila@gmail.com isActive status during auth details fetch: true
+2025-06-27 09:09:28.731 [http-nio-7003-exec-4] DEBUG user3:o.s.security.web.FilterChainProxy - Securing POST /api/v1/users/register
+2025-06-27 09:09:28.732 [http-nio-7003-exec-4] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 09:09:28.732 [http-nio-7003-exec-4] DEBUG user3:o.s.security.web.FilterChainProxy - Secured POST /api/v1/users/register
+2025-06-27 09:09:28.915 [http-nio-7003-exec-4] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.register(com.cts.dto.RegisterRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:09:28.957 [http-nio-7003-exec-4] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.register(com.cts.dto.RegisterRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:09:28.958 [http-nio-7003-exec-4] INFO  user3:com.cts.controller.UserController - API Request: Registering new user with email: rakshith123@gmail.com
+2025-06-27 09:09:28.958 [http-nio-7003-exec-4] INFO  user3:com.cts.service.UserServiceImpl - Attempting to register new user with email: rakshith123@gmail.com
+2025-06-27 09:09:29.278 [http-nio-7003-exec-4] INFO  user3:com.cts.service.UserServiceImpl - User registered successfully with email: rakshith123@gmail.com. User ID: 6
+2025-06-27 09:09:29.279 [http-nio-7003-exec-4] INFO  user3:com.cts.service.UserServiceImpl - Attempting to create cart for new user with ID: 6
+2025-06-27 09:09:31.035 [http-nio-7003-exec-4] INFO  user3:com.cts.service.UserServiceImpl - Cart created successfully for user ID 6. Response from Cart Service: Cart created successfully
+2025-06-27 09:09:31.036 [http-nio-7003-exec-4] INFO  user3:com.cts.controller.UserController - API Response: User registered successfully for email: rakshith123@gmail.com
+2025-06-27 09:09:38.256 [http-nio-7003-exec-3] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith123@gmail.com
+2025-06-27 09:09:38.257 [http-nio-7003-exec-3] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 09:09:38.258 [http-nio-7003-exec-3] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith123@gmail.com
+2025-06-27 09:09:38.261 [http-nio-7003-exec-3] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith123@gmail.com
+2025-06-27 09:09:38.261 [http-nio-7003-exec-3] INFO  user3:com.cts.service.UserServiceImpl - Fetching authentication details for email: rakshith123@gmail.com
+2025-06-27 09:09:38.274 [http-nio-7003-exec-3] DEBUG user3:com.cts.service.UserServiceImpl - User rakshith123@gmail.com isActive status during auth details fetch: true
+2025-06-27 09:09:39.909 [http-nio-7003-exec-5] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/6
+2025-06-27 09:09:40.056 [http-nio-7003-exec-5] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-27 09:09:40.058 [http-nio-7003-exec-5] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@67e071c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-27 09:09:40.061 [http-nio-7003-exec-5] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/6
+2025-06-27 09:09:40.066 [http-nio-7003-exec-5] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-27 09:09:40.077 [http-nio-7003-exec-5] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-27 09:09:40.078 [http-nio-7003-exec-5] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 6
+2025-06-27 09:09:40.078 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@67e071c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-27 09:09:40.079 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-27 09:09:40.079 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@67e071c
+2025-06-27 09:09:40.080 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-27 09:09:40.080 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-27 09:09:40.080 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {exp=2025-06-27T04:39:38Z, userId=6, iat=2025-06-27T03:39:38Z, roles=[USER]}
+2025-06-27 09:09:40.081 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 6
+2025-06-27 09:09:40.081 [http-nio-7003-exec-5] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): null
+2025-06-27 09:09:40.083 [http-nio-7003-exec-5] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 6
+2025-06-27 09:09:40.114 [http-nio-7003-exec-5] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 6. Email: rakshith123@gmail.com
+2025-06-27 09:09:40.131 [http-nio-7003-exec-5] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 6
+2025-06-27 09:09:40.186 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/6
+2025-06-27 09:09:40.188 [http-nio-7003-exec-6] DEBUG user3:o.s.s.o.s.r.a.JwtAuthenticationProvider - Authenticated token
+2025-06-27 09:09:40.189 [http-nio-7003-exec-6] DEBUG user3:o.s.s.o.s.r.w.a.BearerTokenAuthenticationFilter - Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@67e071c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-27 09:09:40.189 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/6
+2025-06-27 09:09:40.190 [http-nio-7003-exec-6] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-27 09:09:40.192 [http-nio-7003-exec-6] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.getUser(int,org.springframework.security.core.Authentication); target is of class [com.cts.controller.UserController]
+2025-06-27 09:09:40.192 [http-nio-7003-exec-6] INFO  user3:com.cts.controller.UserController - API Request: Fetching user profile for ID: 6
+2025-06-27 09:09:40.192 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController - Authentication Object: JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@67e071c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null], Granted Authorities=[ROLE_USER]]
+2025-06-27 09:09:40.192 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Principal Type: org.springframework.security.oauth2.jwt.Jwt
+2025-06-27 09:09:40.192 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Principal: org.springframework.security.oauth2.jwt.Jwt@67e071c
+2025-06-27 09:09:40.192 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Authorities: [ROLE_USER]
+2025-06-27 09:09:40.193 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   Details: WebAuthenticationDetails [RemoteIpAddress=10.230.26.4, SessionId=null]
+2025-06-27 09:09:40.193 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   JWT Claims: {exp=2025-06-27T04:39:38Z, userId=6, iat=2025-06-27T03:39:38Z, roles=[USER]}
+2025-06-27 09:09:40.193 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   JWT userId claim: 6
+2025-06-27 09:09:40.193 [http-nio-7003-exec-6] DEBUG user3:com.cts.controller.UserController -   JWT 'sub' claim (email): null
+2025-06-27 09:09:40.193 [http-nio-7003-exec-6] DEBUG user3:com.cts.service.UserServiceImpl - Attempting to fetch user with ID: 6
+2025-06-27 09:09:40.204 [http-nio-7003-exec-6] INFO  user3:com.cts.service.UserServiceImpl - User found for ID: 6. Email: rakshith123@gmail.com
+2025-06-27 09:09:40.205 [http-nio-7003-exec-6] INFO  user3:com.cts.controller.UserController - API Response: User profile fetched successfully for ID: 6
+2025-06-27 09:12:54.154 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:17:54.167 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:22:54.185 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:27:54.197 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:32:54.210 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:37:54.215 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:42:54.226 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:47:54.241 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:52:54.252 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 09:53:20.948 [http-nio-7003-exec-9] DEBUG user3:o.s.security.web.FilterChainProxy - Securing POST /api/v1/users/forgot-password
+2025-06-27 09:53:20.948 [http-nio-7003-exec-9] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 09:53:20.949 [http-nio-7003-exec-9] DEBUG user3:o.s.security.web.FilterChainProxy - Secured POST /api/v1/users/forgot-password
+2025-06-27 09:53:20.958 [http-nio-7003-exec-9] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:53:20.958 [http-nio-7003-exec-9] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:53:20.959 [http-nio-7003-exec-9] INFO  user3:com.cts.controller.UserController - API Request: Forgot password request for email: rakshith12@gmail.com
+2025-06-27 09:53:20.959 [http-nio-7003-exec-9] INFO  user3:com.cts.service.UserServiceImpl - Processing forgot password request for email: rakshith12@gmail.com
+2025-06-27 09:53:20.973 [http-nio-7003-exec-9] WARN  user3:com.cts.service.UserServiceImpl - Forgot password failed: User with email rakshith12@gmail.com not found. Error: User not found
+2025-06-27 09:53:20.990 [http-nio-7003-exec-9] WARN  user3:c.c.exception.GlobalExceptionHandler - GlobalExceptionHandler: UserNotFoundException. Status: 404, Message: User not found
+2025-06-27 09:53:29.461 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Securing POST /api/v1/users/forgot-password
+2025-06-27 09:53:29.463 [http-nio-7003-exec-10] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 09:53:29.463 [http-nio-7003-exec-10] DEBUG user3:o.s.security.web.FilterChainProxy - Secured POST /api/v1/users/forgot-password
+2025-06-27 09:53:29.466 [http-nio-7003-exec-10] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:53:29.466 [http-nio-7003-exec-10] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:53:29.467 [http-nio-7003-exec-10] INFO  user3:com.cts.controller.UserController - API Request: Forgot password request for email: rakshith123@gmail.com
+2025-06-27 09:53:29.467 [http-nio-7003-exec-10] INFO  user3:com.cts.service.UserServiceImpl - Processing forgot password request for email: rakshith123@gmail.com
+2025-06-27 09:53:29.479 [http-nio-7003-exec-10] DEBUG user3:com.cts.service.UserServiceImpl - Found user rakshith123@gmail.com for forgot password.
+2025-06-27 09:53:29.514 [http-nio-7003-exec-10] INFO  user3:com.cts.service.UserServiceImpl - Verification token generated for user rakshith123@gmail.com. Token (partially logged): token-1750...
+2025-06-27 09:53:29.514 [http-nio-7003-exec-10] INFO  user3:com.cts.controller.UserController - API Response: Forgot password process initiated for email: rakshith123@gmail.com
+2025-06-27 09:56:06.159 [http-nio-7003-exec-1] DEBUG user3:o.s.security.web.FilterChainProxy - Securing POST /api/v1/users/reset-password
+2025-06-27 09:56:06.160 [http-nio-7003-exec-1] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 09:56:06.160 [http-nio-7003-exec-1] DEBUG user3:o.s.security.web.FilterChainProxy - Secured POST /api/v1/users/reset-password
+2025-06-27 09:56:06.165 [http-nio-7003-exec-1] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.resetPassword(com.cts.dto.ResetPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:56:06.165 [http-nio-7003-exec-1] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.resetPassword(com.cts.dto.ResetPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 09:56:06.165 [http-nio-7003-exec-1] INFO  user3:com.cts.controller.UserController - API Request: Resetting password for email: rakshith123@gmail.com
+2025-06-27 09:56:06.166 [http-nio-7003-exec-1] INFO  user3:com.cts.service.UserServiceImpl - Attempting to reset password for user with email: rakshith123@gmail.com
+2025-06-27 09:56:06.173 [http-nio-7003-exec-1] DEBUG user3:com.cts.service.UserServiceImpl - Found user rakshith123@gmail.com for password reset.
+2025-06-27 09:56:06.314 [http-nio-7003-exec-1] INFO  user3:com.cts.service.UserServiceImpl - Password reset successfully for user: rakshith123@gmail.com
+2025-06-27 09:56:06.315 [http-nio-7003-exec-1] INFO  user3:com.cts.controller.UserController - API Response: Password reset successfully.
+2025-06-27 09:56:11.607 [http-nio-7003-exec-4] DEBUG user3:o.s.security.web.FilterChainProxy - Securing GET /api/v1/users/auth/rakshith123@gmail.com
+2025-06-27 09:56:11.607 [http-nio-7003-exec-4] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 09:56:11.608 [http-nio-7003-exec-4] DEBUG user3:o.s.security.web.FilterChainProxy - Secured GET /api/v1/users/auth/rakshith123@gmail.com
+2025-06-27 09:56:11.609 [http-nio-7003-exec-4] INFO  user3:com.cts.controller.UserController - Received authentication details request for email: rakshith123@gmail.com
+2025-06-27 09:56:11.609 [http-nio-7003-exec-4] INFO  user3:com.cts.service.UserServiceImpl - Fetching authentication details for email: rakshith123@gmail.com
+2025-06-27 09:56:11.619 [http-nio-7003-exec-4] DEBUG user3:com.cts.service.UserServiceImpl - User rakshith123@gmail.com isActive status during auth details fetch: true
+2025-06-27 09:57:54.258 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 10:00:58.587 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Securing POST /api/v1/users/forgot-password
+2025-06-27 10:00:58.587 [http-nio-7003-exec-6] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 10:00:58.588 [http-nio-7003-exec-6] DEBUG user3:o.s.security.web.FilterChainProxy - Secured POST /api/v1/users/forgot-password
+2025-06-27 10:00:58.592 [http-nio-7003-exec-6] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 10:00:58.592 [http-nio-7003-exec-6] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 10:00:58.592 [http-nio-7003-exec-6] INFO  user3:com.cts.controller.UserController - API Request: Forgot password request for email: seona131@gmail.com
+2025-06-27 10:00:58.593 [http-nio-7003-exec-6] INFO  user3:com.cts.service.UserServiceImpl - Processing forgot password request for email: seona131@gmail.com
+2025-06-27 10:00:58.599 [http-nio-7003-exec-6] DEBUG user3:com.cts.service.UserServiceImpl - Found user seona131@gmail.com for forgot password.
+2025-06-27 10:00:58.609 [http-nio-7003-exec-6] INFO  user3:com.cts.service.UserServiceImpl - Verification token generated for user seona131@gmail.com. Token (partially logged): token-1750...
+2025-06-27 10:00:58.609 [http-nio-7003-exec-6] INFO  user3:com.cts.controller.UserController - API Response: Forgot password process initiated for email: seona131@gmail.com
+2025-06-27 10:01:30.304 [http-nio-7003-exec-7] DEBUG user3:o.s.security.web.FilterChainProxy - Securing POST /api/v1/users/forgot-password
+2025-06-27 10:01:30.305 [http-nio-7003-exec-7] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 10:01:30.305 [http-nio-7003-exec-7] DEBUG user3:o.s.security.web.FilterChainProxy - Secured POST /api/v1/users/forgot-password
+2025-06-27 10:01:30.308 [http-nio-7003-exec-7] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 10:01:30.309 [http-nio-7003-exec-7] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.forgotPassword(com.cts.dto.ForgotPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 10:01:30.309 [http-nio-7003-exec-7] INFO  user3:com.cts.controller.UserController - API Request: Forgot password request for email: seona131@gmail.com
+2025-06-27 10:01:30.309 [http-nio-7003-exec-7] INFO  user3:com.cts.service.UserServiceImpl - Processing forgot password request for email: seona131@gmail.com
+2025-06-27 10:01:30.317 [http-nio-7003-exec-7] DEBUG user3:com.cts.service.UserServiceImpl - Found user seona131@gmail.com for forgot password.
+2025-06-27 10:01:30.328 [http-nio-7003-exec-7] INFO  user3:com.cts.service.UserServiceImpl - Verification token generated for user seona131@gmail.com. Token (partially logged): token-1750...
+2025-06-27 10:01:30.328 [http-nio-7003-exec-7] INFO  user3:com.cts.controller.UserController - API Response: Forgot password process initiated for email: seona131@gmail.com
+2025-06-27 10:02:02.947 [http-nio-7003-exec-8] DEBUG user3:o.s.security.web.FilterChainProxy - Securing POST /api/v1/users/reset-password
+2025-06-27 10:02:02.948 [http-nio-7003-exec-8] DEBUG user3:o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-27 10:02:02.948 [http-nio-7003-exec-8] DEBUG user3:o.s.security.web.FilterChainProxy - Secured POST /api/v1/users/reset-password
+2025-06-27 10:02:02.952 [http-nio-7003-exec-8] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.resetPassword(com.cts.dto.ResetPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 10:02:02.953 [http-nio-7003-exec-8] DEBUG user3:o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.UserController.resetPassword(com.cts.dto.ResetPasswordRequest); target is of class [com.cts.controller.UserController]
+2025-06-27 10:02:02.953 [http-nio-7003-exec-8] INFO  user3:com.cts.controller.UserController - API Request: Resetting password for email: seona131@gmail.com
+2025-06-27 10:02:02.953 [http-nio-7003-exec-8] INFO  user3:com.cts.service.UserServiceImpl - Attempting to reset password for user with email: seona131@gmail.com
+2025-06-27 10:02:02.961 [http-nio-7003-exec-8] DEBUG user3:com.cts.service.UserServiceImpl - Found user seona131@gmail.com for password reset.
+2025-06-27 10:02:03.091 [http-nio-7003-exec-8] INFO  user3:com.cts.service.UserServiceImpl - Password reset successfully for user: seona131@gmail.com
+2025-06-27 10:02:03.091 [http-nio-7003-exec-8] INFO  user3:com.cts.controller.UserController - API Response: Password reset successfully.
+2025-06-27 10:02:54.272 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 10:07:54.284 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 10:12:54.292 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 10:17:54.307 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 10:22:54.321 [AsyncResolver-bootstrap-executor-%d] INFO  user3:c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-06-27 10:25:27.959 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-06-27 10:25:27.990 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application USER3 with eureka with status DOWN
+2025-06-27 10:25:27.991 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1751000127991, current=DOWN, previous=UP]
+2025-06-27 10:25:27.991 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003: registering service...
+2025-06-27 10:25:28.015 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - registration status: 204
+2025-06-27 10:25:28.060 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27 10:25:28.076 [tomcat-shutdown] INFO  user3:o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-27 10:25:28.144 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-27 10:25:28.155 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-27 10:25:28.261 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-27 10:25:28.263 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-06-27 10:25:31.268 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-06-27 10:25:31.268 [DiscoveryClient-%d] WARN  user3:c.n.discovery.TimedSupervisorTask - task supervisor shutting down, can't accept the task
+2025-06-27 10:25:31.275 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - DiscoveryClient_USER3/LTIN518746.cts.com:user3:7003 - deregister  status: 200
+2025-06-27 10:25:31.275 [RMI TCP Connection(87)-127.0.0.1] INFO  user3:c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
